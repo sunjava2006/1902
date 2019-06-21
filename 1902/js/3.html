@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+
+        var a = 100;
+        while(a<1000){
+
+        	var h = Math.floor(a/100);
+        	var m = Math.floor( a%100/10);
+        	var g = a%10;
+
+        	var sum = Math.pow(h,3) + Math.pow(m,3) + Math.pow(g,3);
+
+        	if(a == sum){
+        		console.log(a);
+        	}
+
+
+        	a++;
+        }
+
+	</script>
+</body>
+</html>

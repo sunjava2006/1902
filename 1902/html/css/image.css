@@ -1,0 +1,8 @@
+img{
+    width: 300px;
+    vertical-align: top;
+    border-top: brown inset 20px;
+}
+.only-h{
+    height: 300px;
+}

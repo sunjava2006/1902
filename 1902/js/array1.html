@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		var a = new Array();
+		var b = new Array(3); // 初始长度
+		var c = new Array("china", 100 , false, null);
+		var d = ["china", 100 , false, null]; // JSON {name: value, age: 12}
+
+		// 通过下标添加元素，取元素。
+		// pop从尾部取元素， push向尾部添加元素。
+		// fill方法，填充所有元素为指定值。 
+
+		array = ['李', '男', 20, '张', '女', 21];
+
+		function getInfo(idx){
+			console.log('NO.' +idx +":"+array[idx*3] + array[idx*3+1] + array[idx*3+2]);
+		}
+		
+        getInfo(0);
+ 		getInfo(1);
+	</script>
+</body>
+</html>

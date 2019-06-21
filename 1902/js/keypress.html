@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function anXia(v){
+			alert(v.id);
+			alert(v.className);
+			var n = v.value.replace('法轮功', '*');
+			console.log(n);
+			v.value = n;
+		}
+		
+
+	</script>
+</head>
+<body>
+	<input type="text" value="hi" id="i3" class="sss"
+	       onkeyup="anXia(this)">
+	
+</body>
+</html>

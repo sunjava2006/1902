@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var fileName = "abc.jpg";
+
+		// 找到“.”的位置
+		var dotAt = fileName.lastIndexOf(".");
+
+		// 取文件名的前缀
+		var prefixed = fileName.substring(0, dotAt);
+
+		// 前缀字符串，转换为大写
+		prefixed = prefixed.toUpperCase();
+
+		// 取文件名的后缀
+		var surfixed = fileName.substring(dotAt);
+
+		// 将大写的前缀与后缀，拼接为新的文件名
+		var 新文件名 = prefixed + surfixed;
+
+		document.writeln(新文件名);
+	</script>
+</body>
+</html>

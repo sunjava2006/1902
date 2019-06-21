@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var o = new Object();
+		o.name="小张";
+		o.age = 20;
+		o.ID = "110101010101";
+		o.married = false;
+		o.gender="男";
+		o.work = function(){
+			console.log('工作中');
+		};
+		o.study=function(){
+            console.log('正在学习');
+		};
+
+		o.work();
+		o.study();
+
+		function add(a, b){
+			return a+b;
+		}
+
+		o.sum = add;
+		o.sum(3,4);
+
+
+		var aa = add;
+
+
+
+	</script>
+</body>
+</html>

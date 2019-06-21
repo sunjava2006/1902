@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		var score = Math.random()*100;
+		score = Math.round(score);
+
+		var grad = "";
+
+		if(score<60){
+			grad = "差";
+		}else{
+			if(score>=90){
+				grad = "优";
+			}else{
+				if(score>=80){
+					grad = "良"; 
+				}else{
+					if(score>=70){
+						grad = "中";
+					}else{
+						grad = "及格";
+					}
+
+				}
+			}
+		}
+		console.log(score);
+		console.log(grad);
+
+	</script>
+</body>
+</html>

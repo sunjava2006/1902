@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: cornflowerblue;
+        }
+         #page{
+             background: white;
+             width: 1280px;
+             margin: auto;
+         }
+        .header{
+            height: 200px;
+            background: cadetblue;
+        }
+        .side-bar{
+            width: 200px;
+            background: orange;
+            height: 800px;
+            float: left;
+        }
+        #main{
+            width: 1080px;
+            height: 800px;
+            background: white;
+            float: left;
+            border: 0;
+            /*margin-top:50px;*/
+        }
+        .footer{
+            height: 200px;
+            background: black;
+            clear: left;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+
+
+        }
+        hr{
+            height: 20px;
+            border: 0;
+            border-top: red solid 1px;
+        }
+        .side-bar>ul{
+            list-style-type: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .side-bar>ul>li{
+            width: 100%;
+            height: 40px;
+            background: black;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+        }
+        .side-bar>ul>li:hover{
+            background: brown;
+        }
+        .side-bar>ul>li>a{
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <header class="header"></header>
+        <aside class="side-bar">
+            <ul>
+                <li><a href="https://www.sina.com.cn" target="main">新浪</a></li>
+                <li><a href="https://www.qq.com" target="main">腾讯</a></li>
+                <li><a href="https://www.thzhima.com" target="main">天汇智码</a></li>
+            </ul>
+        </aside>
+        <iframe id="main" name="main" src="https://www.sina.com.cn"></iframe>
+        <footer class="footer">
+            版权所有
+        </footer>
+    </div>
+</body>
+</html>

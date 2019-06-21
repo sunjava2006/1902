@@ -1,0 +1,13 @@
+<view class='top-bar'>
+    <scroll-view scroll-x="true" class="top-scroll">
+        <view class='row'>
+            <block wx:for="{{10}}">
+                <view>
+                    <view class='item'></view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+    <view class='plus'>...</view>
+</view>
+

@@ -1,0 +1,63 @@
+body{
+    background: #eee;
+}
+#page{
+    width:1191px;
+    margin: auto;
+    box-shadow: darkslategray 15px 15px 195px;
+}
+.banel{
+    height: 138px;
+    background: url("../imgs/banel.jpg");
+}
+#tool-bar{
+    height: 38px;
+    background: url("../imgs/bar_1px.jpg") repeat-x;
+    color: white;
+}
+#index-aside{
+    width: 300px;
+    height: 800px;
+    background-color: dodgerblue;
+    float: left;
+}
+#main{
+    height: 800px;
+    width: 891px;
+    border: 0;
+    float: left;
+    overflow: scroll;
+}
+footer{
+    height: 100px;
+    background:black;
+    clear: left;
+    color: white;
+}
+#lbar{
+    width: 40%;
+    height: 38px;
+    line-height: 30px;
+    float: left;
+    padding-left: 30px;
+}
+#rbar{
+    width: 40%;
+    height: 38px;
+    line-height: 30px;
+    float: right;
+    text-align: right;
+    padding-right: 30px;
+}
+.items{
+    height: 400px;
+}
+.items>label{
+    height: 40px;
+    line-height: 40px;
+    background: blue;
+    color: white;
+    text-align: center;
+    display: block;
+    width: 100%;
+}

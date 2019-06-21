@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menu{
+            list-style-type: none;
+            width: 100%;
+            height: 40px;
+
+            padding: 0;
+        }
+        .menu>li{
+            float: left;
+            width: 20%;
+            height: 40px;
+            background: brown;
+        }
+        .menu>li>a{
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+
+        }
+        .menu>li>a:hover{
+
+            transition: background-color 1s linear ,font-size 0.3s linear;
+            font-size: 1.5em;
+        }
+        .menu>li>a:first-child:hover{
+            transition: background-color 1s linear ,font-size 0.3s linear;
+            font-size: 1.5em;
+        }
+        .menu>li:first-child, .menu>li:first-child>a{
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+        }
+        .menu>li:last-child{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius:5px;
+        }
+        .menu>li:hover{
+            background: black;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">军事</a></li>
+        <li><a href="#">财经</a></li>
+        <li><a href="#">体育</a></li>
+        <li><a href="#">科技</a></li>
+    </ul>
+</body>
+</html>

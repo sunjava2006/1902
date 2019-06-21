@@ -1,0 +1,83 @@
+.page{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.search-bar{
+  height: 80rpx;
+  background: #f00;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.search-bar>text{
+  width: 100rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color:white;
+}
+.search{
+  width: 550rpx;
+  background: white;
+  height: 60rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.search-img{
+  width: 50rpx;
+  height: 50rpx;
+}
+.keywords{
+  /* background: blue; */
+  height: 50rpx;
+  line-height: 60rpx;
+  width: 420rpx;
+}
+.kinds{
+  height: 80rpx;
+  width: 100vw;
+  background: pink;
+  display: flex;
+  flex-direction: row;
+}
+.scroll{
+  width: 650rpx;
+  height: 80rpx;
+  /* background: yellow; */
+}
+.plus{
+  width: 100rpx;
+  height: 80rpx;
+  text-align: center;
+  font-weight: bold;
+  line-height: 80rpx;
+  font-size: 60rpx;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.kind{
+  width: 150rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.selected-kind{
+  width: 150rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.swiper{
+    flex-grow: 1;
+}

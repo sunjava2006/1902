@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 500px;
+            /*border:gray solid 1px;*/
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th,td{
+            border:gray solid 1px;
+        }
+        thead>tr:first-child{
+            height: 30px;
+            background: yellowgreen;
+            color: white;
+        }
+        tbody>tr:nth-child(1),tbody>tr:nth-child(5){
+            height: 20px;
+            background: greenyellow;
+        }
+        img{
+            width: 100px;
+
+        }
+        caption{
+            color: green;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        tbody>tr>td:first-child{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>浏览器兼容表</caption>
+    <thead>
+        <tr>
+            <th>CSS特征</th>
+            <th>MSIE</th>
+            <th>FireFox</th>
+            <th>Opera</th>
+            <th>Chrome</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th colspan="5">
+                html5
+            </th>
+        </tr>
+        <tr>
+            <td>a</td>
+            <td rowspan="3" style="text-align: center">
+                <img src="../../imgs/1.jpg" alt="">
+            </td>
+            <td>22</td>
+            <td>33</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td>addr</td>
+
+            <td>98</td>
+            <td>98</td>
+            <td>78</td>
+        </tr>
+        <tr>
+            <td>acronym</td>
+
+            <td>77</td>
+            <td>89</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <th colspan="5">
+                XHTML1.0
+            </th>
+        </tr>
+        <tr>
+            <td>HTML in xml</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td>well-formed</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td>Media Types</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" style="border: 0; text-align: right">
+                copyright &copy;
+            </td>
+        </tr>
+    </tfoot>
+
+</table>
+</body>
+</html>

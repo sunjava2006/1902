@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="search-bar">
+    <text>搜索</text>
+    <view class="search">
+      <image class="search-img" src="/imgs/search.png"/>
+      <input placeholder="Input" class="keywords" />
+    </view>
+  </view>
+  <view class="kinds">
+    <scroll-view class="scroll" scroll-x="true">
+       <view class="row">
+          <block a:for="{{kinds}}" a:key="*this">
+            <view>
+                <view onTap="selectKind" id="{{index}}" class="{{currID==index?'selected-kind':'kind'}}">{{item}}</view>
+            </view>
+          </block>
+       </view>
+    </scroll-view>
+    <view class="plus">+</view>
+  </view>
+  <!-- ======================= swiper ============================== -->
+  <swiper indicator-dots="{{true}}" class="swiper" >
+     <swiper-item >
+             
+     </swiper-item>
+      
+  </swiper>
+</view>

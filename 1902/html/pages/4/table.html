@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 300px;
+            border: blue solid 1px;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: blue solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <table ><!-- 表格-->
+        <caption>商品列表</caption>
+        <thead>
+            <tr>
+                <th>分类</th>
+                <th>商品</th>
+                <th>数量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> <!-- table row 表行-->
+                <!-- table data-->
+                <td rowspan="2"></td>
+                <td>pen</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>rubber</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">制表：XX人</td>
+            </tr>
+        </tfoot>
+
+
+    </table>
+</body>
+</html>

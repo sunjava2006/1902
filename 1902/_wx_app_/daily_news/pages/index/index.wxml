@@ -1,0 +1,61 @@
+<import src="/pages/templates/templates"/>
+<view class='page'>
+    <view class='searchbar'>
+        <text>搜索</text>
+        <view>
+            <image src='/imgs/search.png'></image>
+            <input placeholder='查询关键字'></input>
+        </view>
+    </view>
+    <view class='menu'>
+        <scroll-view class='kind-list' scroll-x="true">
+            <view class="row">
+                <view>
+                    <view class="{{currId==0?'selected-item':'item'}}" id="0" bindtap='selectItem'>头条</view>
+                </view>
+                <view>
+                    <view  class="{{currId==1?'selected-item':'item'}}" id="1" bindtap='selectItem'>社会</view>
+                </view>
+                <view>
+                    <view class="{{currId==2?'selected-item':'item'}}" id="2" bindtap='selectItem'>国内</view>
+                </view>
+                <view>
+                    <view class="{{currId==3?'selected-item':'item'}}" id="3" bindtap='selectItem'>国际</view>
+                </view>
+                <view>
+                    <view class="{{currId==4?'selected-item':'item'}}" id="4" bindtap='selectItem'>娱乐</view>
+                </view>
+                <view>
+                    <view class="{{currId==5?'selected-item':'item'}}" id="5" bindtap='selectItem'>体育</view>
+                </view>
+                <view>
+                    <view class="{{currId==6?'selected-item':'item'}}" id="6" bindtap='selectItem'>军事</view>
+                </view>
+                <view>
+                    <view class="{{currId==7?'selected-item':'item'}}" id="7" bindtap='selectItem'>科技</view>
+                </view>
+                <view>
+                    <view class="{{currId==8?'selected-item':'item'}}" id="8" bindtap='selectItem'>财经</view>
+                </view>
+                <view>
+                    <view class="{{currId==9?'selected-item':'item'}}" id="9" bindtap='selectItem'>时尚</view>
+                </view>
+
+            </view>
+
+
+        </scroll-view>
+        <view class='plus'>+</view>
+    </view>
+
+    <swiper class='list'  current-item-id='{{currId}}' circular='true' bindchange="changeItem">
+        <swiper-item item-id="0">
+            <template is="newslist" data="{{array}}"/>
+        </swiper-item>
+        <swiper-item item-id="1">
+            <template is="newslist" data="{{array}}"/>
+        </swiper-item>
+
+    </swiper>
+
+</view>

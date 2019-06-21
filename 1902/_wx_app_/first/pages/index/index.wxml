@@ -1,0 +1,42 @@
+<view class="page">
+    <swiper class='swiper' autoplay='true' interval='4000' duration='2000' circular='true' indicator-dots='true'>
+        <swiper-item class="yellow">
+            <image src='/imgs/1.jpg' class='swiper-img' />
+        </swiper-item>
+        <swiper-item class="green">
+            <image src='/imgs/2.jpg' class='swiper-img' />
+        </swiper-item>
+        <swiper-item>
+            <image src="/imgs/3.jpg" class='swiper-img' />
+        </swiper-item>
+    </swiper>
+    <scroll-view class='items' scroll-y='true'
+     bindscrolltolower="lowerAction" lower-threshold="100">
+        <!-- <view> -->
+            <view class='row'>
+                <view>
+                    <image src='/imgs/Home.png'></image>
+                </view>
+                <view bindtap='toLog'>
+                    <image src='/imgs/log.png'/>
+                </view>
+                <view></view>
+            </view>
+            <view class='row'>
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+            <view class="row">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+            <view class="row">
+                <view></view>
+                <view></view>
+                <view></view>
+            </view>
+        <!-- </view> -->
+    </scroll-view>
+</view>
