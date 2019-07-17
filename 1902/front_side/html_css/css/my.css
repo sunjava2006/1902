@@ -1,0 +1,18 @@
+label{
+    color:#F48907;
+    background: yellow;
+    font-size: 14px;
+    font-style: normal;
+}
+body{
+    color:white;
+    background: grey;
+    font-style: italic;
+    border: #F48907 solid 1px;
+    /* margin: 0px 50px 20px 100px; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 50px;
+    padding: 0 0 0 1cm;
+}
