@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            height: 200px;
+            margin: auto;
+            border: blue solid 2px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: blue solid 1px;
+        }
+        tr:nth-child(2n){
+            background: yellow;
+        }
+        caption{
+            color: red;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 这里是一个学生信息的表格  -->
+    <table>
+        <caption>學生信息表</caption>
+        <thead>
+            <tr>
+                <th>G</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5">小組1</td>
+                <td>小张</td>
+                <td>男</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>小李</td>
+                <td>女</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>小王</td>
+                <td>女</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>小黃</td>
+                <td>女</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>小方</td>
+                <td>女</td>
+                <td>21</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>縂計</td>
+                <td colspan="3">2人</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+
+</html>
