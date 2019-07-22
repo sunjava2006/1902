@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        fieldset{
+            border: blue solid 1px;
+            border-radius: 10px;
+        }
+       legend{
+           color:blue;
+       }
+    </style>
+</head>
+
+<body>
+    <form action="http://127.0.0.1:9990" method="get">
+        <fieldset>
+            <legend>用户注册信息</legend>
+            <table>
+                <tr>
+                    <td>用户名</td>
+                    <td><input type="text" name="user_name" value="LiBai"></td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><input type="password" name="pwd"></td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td>
+                        <input type="radio" name="gender" value="male">男
+                        <input type="radio" name="gender" value="female">女
+                    </td>
+                </tr>
+                <tr>
+                    <td>兴趣</td>
+                    <td>
+                        <input type="checkbox" name="interest" value="reading">阅读
+                        <input type="checkbox" name="interest" value="travel">旅游
+                        <input type="checkbox" name="interest" value="bolt">划船
+                    </td>
+                </tr>
+                <tr>
+                    <td>国籍</td>
+                    <td>
+                        <select name="national" multiple>
+                            <option value="cn">中国</option>
+                            <option value="jp">日本</option>
+                            <option value="uk">英国</option>
+                            <option value="frn">法国</option>
+                            <option value="rus">俄国</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>简介</td>
+                    <td>
+                        <textarea name="desc" id="" cols="30" rows="10">
+hello
+                    </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="reset" value="重置">
+                    </td>
+                    <td><input type="submit" value="注册">
+                        <button type="submit">注册2</button></td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+    </form>
+</body>
+
+</html>
