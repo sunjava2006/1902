@@ -64,6 +64,16 @@
         }
         
     }, 20);
+
+    document.addEventListener('mousemove',function(e){
+        var m = e.target;
+        var x = e.clientX;
+        var y = e.clientY;
+        console.log(x +":"+ y);
+        var d1 = document.getElementById('div1');
+        d1.style.left=x+"px";
+        d1.style.top=y+"px";
+    }, false);
    
 </script>
 </html>
