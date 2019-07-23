@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       div{
+           width: 100px;
+           height: 100px;
+           border: black solid 1px;
+       }
+       #div1{
+           background: red;
+           position:absolute;
+           top: 0px;
+           left: 0px;
+           z-index: 1;
+       }
+       #div2{
+           position: relative;
+           background: yellow;
+           top: -20px;
+           left: 100px;
+       }
+       #div3{
+           position: fixed;
+           background: blue;
+           right: 0;
+           bottom: 0;
+       }
+       #div4{
+           position: static;
+           background: brown;
+           left: 200px;
+           bottom: 0;
+           float:right;
+       }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+</body>
+<script>
+    a= setInterval( function(){
+        var d1 = document.getElementById('div1');
+        var left = d1.style.left;
+        
+        left = parseInt(left);
+        if(isNaN(left)){
+            left = 0;
+        }
+        console.log(left);
+        if(left<=20){
+            
+           d1.style="left:"+(left+1)+"px";
+        }else{
+            window.clearInterval(a);
+        }
+        
+    }, 20);
+   
+</script>
+</html>
