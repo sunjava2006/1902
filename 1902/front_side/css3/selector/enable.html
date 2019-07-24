@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    :enabled{
+        border: blue solid 1px;
+    }
+    :disabled{
+        color: white;
+    }
+  
+    </style>
+</head>
+<body>
+    <input type="text" value="hello" disabled>
+    <input type="text">
+
+    <input type="button" value="click" disabled>
+    <button disabled>press</button>
+    <input type="button" value="点击">
+
+    <input type="checkbox" name="" id="" >A
+    <input type="checkbox" name="" id="" checked>B
+    <input type="checkbox" name="" id="" >C
+</body>
+   <script>
+    var l = document.querySelectorAll(":checked");
+    alert(l.length);
+   </script>
+
+</html>
