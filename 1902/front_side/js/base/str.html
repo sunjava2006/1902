@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = " I like javascript! ";
+
+        // charAt()	返回指定索引位置的字符,索引从0开始。
+        var c = s.charAt(1);
+        document.write(c+"<br>");
+
+        // charCodeAt()	返回指定索引位置字符的 Unicode 值
+        document.write( s.charCodeAt(1)+"<br>" ) ;
+
+        // concat()	连接两个或多个字符串，返回连接后的字符串
+        document.write( s.concat(' and python.')  +"<br>");
+
+        // String.fromCharCode()	将 Unicode 转换为字符串
+        document.write(String.fromCharCode(73 ) + "<br>") ;
+        
+        // indexOf()	从指定位置开始，查找字符串出现的位置。
+        // 不给定位置时，从0位置开始。找不到，返回-1。
+        var at = s.indexOf('java', 9);
+        document.write(at + "<br>");
+
+        // lastIndexOf()	从指定位置开始从后向前，查找字符串出现的位置。
+        // 不给定位置时，从最后位置开始。找不到，返回-1。
+        var at = s.lastIndexOf('a', 10);
+        document.write(at + '<br>');
+
+        // localeCompare()	用本地特定的顺序来比较两个字符串
+        var r = "abc".localeCompare('aaabc');
+        document.write(r + '<br>');
+
+        // match()	返回字符串中与正则表达式匹配的内容
+        var r = s.match(/!/);
+        document.write(r + '<br>');
+
+        // replace()	将old字符（可以用正则）替换为新字符
+        s.replace(/a/g, 'A');
+
+        // toUpperCase()	把字符串转换为大写
+        // toLocaleUpperCase()	
+        var r = s.toUpperCase();
+        document.write(r + '<br>');
+
+       
+        // search()	从位置0,查找指定的内容。与indexOf类似。
+        s.search('java');
+
+
+        // slice(s, e)	取子串,从s（包含）到e之间。
+        // substring(s, e)	
+        "abcedfg".slice(1,5);
+        "abcedfg".substring(1,5)
+
+        // substr(s, l)	取子串，从s（包含）开始，取l个。
+        "abcedfg".substr(1,5)
+       
+        // split()	按指定字符将字符串分割成数组
+        s.split(' ');
+        
+        // toLocaleLowerCase()	
+        // toLowerCase()	把字符串转换为小写
+        s.toLowerCase();
+
+        // trim()	移除字符串首尾空白
+        s.trim();
+        
+    
+    </script>
+
+</body>
+</html>
