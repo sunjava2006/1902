@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var p = new Object();
+        
+        p.name = "wang";
+        p.age = 20;
+        
+        p.toString = function(){
+            return this.name;
+        };
+
+        p.valueOf = function(){
+            return this.age;
+        };
+
+        p.sleep = function(){
+            console.log('sleeping');
+        };
+        //---------------------------------
+        var p2 = {
+            name:"zhang",
+            age:22,
+            run:function(){
+                console.log('running..........');
+            },
+            toString:function(){
+                return this.name + "," +this.age;
+            }
+        };
+
+        //------------------创建一个与p相同的对象 ------------------
+        var p3 = new Object(p);
+
+        var p4 = Object.create(p2);
+
+    </script>
+</body>
+</html>
