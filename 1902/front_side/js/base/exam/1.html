@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "中国队大胜日本队";
+
+       // 将日本队，替换为“美国队” 。
+       var s2 = s.replace('日本队','美国队');
+       document.write(s2 + "<br>");
+       document.write(s +"<br>");
+
+       // 输出字符串的长度
+       document.write("字符串长度为： " + s.length + "<br>")
+
+       // 取出“大胜”前后的内容
+       var a = s.split('大胜');
+       for(var i of a){
+           document.write(i + "<br>");
+       }
+
+       // 找出所有“队”所在位置，共几个？
+       var count = 0;
+       var idx = 0;
+       do{
+         var at = s.indexOf('队', idx);
+         
+         if(at!=-1){
+            document.write("at: "+at);
+            idx = at+1;
+            count += 1;
+         }
+         
+       }while(at != -1);
+       document.write("<br>共"+count+"个<br>");
+
+       // 定义长度为10的数组
+       var array = new Array(10);
+       document.write("数组长度为：" + array.length + "<br>");
+
+       // 为数组赋3个值，并使长度为20.
+       array[19] = 100;
+       array[0] = 90;
+       array[1] = 90;
+
+       document.write(array.length);
+       
+
+    </script>
+</body>
+</html>
