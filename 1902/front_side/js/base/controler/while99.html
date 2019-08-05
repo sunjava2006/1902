@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       table{
+           width: 400px;
+           height: 400px;
+       }
+       td{
+           border: solid 1px black;
+       }
+       .red{
+           background: red;
+       }
+    </style>
+</head>
+<body>
+    <script>
+        
+        var i = 1;
+        while(i<10){
+
+            var j=1;
+            while(j<=i){
+                var cj = i*j;
+                document.write(j + "*" + i + "=" + cj + "&nbsp;&nbsp;");
+                j++;
+            }
+
+            document.write('<br>');
+            i++;
+        }
+        document.write('<table>');
+        for(var i=1;i<=10;i++){
+            document.write('<tr>');
+            for(var j=1;j<=10;j++){
+                document.write('<td class="red">');
+                   document.write(i+j);
+                document.write('</td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+      
+    </script>
+</body>
+</html>

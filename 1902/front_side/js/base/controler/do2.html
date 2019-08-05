@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/************打印如下3角形****************
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+*/
+    var i = 1;
+    do{
+        var j=1;
+        do{
+            document.write('*');
+            j++;
+        }while(j<=i);
+
+        document.write('<br>');
+        i++;
+    }while(i<=10);
+
+
+    //=======================
+
+    var i =1;
+    do{
+        var j = 11-i;
+        do{
+            document.write("*");
+            j--;
+        }while(j>0);
+       
+        document.write('<br>');
+        i++;
+        
+    }while(i<=10);
+
+
+    var i =10;
+    do{
+        var j = 1;
+        do{
+            document.write("*");
+            j++;
+        }while(j<=i);
+       
+        document.write('<br>');
+        i--;
+        
+    }while(i>0);
+
+
+    
+
+    </script>
+</body>
+</html>

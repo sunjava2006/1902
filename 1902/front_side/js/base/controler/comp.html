@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var a = [20,25,2,889,333,6,45,908,29];
+    
+        for(var i=0; i<a.length-1; i++){
+            for(var j=i+1; j<a.length; j++ ){
+                if(a[i] > a[j]){
+                    a[i] = a[i]+a[j];
+                    a[j] = a[i] - a[j];
+                    a[i] = a[i] - a[j];
+                }
+            }
+        }
+
+        for(var i of a){
+            document.write(i + " , ");
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 6;
+
+        while(i>0){
+
+            var blank = (11-((i-1)*2+1))/2;
+            while(blank>0){
+                document.write('&nbsp;&nbsp;')
+                blank--;
+            }
+            var star=1;
+            while(star<=(i-1)*2+1){
+                document.write('*');
+                star++
+            }
+
+            document.write('<br>');
+            i--;
+        }
+    
+    
+    </script>
+</body>
+</html>
