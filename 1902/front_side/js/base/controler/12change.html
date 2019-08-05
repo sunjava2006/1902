@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a = [];
+        for(var i=10; i>0; i--){
+            a.unshift(i);
+        }
+        
+        document.write(a);
+        document.write('<br>')
+
+        for(i=0; i<a.length-1 ;i+=2){
+            t = a[i];
+            a[i] = a[i+1];
+            a[i+1] = t;
+        }
+
+        document.write(a);
+
+    </script>
+</body>
+</html>
