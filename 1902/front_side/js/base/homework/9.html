@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            for(var a=1;a<=11;a++){
+                if(a<=6){
+                    for(var b=1;b<=a;b++){
+                        document.write('*'+'&nbsp;&nbsp');
+                    }
+                }else if(6<a<=11){
+                    for(var c=1;c<=(11-a+1);c++){
+                    document.write('*'+'&nbsp;&nbsp')
+                }
+
+                
+
+            }
+            document.write('<br>')
+            }
+
+
+
+            //=====================================
+            var i = 1;
+            do{
+                var j = 1;
+                do{
+                    document.write('#'+'&nbsp;&nbsp;');
+                    j++;
+                }while(j<=i);
+                document.write("<br>")
+                i++;
+            }while(i<=5);
+            var i = 1;
+            do{
+                var j = 7;
+                do{
+                    document.write('#'+'&nbsp;&nbsp;');
+                    j--;
+                }while(j>i);
+                document.write("<br>");
+                i++;
+            }while(i<=6);
+            //=================
+            var a=1
+            while(a<11){
+                var b =0;
+                while(b<a-1){
+                    document.write('&nbsp;*&nbsp;&nbsp')
+                    b++
+                }
+                document.write('<br>')
+                a++
+            }
+            var c=11;
+            while(c>0){
+                var d=0
+                while(d<c-1){
+                    document.write('&nbsp;*&nbsp;&nbsp')
+                    d++
+                }
+                document.write('<br>')
+                c--
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 公鸡一只5个钱，母鸡一只3个钱，小鸡3只1个钱。
+        现在要用100钱买100只鸡，
+        问公鸡、母鸡、小鸡各多少只？  -->
+    <script>
+    for(var gj=0;gj<=20;gj++){
+        for(var mj=0;mj<33;mj++){
+            for(var xj=0;xj<100;xj++){
+                if(gj+mj+xj==100&&5*gj+3*mj+xj/3==100){
+                    document.write("gongji:"+gj+"muji:"+mj+"xiaoji:"+xj+"<br>");
+                }
+            
+            }
+        
+        }
+    
+    }
+    </script>
+
+</body>
+</html>
