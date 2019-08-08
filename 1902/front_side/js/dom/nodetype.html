@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<!-- hello  -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var bigsons = document.childNodes;
+
+        for (var i = 0; i < bigsons.length; i++) {
+            var node = bigsons[i];
+            var name = node.nodeName;
+            console.log("Node value: " + node.nodeValue);
+            console.log('Node: ' + name);
+            switch (node.nodeType) {
+                case Node.ELEMENT_NODE:
+                    console.log('type:' + 'ELEMENT_NODE')
+                    break;
+                case Node.DOCUMENT_TYPE_NODE:
+                    console.log('type:' + 'DOCUMENT_TYPE_NODE')
+                    break;
+                case Node.DOCUMENT_NODE:
+                    console.log('type:' + 'DOCUMENT_NODE')
+                    break;
+                case Node.TEXT_NODE:
+                    console.log('type:' + 'TEXT_NODE')
+                    break;
+                case Node.COMMENT_NODE:
+                    console.log('type:' + 'COMMENT_NODE')
+                    break;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

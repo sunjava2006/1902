@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>      
+        <li>
+            china
+        </li>
+        <li>
+            english
+        </li>
+        <li>
+            franch
+        </li>
+        <li>
+            japanese
+        </li>
+        <li>
+            russion
+        </li>
+    </ul>
+    
+    <script>
+        var ul = document.querySelector('ul');
+        var items = ul.children; //childNodes;
+        console.log(items.length);
+        for(var i=0; i<items.length; i++){
+            console.log(items[i].nodeName);
+        }
+
+        var bo = ul.parentElement;
+        
+    </script>
+
+</body>
+</html>
