@@ -65,9 +65,9 @@
                     <button onclick="toLeft();">&lt;&lt;</button>
                  </div>
                  <div id="group">
-                        <select name="groups" id="groups">
+                        <select name="groups" id="groups" onchange="setCurrGrp(this.value);">
                             <option value="group1">第一组</option>
-                            <option value="group2" selected>第二组</option>
+                            <option value="group2">第二组</option>
                             <option value="group3">第三组</option>
                         </select>
                         <select  id="right" multiple onchange="only();"></select>
@@ -85,6 +85,11 @@
                     "group3":[]};
         var currGrp = document.querySelector('#groups').value;
 
+        function setCurrGrp(curr){
+            currGrp = curr;
+            flushRight(groups[currGrp]);
+        }
+
         function toLeft(){
             var selectedLis = document.querySelectorAll('#right>option:checked');
             var left = document.querySelector('#left');
@@ -95,11 +100,22 @@
 
         function toRight(){
             var selected = document.querySelectorAll('#left>option:checked');
-            var right = document.querySelector('#right');
+            
             for(var i=0; i<selected.length; i++){
-                right.appendChild(selected[i]);
+                groups[currGrp].push(selected[i]);
             }
-            only();
+            flushRight(groups[currGrp]);
+        }
+
+        function flushRight(array){
+            var right = document.querySelector('#right');
+            while(right.hasChildNodes()){
+                right.removeChild(right.firstChild);
+            }
+            for(var i of array){
+                right.appendChild(i);
+            }
+
         }
 
         function only(){
