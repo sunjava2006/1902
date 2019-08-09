@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select name="province" id="province"></select>
+    <select name="city" id="city"></select>
+    <select name="area" id="area"></select>
+</body>
+
+    <script>
+        var data = {"江苏":{"value":"JiangSu",
+                            "cities":[{"name":"南京","value":"NanJing", 
+                                    "areas":[{"name":"鼓楼","value":"GuLou"},
+                                                {"name":"浦口","value":"PuKou"}]},
+                                    {"name":"苏州","value":"SuZhou",
+                                        "areas":[{"name":"相城", "value":"XianCheng"},
+                                                {"name":"虎丘", "value":"HuQiu"}]}
+                                    ]},
+                    "安徽":{"value":"AnHui",
+                            "cities":[{"name":"合肥","value":"HeFei",
+                                        "areas":[{"name":"包河", "value":"BaoHe"},
+                                                {"name":"滨湖", "value":"BinHu"}]},
+                                    {"name":"芜湖","value":"WuHu",
+                                    "areas":[{"name":"环湖","value":"HuanHu"},
+                                                {"name":"区2", "value":"qu2"}]}]        
+                    }
+        
+        
+        };
+        
+        function init(){
+            var province  = document.querySelector('#province');
+            for(var i in data){
+                var name = i;
+                var value = data[i].value;
+                var option  = document.createElement('option');
+                option.value=value;
+                option.innerText = name;
+                province.appendChild(option);
+
+            }
+
+            province.addEventListener("change", function(e){
+                var provinceValue = e.target.value;
+                for(var i in data){
+                    if(data[i].value==provinceValue){
+                        var cities = data[i].cities;
+                        var city = document.querySelector('#city');
+                        while(city.hasChildNodes()){
+                            city.removeChild(city.firstChild);
+                        }
+                        for(var j of cities){
+                            var option = document.createElement('option');
+                            option.value=j.value;
+                            option.innerText = j.name;
+                            city.appendChild(option);
+                        }
+                        break;
+                    }
+                }
+
+            },false);
+
+
+            var event = new Event('change');
+            province.dispatchEvent(event);
+
+        }
+
+
+
+        init();
+    
+    </script>
+</html>

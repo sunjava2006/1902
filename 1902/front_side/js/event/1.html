@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('click',function(e){
+            console.log(e);
+        },false);
+
+        // evt =  new Event('click');
+        evt = new MouseEvent('click',{clientX:10, clientY:100, witch:2});
+        document.dispatchEvent(evt);
+        
+
+        evt1 = new CustomEvent('build',{detail:{name:'WANG'}});
+        document.addEventListener('build',function(e){
+            console.log(e);
+        },false);
+
+        document.dispatchEvent(evt1);
+   
+    </script>
+</body>
+</html>
