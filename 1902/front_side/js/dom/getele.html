@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>铅笔</td>
+            <td><input type="checkbox" name="goods" id=""></td>
+        </tr>
+        <tr>
+            <td>钢笔</td>
+            <td><input type="checkbox" name="goods" id=""></td>
+        </tr>
+        <tr>
+            <td>毛笔</td>
+            <td><input type="checkbox" name="goods" id=""></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+
+                全选/取消<input type="checkbox" name="" id="">
+
+                <input type="button" value="删除" onclick="del()">
+                
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+        function del(){
+            // var checkedGoods = document.querySelectorAll('input[name=goods]:checked');
+            var checkedGoods = document.getElementsByName('goods');
+            console.log(checkedGoods.length);
+            for(var i=checkedGoods.length-1; i>=0; i--){
+                var chk = checkedGoods[i];
+                if(chk.checked){
+                    var td = chk.parentNode;
+                    var tr = td.parentElement;
+                    var tab = document.getElementsByTagName('table')[0];
+                    //tab.removeChild(tr);
+                    var p = tr.parentElement;
+                    console.log('p is: '+ p.nodeName);
+                    p.removeChild(tr);
+                }
+            }
+
+
+        }
+    
+    </script>
+</body>
+</html>
