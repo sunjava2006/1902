@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .menu-bar {
+            position: relative;
+            z-index: 100;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 30px;
+            background: red;
+        }
+
+        .menu-item {
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 20%;
+            height: 30px;
+            line-height: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            font-weight: bold;
+            background: brown;
+        }
+
+        .menu-list {
+            border: solid 1px rgb(33.2%, 35.1%, 44.8%);
+            color: rgb(33.2%, 35.1%, 44.8%);
+            font-weight: normal;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            text-indent: 1em;
+            display:none;
+        }
+        .list-item:nth-child(odd){
+            background: wheat;
+        }
+        .list-item:nth-child(even){
+            background: rgb(82.5%, 83.2%, 86.6%);
+        }
+        .list-item:hover{
+            font-weight: bold;
+            background: darkolivegreen;
+            color: wheat;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu-bar">
+        <li class="menu-item">
+            分类
+            <ul class="menu-list" >
+                <li class="list-item">商场</li>
+                <li class="list-item">美食</li>
+                <li class="list-item">旅社</li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            周边
+            <ul class="menu-list">
+                <li class="list-item">商场</li>
+                <li class="list-item">美食</li>
+                <li class="list-item">旅社</li>
+                <li class="list-item">生活</li>
+                <li class="list-item">購物</li>
+                <li class="list-item">醫院</li>
+            </ul>
+        </li>
+        <li class="menu-item">美食</li>
+        <li class="menu-item">生活</li>
+        <li class="menu-item">购物</li>
+    </ul>
+
+    <div>
+
+        hello
+    </div>
+<script>
+   (function(){
+       var menuItems = document.querySelectorAll('.menu-item');
+       for(var i=0; i<menuItems.length; i++){
+           var menuItem  = menuItems[i];
+
+           var menuList = menuItem.lastElementChild;
+
+           if(menuList!=null && menuList.className=='menu-list' ){
+               menuItem.addEventListener('mouseover',function(e){
+                   var menuList = e.target.lastElementChild;
+                   if(menuList){
+                      menuList.style.display='block';
+                      
+                   }
+                   
+               },false);
+               menuItem.addEventListener('mouseout',function(e){
+                    var menuList = e.target.lastElementChild;
+                    var related = e.relatedTarget;
+                    if(menuList){
+                        if(related.className!='menu-list'){
+                            menuList.style.display='none';
+                        }
+                        
+                    }
+               },true);
+               menuList.addEventListener('mouseout',function(e){
+                   var cur = e.currentTarget;
+                   if(cur){
+                       var related = e.relatedTarget;
+                       if(related){
+                        console.log("related:"+related+":"+related.className);
+                       }
+                    
+                       if(related.className!='list-item'){
+                           cur.style.display='none';
+                       }
+                   }
+               },false);
+           }
+
+       }
+
+   })();
+
+</script>
+
+</body>
+
+</html>
