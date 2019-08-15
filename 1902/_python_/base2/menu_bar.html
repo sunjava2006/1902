@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         .menu-bar {
             position: relative;
             z-index: 100;
@@ -129,10 +133,17 @@
 
                     }, false);
                     menuItem.addEventListener('mouseout', function (e) {
-                        var menuList = e.target.lastElementChild;
+                        var menuList = e.currentTarget.lastElementChild;
                         var related = e.relatedTarget;
+                        if (related){
+                            console.log(related+":"+related.className);
+                        }
+                        
                         if (menuList) {
-                            if (related.className == 'menu-item') {
+                            if (
+                                related==null
+                                || related.className == 'menu-item' 
+                                || related==document.documentElement) {
                                 menuList.style.display = 'none';
                             }
 
