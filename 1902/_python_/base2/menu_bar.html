@@ -110,10 +110,10 @@
                     var menuList = e.target.lastElementChild;
                     var related = e.relatedTarget;
                     if(menuList){
-                        if(related.className!='menu-list'){
+                        if(related.className=='menu-item'){
                             menuList.style.display='none';
                         }
-                        
+                      
                     }
                },true);
                menuList.addEventListener('mouseout',function(e){
