@@ -13,8 +13,9 @@ def hi(name):
 
 @app.route('/location/<latitude>/<longitude>/<key>')
 def location(latitude, longitude, key):
-    return jsonify({'latitude':latitude, 'longitude':longitude, 'key':key, 'name':'便利蜂'}),\
-    {"responseContent":"application/json;charset=utf-8"}
+    return jsonify({'latitude':latitude, 'longitude':longitude,\
+                    'key':key, 'name':'便利蜂'})#,\
+           #{"responseContent":"application/json;charset=utf-8"}
 
 
 if __name__ == "__main__":
