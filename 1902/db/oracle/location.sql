@@ -35,8 +35,13 @@ commit;
 select * from locations where type_id=13;
 
 -- 32.1566627916,  118.6975067854 500米以内的，所有单位.(100米0.001)
-select * from locations where latitude>=32.1566627916-0.01 and latitude<=32.1566627916+0.01
+select * from locations where 
+latitude>=32.1566627916-0.01 and latitude<=32.1566627916+0.01
 and  longitude>=118.6975067854-0.01 and longitude<=118.6975067854+0.01;
+
+select * from locations where latitude BETWEEN :latmin and satmax
+and longitude BETWEEN -0.01 and longitude+0.01;
+
 
 
 
