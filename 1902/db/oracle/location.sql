@@ -39,8 +39,9 @@ select * from locations where
 latitude>=32.1566627916-0.01 and latitude<=32.1566627916+0.01
 and  longitude>=118.6975067854-0.01 and longitude<=118.6975067854+0.01;
 
-select * from locations where latitude BETWEEN :latmin and satmax
-and longitude BETWEEN -0.01 and longitude+0.01;
+select * from locations where latitude BETWEEN latitude-0.01 and latitude+0.01
+and longitude BETWEEN longitude-0.01 and longitude+0.01
+and type_id=(select id from types where type_name='快餐');
 
 
 
