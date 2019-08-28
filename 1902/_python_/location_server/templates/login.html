@@ -17,6 +17,14 @@
 
     }
     </style>
+    <script>
+        $(document).ready(function(){
+            $('#btnLogin').click(function(){
+                $('.modal-body').text('xxxxxxxxxxxxxx');
+                $('#pop').modal('show');
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -43,8 +51,9 @@
                 <div class="panel-footer">
                     
                    
-                  <button type="button" class="btn btn-large  btn-success  
-                  col-md-offset-11 col-lg-offset-11 col-sm-offset-11 col-xs-offset-10">登录</button>
+                  <button type="button" class="btn btn-large btn-success  
+                  col-md-offset-11 col-lg-offset-11 col-sm-offset-11 
+                  col-xs-offset-10 " id="btnLogin">登录</button>
                    
                     
                     
@@ -54,6 +63,28 @@
         </div>
 
     </div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade"  id="pop" role="dialog" tabindex="-1"><!-- 按ESC消除对话框，要设置tabindex属性 -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+                <h4>提示：</h4>
+            </div>
+            <div class="modal-body">
+                这里是消息..........
+            </div>
+            <div class="modal-footer">
+                <a  class="btn btn-danger" data-dismiss="modal">close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 </body>
 
