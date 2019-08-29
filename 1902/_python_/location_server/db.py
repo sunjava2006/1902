@@ -3,11 +3,12 @@ import os
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'  
 
 def getconn():
-    return orl.connect('location/location@127.0.0.1/xe')
+    dns = getdns()
+    return orl.connect(dns)
 
 
 def login(user_name, pwd):
-    sql = 'select * from users where user_name=:user_name and pwd=:pwd'
+    sql = 'select * from users where user_name=:user_name and pwd=:pwd and account_state=1'
     return select(sql, one=False, user_name=user_name, pwd=pwd)
 
 
@@ -46,4 +47,17 @@ def sum(a, b, *c, **d):
     return result
 
 
-print(login('wang', '123456'))
+
+
+def getdns():
+    path = os.path.dirname(__file__)
+    ini = os.path.join(path, 'db.ini')
+    file = open(ini, 'r')
+    data = file.readline()
+    at = data.find('=')
+    url= data[at+1::]
+    file.close()
+    return url
+
+if __name__=='__main__':
+    print(getdns())

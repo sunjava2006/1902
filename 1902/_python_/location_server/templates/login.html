@@ -16,6 +16,7 @@
             margin-top: 200px;
 
         }
+        
     </style>
     <script>
         $(document).ready(function () {
@@ -69,12 +70,19 @@
                             <div class="input-group-addon">密码 </div>
                             <input type="password" class="form-control" name="pwd" id="pwd">
                         </div>
+                        <br>
+                        <div class="input-group">
+                                <div class="input-group-addon">校验码 :{{code}}</div>
+                                <input type="password" class="form-control" name="code" id="code">
+      
+                        </div>
                     </form>
                 </div>
                 <br>
                 <div class="panel-footer">
-
-                    {{msg}}
+                    
+                    <span class="label label-danger">{{msg}}</span>
+                  
                     <button type="button" class="btn btn-large btn-success  
                   col-md-offset-11 col-lg-offset-11 col-sm-offset-11 
                   col-xs-offset-10 " id="btnLogin">登录</button>
