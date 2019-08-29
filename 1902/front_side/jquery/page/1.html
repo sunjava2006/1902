@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+      .red{
+          color: red;
+      }
+      .ita{
+          font-style: italic;
+      }
+      .bold{
+          font-weight: bold;
+      }
+    </style>
+    <script>
+        
+        $(function (){
+            $('#btn').click(function(e){
+                $('#p1,#p2').hide('fast');
+            })
+
+            $('#p1+*').addClass('red');
+            $('#p1~p').addClass('ita');
+            $('p:first').addClass('ita');
+            $('p:even').addClass('bold');
+            $('td:contains(-)').addClass('red');
+        });
+
+        // window.onload=function(e){
+        //     document.querySelector('#btn')
+        //     .addEventListener('click',function(e){
+        //         document.querySelector('p')
+        //         .style.display='none';
+        //     },false);
+        // };
+        
+    </script>
+</head>
+<body>
+    <p id="p1">
+        hello 这里我要给大家讲一讲jQuery库的用法。
+    </p>
+    <p id="p2">
+        hello 这里我要给大家讲一讲jQuery库的用法。
+    </p>
+    <p>
+        hello 这里我要给大家讲一讲jQuery库的用法。
+    </p>
+    <div>
+        hello
+    </div>
+    <button id="btn">click</button>
+
+    <table>
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>-2</td>
+        </tr>
+        <tr>
+            <td>-1</td>
+        </tr>
+    </table>
+</body>
+</html>
