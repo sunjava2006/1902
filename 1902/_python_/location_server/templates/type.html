@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,37 +11,64 @@
     <script src="/static/bower_components/jquery/dist/jquery.js"></script>
     <script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <style>
-       #types>li:hover{
-           background:#bbb;
-       }
+        #types>li:hover {
+            background: #bbb;
+        }
     </style>
     <script>
-        $(function(){
-            $('#types>li').click(function(){
+        $(function () {
+            $('#types>li').click(function () {
+                // this是HTML原生对象，可使用$(this)转换为JQuery对象。
                 var t = $(this).text().trim();
                 var pid = $(this).attr('name');
-                $('#parent').val(t+":"+pid) ;
+                $('#parent').val(t + ":" + pid);
             });
+
+            $('#btnAdd').click(function () {
+                var type = $('#type').val();
+                var parent = $('#parent').val();
+                // XMLHttpRequestXMLHttpRequest
+                var ajax = new XMLHttpRequest();
+                ajax.onreadystatechange = function () {
+                    if (ajax.readyState == 4 && ajax.status == 200) {
+                        var data = ajax.responseText;
+                        data = eval("(" + data + ")"); // 将返回数据字符串，转换成对象。
+                        var lblAdd = document.querySelector('#lblAdd');
+                        lblAdd.innerHTML='';
+                        if (data.result == 'ok') {
+                            lblAdd.innerHTML='添加成功';
+                        } else {
+                            lblAdd.innerHTML='添加失败';
+                        }
+                    }
+                };
+                ajax.open('POST', '/addtype', true);
+                ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+
+                ajax.send('type=' + type + '&parent=' + parent);
+            });
+
         });
 
     </script>
 </head>
+
 <body>
     <div class="container">
 
-    
-    <div class="panel panel-primary">
-          <div class="panel-heading">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
                 <h3 class="panel-title">添加分类</h3>
-          </div>
-          <div class="panel-body">
-                
+            </div>
+            <div class="panel-body">
+
                 <!-- --------------------------------- -->
-                
+
                 <div class="input-group">
                     <div class="input-group-addon">类型名：</div>
-                    <input type="text" class="form-control"  id="type"
-                    id="exampleInputAmount"  >
+                    <input type="text" class="form-control" id="type" id="exampleInputAmount">
                 </div>
                 <br>
                 <div class="input-group">
@@ -56,24 +84,19 @@
                             <li name='{{i[0]}}' title="ID:{{i[0]}}">
                                 {{i[1]}}
                             </li>
-                            
+
                             {% endfor%}
                         </ul>
                     </div>
                 </div>
                 <br>
                 <!-- ====================================== -->
-                
-             
-                         
-                         
-                    <button type="button" class="btn btn-primary pull-right">添加</button>
-
-                
-                
-                
-          </div>
+                <span class="label label-info" id="lblAdd"></span>
+                <button id="btnAdd" type="button" class="btn btn-primary pull-right">添加</button>
+            </div>
+      
+        </div>
     </div>
-</div>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, Response, redirect
+from flask import Flask, render_template, request, session, Response, redirect,jsonify
 import db 
 from datetime import timedelta
 import random
@@ -28,6 +28,25 @@ def main():
 def typehtml():
     types = db.listtypes()
     return render_template('/type.html', types=types)
+
+
+@app.route('/addtype', methods=['POST'])
+def addtype():
+    typ = request.values.get('type')
+    parent = request.values.get('parent')
+    if parent:
+        array = parent.split(':')
+        if array[1]:
+            parent = int(array[1])
+        else:
+            parent = None
+    else:
+        parent = None
+    # add to DB
+    
+        return jsonify({'result':"ok"})
+
+
 
 
 @app.route('/login', methods=['POST'])
