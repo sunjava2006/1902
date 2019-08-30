@@ -12,6 +12,10 @@ def login(user_name, pwd):
     return select(sql, one=False, user_name=user_name, pwd=pwd)
 
 
+def listtypes():
+    sql = 'select * from types'
+    return select(sql, False)
+
 def select(sql, one=True, **arg):
     data = None
     try:
@@ -36,15 +40,15 @@ def select(sql, one=True, **arg):
 
 
 
-def sum(a, b, *c, **d):
-    print(d)
-    result = 0
-    result += (a+b)
-    for i in c:
-        result += i
-    for i in d.keys():
-        result += d.get(i)
-    return result
+# def sum(a, b, *c, **d):
+#     print(d)
+#     result = 0
+#     result += (a+b)
+#     for i in c:
+#         result += i
+#     for i in d.keys():
+#         result += d.get(i)
+#     return result
 
 
 

@@ -24,6 +24,11 @@ def main():
     else:
         return redirect('/')
 
+@app.route('/type', methods=['GET'])
+def typehtml():
+    types = db.listtypes()
+    return render_template('/type.html', types=types)
+
 
 @app.route('/login', methods=['POST'])
 def login():
