@@ -91,6 +91,16 @@ def login():
         return 'error'
     
 
+@app.route('/delType')
+def delType():
+    id = request.values.get('id')
+    #删除
+    if db.delType(id):
+        return jsonify({'result':'ok'})
+    else:
+        return jsonify({'result':'fald'})
+
+
 def getcode():
     ran = random.randint(10000,100000)  
     return str(ran)  

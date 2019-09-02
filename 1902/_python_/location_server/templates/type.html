@@ -56,22 +56,75 @@
             });
 
             //--------------------查询列表-------------------------
+            function del(){
+                
+                var tr = $(this).parent().parent();
+                tr.unbind('click', del);
+                var id = tr.children().first().text();
+                // 将ID 发送给服务器，删除该ID有类型
+                $.get('/delType?id='+id, function(data, status){
+                    if(data.result=='ok'){
+                          // 删除行显示
+                         tr.remove();
+                    }else{
+                        alert('删除失败');
+                    }
+                });
+
+              
+            }
+
             $('#btnSearch').click(function(){
                 var key = $('#searchName').val();
                 $.post('/searchTypeList',{'key':key,'page':1,'size':5},function(data, status){
                     console.log(data);
                     var body = $('#typelist');
+                    $('button[name=delBtn]').unbind('click', del);
                     body.empty();
+                    
                     for(var i=0;i<data.length;i++){
                         var tr = $(document.createElement('tr'));
                         var tdid = $(document.createElement('td'));
                         tdid.text(data[i][0]);
                         var tdname = $(document.createElement('td'));
-                        tdname.text(data[i][1]);
+                        var editname = $(document.createElement('input'));
+                        editname.attr('type','text').val(data[i][1]);
+                        editname.prop('disabled',true);
+                        editname.addClass('form-control');
+                        tdname.append(editname);
                         var tdbtn = $(document.createElement('td'));
                         var btndel = $(document.createElement('button'));
+                        btndel.addClass('btn btn-danger');
+                        btndel.attr('name','delBtn');
                         btndel.text('删除');
-                        tdbtn.append(btndel);
+                        btndel.bind('click', del);
+
+                        //------------------------
+                        var btnModify = $(document.createElement('button'));
+                        btnModify.attr('name','modifyBtn');
+                        btnModify.text('修改');
+                        btnModify.addClass('btn btn-warning');
+                        btnModify.click(function(){
+                            var tr = $(this).parent().parent();
+                            var inputd = tr.children(':nth-child(2)');
+                           
+                            var curr = $(this).text();
+                            if(curr=='修改'){
+                                inputd.children().prop('disabled',false);
+                                $(this).text('保存');
+                                $(this).removeClass('btn-warning');
+                                $(this).addClass('btn-primary');
+                            }else{
+                                inputd.children().prop('disabled',true);
+                                $(this).text('修改');
+                                $(this).removeClass('btn-primary');
+                                $(this).addClass('btn-warning');
+                            }
+
+                        });
+                       
+
+                        tdbtn.append(btndel, btnModify);
                         tr.append(tdid,tdname,tdbtn);
                         body.append(tr);
                     }

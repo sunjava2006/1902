@@ -22,7 +22,7 @@ def addType(typename, parentID):
           values(:id, :type_name, :parent_id)'
     id = select('select seq_types.nextval from dual')[0]
 
-    if insert(sql, id=id, type_name=typename, parent_id=parentID):
+    if update(sql, id=id, type_name=typename, parent_id=parentID):
         return id, typename, parentID
     else:
         return None
@@ -38,8 +38,12 @@ def listAllTypes(page, size):
     return select(sql, False, max=page*size, min=(page-1)*size)
 
 
+def delType(id):
+    sql = 'delete from types where id=:id'
+    return update(sql, id=id)
+
 #--------------------------------------------------------------------
-def insert(sql, **arg):
+def update(sql, **arg):
     ok = True
     try:
         conn  = getconn()
