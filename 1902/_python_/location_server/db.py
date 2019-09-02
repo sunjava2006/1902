@@ -27,7 +27,18 @@ def addType(typename, parentID):
     else:
         return None
 
+def searchTypes(key):
+    sql = 'select * from types where type_name=:key'
+    return select(sql, False, key=key)
 
+def listAllTypes(page, size):
+    sql = 'SELECT * FROM \
+          (select t.*, rownum ro from \
+          (select * from types order by id desc) t where rownum <=:max) where ro >:min'
+    return select(sql, False, max=page*size, min=(page-1)*size)
+
+
+#--------------------------------------------------------------------
 def insert(sql, **arg):
     ok = True
     try:
@@ -69,6 +80,8 @@ def select(sql, one=True, **arg):
         if conn:
             conn.close()
     return data
+
+
 
 
 

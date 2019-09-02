@@ -51,6 +51,18 @@ def addtype():
 
 
 
+@app.route('/searchTypeList', methods=['POST'])
+def searchTypeList():
+    key = request.values.get('key')
+    page = request.values.get('page')
+    size = request.values.get('size')
+    data = None
+    if key:
+        data = db.searchTypes(key)
+    else:
+        data = db.listAllTypes(int(page), int(size))
+    return jsonify(data)
+
 
 @app.route('/login', methods=['POST'])
 def login():

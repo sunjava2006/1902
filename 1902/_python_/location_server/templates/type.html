@@ -55,6 +55,29 @@
                 ajax.send('type=' + type + '&parent=' + parent);
             });
 
+            //--------------------查询列表-------------------------
+            $('#btnSearch').click(function(){
+                var key = $('#searchName').val();
+                $.post('/searchTypeList',{'key':key,'page':1,'size':5},function(data, status){
+                    console.log(data);
+                    var body = $('#typelist');
+                    body.empty();
+                    for(var i=0;i<data.length;i++){
+                        var tr = $(document.createElement('tr'));
+                        var tdid = $(document.createElement('td'));
+                        tdid.text(data[i][0]);
+                        var tdname = $(document.createElement('td'));
+                        tdname.text(data[i][1]);
+                        var tdbtn = $(document.createElement('td'));
+                        var btndel = $(document.createElement('button'));
+                        btndel.text('删除');
+                        tdbtn.append(btndel);
+                        tr.append(tdid,tdname,tdbtn);
+                        body.append(tr);
+                    }
+                });
+            });
+
         });
 
     </script>
@@ -102,6 +125,41 @@
             </div>
       
         </div>
+        <!--  ---------------------------------------------------- --->
+        
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">查询列表</div>
+                <div class="panel-body">
+                    
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                               id="searchName" placeholder="输入类型名">
+                        <span class="input-group-btn">
+                            <button id="btnSearch" type="button" class="btn btn-default">查询</button>
+                        </span>
+                    </div>
+                    
+                </div>
+        
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>类型ID</th>
+                            <th>类型名</th>
+                            <th>操作</th>
+                        </tr>
+                       
+                    </thead>
+                    <tbody id="typelist">
+                        
+                    </tbody>
+                </table>
+        </div>
+        
+
+
     </div>
 </body>
 
