@@ -37,6 +37,12 @@
                         lblAdd.innerHTML='';
                         if (data.result == 'ok') {
                             lblAdd.innerHTML='添加成功';
+                            // dom操作，在列表中加入新的类型
+                            var newli = $(document.createElement('li'));
+                            newli.attr('name',data.id).attr('title','ID:'+data.id);
+                            newli.text(data.typeName);
+                            $('#types').append(newli);
+
                         } else {
                             lblAdd.innerHTML='添加失败';
                         }

@@ -32,7 +32,7 @@ def typehtml():
 
 @app.route('/addtype', methods=['POST'])
 def addtype():
-    typ = request.values.get('type')
+    typename = request.values.get('type')
     parent = request.values.get('parent')
     if parent:
         array = parent.split(':')
@@ -43,8 +43,11 @@ def addtype():
     else:
         parent = None
     # add to DB
-    
-        return jsonify({'result':"ok"})
+    data = db.addType(typename, parent)
+    if data:
+        return jsonify({'result':"ok", 'typeName':data[1], 'id':data[0]})
+    else:
+        return jsonify({'result':'fald'})
 
 
 
