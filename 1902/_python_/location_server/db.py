@@ -27,6 +27,12 @@ def addType(typename, parentID):
     else:
         return None
 
+
+def updateTypeName(typename, id):
+    sql = '''update types set type_name=:name where id=:id'''
+    return update(sql, name=typename, id=id)
+
+
 def searchTypes(key):
     sql = 'select * from types where type_name=:key'
     return select(sql, False, key=key)

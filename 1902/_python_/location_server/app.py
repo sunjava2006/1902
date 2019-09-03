@@ -109,6 +109,22 @@ def delType():
         return jsonify({'result':'fald'})
 
 
+@app.route('/updateType', methods=['POST'])
+def updateType():
+    id = int(request.values.get('id'));
+    typename = request.values.get('typeName')
+    if db.updateTypeName(typename, id):
+        return jsonify({'result':'ok'})
+    else:
+        return jsonify({'result':'nook'})
+
+
+@app.route('/exit', methods=['GET'])
+def exit():
+    del(session['userInfo'])
+    return redirect('/')
+
+
 def getcode():
     ran = random.randint(10000,100000)  
     return str(ran)  

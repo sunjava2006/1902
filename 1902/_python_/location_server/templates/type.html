@@ -95,6 +95,18 @@
                                 $(this).text('修改');
                                 $(this).removeClass('btn-primary');
                                 $(this).addClass('btn-warning');
+                                var id = tr.children(':nth-child(1)').text();
+                                var typeName = tr.children(':nth-child(2)').children().val();
+                                $.ajax({
+                                    "type":'POST',
+                                    "url":"/updateType",
+                                    "data":{"id":id,"typeName":typeName},
+                                    "success":function(data, status){
+                                        if('ok'!= data.result){
+                                            alert('修改失败');
+                                        }
+                                    }
+                                });
                             }
 
             }
@@ -142,7 +154,7 @@
                         
                         $('#btnPre').prop('disabled',false);
                         $('#btnNext').prop('disabled',false);
-                        
+
                         if(1 == data.currentPage){
                             $('#btnPre').prop('disabled',true);
                         }
