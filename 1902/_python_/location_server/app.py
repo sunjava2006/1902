@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session, Response, redirect,j
 import db 
 from datetime import timedelta
 import random
+import math
 
 
 app = Flask(__name__)
@@ -59,9 +60,16 @@ def searchTypeList():
     data = None
     if key:
         data = db.searchTypes(key)
+        count= 1
+        totalpage = 1
+        currentPage = 1
     else:
         data = db.listAllTypes(int(page), int(size))
-    return jsonify(data)
+        count = db.allcount()
+        totalpage = math.ceil(count/int(size))
+        currentPage = int(page)
+        
+    return jsonify({"data":data, "count":count, "currentPage":currentPage, "totalPage":totalpage})
 
 
 @app.route('/login', methods=['POST'])

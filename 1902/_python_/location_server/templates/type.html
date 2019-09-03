@@ -59,13 +59,20 @@
             function del(){
                 
                 var tr = $(this).parent().parent();
-                tr.unbind('click', del);
+                $(this).unbind('click', del);
+                $(this).siblings('[name=modifyBtn]').unbind('click', modify);
                 var id = tr.children().first().text();
+                var val = tr.children(':nth-child(2)').children().val();
                 // 将ID 发送给服务器，删除该ID有类型
                 $.get('/delType?id='+id, function(data, status){
                     if(data.result=='ok'){
                           // 删除行显示
                          tr.remove();
+                         $('#types').children().each(function(idx, e){
+                            if(val == $(e).text()){
+                                $(e).remove();
+                            }  
+                         });
                     }else{
                         alert('删除失败');
                     }
@@ -73,38 +80,7 @@
 
               
             }
-
-            $('#btnSearch').click(function(){
-                var key = $('#searchName').val();
-                $.post('/searchTypeList',{'key':key,'page':1,'size':5},function(data, status){
-                    console.log(data);
-                    var body = $('#typelist');
-                    $('button[name=delBtn]').unbind('click', del);
-                    body.empty();
-                    
-                    for(var i=0;i<data.length;i++){
-                        var tr = $(document.createElement('tr'));
-                        var tdid = $(document.createElement('td'));
-                        tdid.text(data[i][0]);
-                        var tdname = $(document.createElement('td'));
-                        var editname = $(document.createElement('input'));
-                        editname.attr('type','text').val(data[i][1]);
-                        editname.prop('disabled',true);
-                        editname.addClass('form-control');
-                        tdname.append(editname);
-                        var tdbtn = $(document.createElement('td'));
-                        var btndel = $(document.createElement('button'));
-                        btndel.addClass('btn btn-danger');
-                        btndel.attr('name','delBtn');
-                        btndel.text('删除');
-                        btndel.bind('click', del);
-
-                        //------------------------
-                        var btnModify = $(document.createElement('button'));
-                        btnModify.attr('name','modifyBtn');
-                        btnModify.text('修改');
-                        btnModify.addClass('btn btn-warning');
-                        btnModify.click(function(){
+            function modify(){
                             var tr = $(this).parent().parent();
                             var inputd = tr.children(':nth-child(2)');
                            
@@ -121,14 +97,82 @@
                                 $(this).addClass('btn-warning');
                             }
 
-                        });
+            }
+
+            function search(key, page, size){
+                
+                $.post('/searchTypeList',{'key':key,'page':page,'size':size},function(data, status){
+                    console.log(data);
+                    var body = $('#typelist');
+                    $('button[name=delBtn]').unbind('click', del);
+                    $('button[name=modifyBtn]').unbind('click', modify);
+                    body.empty();
+                    
+                    for(var i=0;i<data.data.length;i++){
+                        var tr = $(document.createElement('tr'));
+                        var tdid = $(document.createElement('td'));
+                        tdid.text(data.data[i][0]);
+                        var tdname = $(document.createElement('td'));
+                        var editname = $(document.createElement('input'));
+                        editname.attr('type','text').val(data.data[i][1]);
+                        editname.prop('disabled',true);
+                        editname.addClass('form-control');
+                        tdname.append(editname);
+                        var tdbtn = $(document.createElement('td'));
+                        var btndel = $(document.createElement('button'));
+                        btndel.addClass('btn btn-danger');
+                        btndel.attr('name','delBtn');
+                        btndel.text('删除');
+                        btndel.bind('click', del);
+
+                        //------------------------
+                        var btnModify = $(document.createElement('button'));
+                        btnModify.attr('name','modifyBtn');
+                        btnModify.text('修改');
+                        btnModify.addClass('btn btn-warning');
+                        btnModify.click(modify);
                        
 
                         tdbtn.append(btndel, btnModify);
                         tr.append(tdid,tdname,tdbtn);
                         body.append(tr);
+
+                        //==================================================
+                        $('#listInfo').text('总记录数'+data.count+'，共'+data.totalPage+'页，当前为'+data.currentPage+'页');
+                        
+                        $('#btnPre').prop('disabled',false);
+                        $('#btnNext').prop('disabled',false);
+                        
+                        if(1 == data.currentPage){
+                            $('#btnPre').prop('disabled',true);
+                        }
+                        if(data.totalPage==data.currentPage){
+                            $('#btnNext').prop('disabled',true);
+                        }
+                            
+                        
+                        currentPage = data.currentPage;
+
+
                     }
                 });
+            }
+            //==========================================================                        
+            var key ;
+            var currentPage;
+            var size = 5;
+            
+            $('#btnSearch').click(function(){
+                key = $('#searchName').val();
+
+                search(key, 1, 5);
+            });
+
+            $('#btnPre').click(function(){
+                search(key,currentPage-1,size);
+            });
+            $('#btnNext').click(function(){
+                search(key,currentPage+1,size);
             });
 
         });
@@ -208,6 +252,21 @@
                     <tbody id="typelist">
                         
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" id="listInfo">
+                                总记录数：0
+                            </td>
+                            <td>
+                                <div class="btn-group ">
+                                    <button type="button" class="btn btn-default" id="btnPre" disabled>上一页</button>
+                                    <button type="button" class="btn btn-default" id="btnNext" disabled>下一页</button>
+                                   
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
         </div>
         

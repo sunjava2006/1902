@@ -31,6 +31,10 @@ def searchTypes(key):
     sql = 'select * from types where type_name=:key'
     return select(sql, False, key=key)
 
+def allcount():
+    sql = 'select count(*) from types'
+    return select(sql)[0]
+
 def listAllTypes(page, size):
     sql = 'SELECT * FROM \
           (select t.*, rownum ro from \
