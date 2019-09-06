@@ -187,7 +187,15 @@
                 search(key,currentPage+1,size);
             });
 
+            $('#panelAdd').hide();
+            $('#btnTogger').click(function(e){
+                $('#panelAdd').slideToggle(300);
+            });
+
         });
+
+
+       
 
     </script>
 </head>
@@ -198,9 +206,16 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">添加分类</h3>
+                <span class="panel-title">添加分类</span>
+                
+                <button id="btnTogger" type="button" class="btn btn-sm btn-primary pull-right
+               
+                ">
+                <span class="glyphicon glyphicon-sort" ></span>
+                </button>
+   
             </div>
-            <div class="panel-body">
+            <div class="panel-body " id="panelAdd" >
 
                 <!-- --------------------------------- -->
 

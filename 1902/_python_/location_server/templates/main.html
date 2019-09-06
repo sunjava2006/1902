@@ -34,14 +34,14 @@
                                     用户信息 <b class="caret"></b>
                                 </a> 
                                 <ul class="dropdown-menu">
-                                    {% if session['userInfo'][0][3]==1 %}
+                                    {% if session['userInfo'][3]==1 %}
                                    
                                     <li><a href="#">用户维护</a></li>
 
                                     <li class="divider"></li>
                                     {% endif %}
                                     
-                                    <li><a href="#">修改密码</a></li>
+                                    <li><a href="/changepwd" target="view">修改密码</a></li>
                                 </ul>
                             </li>
                             <li><a href="/exit">退出</a></li>
@@ -55,7 +55,7 @@
        
         <div class="container row">
             <div class="row">
-                <iframe src="/type" frameborder="0" style="width: 100%; position:relative;  
+                <iframe name="view" src="/type" frameborder="0" style="width: 100%; position:relative;  
                         height:800px;">
                 </iframe>
             </div>

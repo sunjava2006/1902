@@ -25,6 +25,41 @@ def main():
     else:
         return redirect('/')
 
+@app.route('/changepwd')
+def pwd1():
+    return render_template('/change_pwd.html')
+
+@app.route('/valiold', methods=['POST','GET'])
+def valiold():
+    pwd = request.values.get('pwd')
+    userInfo = session.get('userInfo')
+    result = ""
+    if userInfo:
+        spwd = userInfo[2]
+        if pwd==spwd:
+           result='ok'
+        else:
+            result="nook"
+    else:
+        result = "login"
+    return jsonify({"result":result})
+
+
+@app.route('/pwd2', methods=['POST','GET'])
+def pwd2():
+    return render_template('/pwd2.html')
+        
+
+@app.route('/change', methods=['POST'])
+def change():
+    result = 'nook'
+    pwd = request.values.get('pwd')
+    id = session.get('userInfo')[0]
+    if db.updatePWD(id, pwd):
+        result="ok"
+    return jsonify({'result':result})
+
+
 @app.route('/type', methods=['GET'])
 def typehtml():
     types = db.listtypes()

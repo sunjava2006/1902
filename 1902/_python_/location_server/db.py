@@ -9,7 +9,7 @@ def getconn():
 
 def login(user_name, pwd):
     sql = 'select * from users where user_name=:user_name and pwd=:pwd and account_state=1'
-    return select(sql, one=False, user_name=user_name, pwd=pwd)
+    return select(sql, one=True, user_name=user_name, pwd=pwd)
 
 
 def listtypes():
@@ -51,6 +51,10 @@ def listAllTypes(page, size):
 def delType(id):
     sql = 'delete from types where id=:id'
     return update(sql, id=id)
+
+def updatePWD(id, pwd):
+    sql = 'update users set pwd=:pwd where user_id=:id'
+    return update(sql, pwd=pwd, id=id)
 
 #--------------------------------------------------------------------
 def update(sql, **arg):
@@ -124,4 +128,5 @@ def getdns():
 
 if __name__=='__main__':
     # print(getdns())
-    print(addType('type2', 2))
+    # print(addType('type2', 2))
+    print(login('wang','123456'))
