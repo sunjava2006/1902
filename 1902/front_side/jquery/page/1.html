@@ -7,71 +7,21 @@
     <title>Document</title>
     <script src="../js/jquery.js"></script>
     <style>
-      .red{
-          color: red;
-      }
-      .ita{
-          font-style: italic;
-      }
-      .bold{
-          font-weight: bold;
-      }
+       div{
+           height: 300px;
+           border: red solid 1px;
+       }
     </style>
     <script>
-        
-        $(function (){
-            $('#btn').click(function(e){
-                $('#p1,#p2').hide('fast');
-            })
+        $(function(){
+            $('div').load('2.html');
 
-            $('#p1+*').addClass('red');
-            $('#p1~p').addClass('ita');
-            $('p:first').addClass('ita');
-            $('p:even').addClass('bold');
-            $('td:contains(-)').addClass('red');
         });
-
-        // window.onload=function(e){
-        //     document.querySelector('#btn')
-        //     .addEventListener('click',function(e){
-        //         document.querySelector('p')
-        //         .style.display='none';
-        //     },false);
-        // };
-        
+      
     </script>
 </head>
 <body>
-    <p id="p1">
-        hello 这里我要给大家讲一讲jQuery库的用法。
-    </p>
-    <p id="p2">
-        hello 这里我要给大家讲一讲jQuery库的用法。
-    </p>
-    <p>
-        hello 这里我要给大家讲一讲jQuery库的用法。
-    </p>
-    <div>
-        hello
-    </div>
-    <button id="btn">click</button>
-
-    <table>
-        <tr>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>-2</td>
-        </tr>
-        <tr>
-            <td>-1</td>
-        </tr>
-    </table>
+    <h1>本页内容</h1>
+    <div></div>
 </body>
 </html>

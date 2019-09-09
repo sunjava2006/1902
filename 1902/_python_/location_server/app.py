@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, Response, redirect,jsonify
+from flask import Flask, render_template, request, session, Response, redirect,jsonify,make_response
 import db 
 from datetime import timedelta
 import random
@@ -158,6 +158,24 @@ def updateType():
 def exit():
     del(session['userInfo'])
     return redirect('/')
+
+##################################################
+@app.route('/getdata',methods=['GET','post'])
+def getdata():
+    call_back = request.values.get('callback')
+    print(call_back)
+    return call_back+'({"name":"wang"});'
+
+
+@app.route('/getinfo', methods=['GET','POST'])
+def getinfo():
+    res = make_response(jsonify({'name':'wang'}))
+    
+    res.headers['Access-Control-Allow-Origin']='http://localhost'
+    return res;
+
+###################################################
+
 
 
 def getcode():
