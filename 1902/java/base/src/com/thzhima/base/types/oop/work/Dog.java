@@ -6,6 +6,7 @@ public class Dog {
 	public String name;
 	public int age;
 	public final String GENDER;
+	public static String def_name = "小狗";
 	
 	public Dog(String gender, int age, String name) {
 		this.name = name;
@@ -15,6 +16,12 @@ public class Dog {
 	
 	public Dog(String gender) {
 		this.GENDER = gender;
+	}
+	
+	public static void sleep() {
+		System.out.println(Dog.def_name + "sleep.");
+		Dog d = new Dog("male");
+		System.out.println(d.name);
 	}
 	
 	public void eat(Food f) {
