@@ -2,8 +2,6 @@ package com.thzhima.inherit;
 
 import java.sql.Date;
 
-
-
 public class Student extends Human{
 	public String name = "小张";
 	public String NO ;
@@ -34,7 +32,7 @@ public class Student extends Human{
 	@Override   //方法重写（覆盖）
 	public String toString() {
 		return "name:" + this.name+ "; birthday:"+this.birthday 
-				+"; NO:" + NO;
+				+"; NO:" + NO ;
 	}
 	
 	public void study() {
