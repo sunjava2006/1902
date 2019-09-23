@@ -45,7 +45,7 @@ public class SbatisApplication implements CommandLineRunner{
 		//System.out.println(this.mapper.list2(new String[] {"wang","Xie"}));
 		//this.mapper.updateExample(new RegUser(10,"xie","123456","男"));
 		
-		RegUser u = new RegUser(10, "Xie", "123", "女");
+		RegUser u = new RegUser(12, "Xie", "123", "女");
 		System.out.println(this.mapper.insert(u));
 	}
 
