@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import oracle.jdbc.driver.OracleDriver;
 
+
 public class ConnectionUtil {
 	static String url;
 	static String user;

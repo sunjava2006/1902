@@ -8,7 +8,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import oracle.jdbc.driver.OracleDriver;
 
 public class First {
 

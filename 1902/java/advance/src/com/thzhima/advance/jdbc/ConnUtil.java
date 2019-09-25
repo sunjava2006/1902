@@ -21,6 +21,7 @@ public class ConnUtil {
 		try {
 			p.load(inStream);
 			pool = BasicDataSourceFactory.createDataSource(p);
+			
 
 			
 		} catch (Exception e) {
@@ -43,6 +44,8 @@ public class ConnUtil {
 		Connection c = getConn();
 		System.out.println(c.isClosed());
 		c.close();
+		System.out.println(c.isClosed());
+		
 		
 	}
 }
