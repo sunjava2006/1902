@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.thzhima.advance.entity.Kind;
+
 public class KindsDAO {
 	
 	public Object[] findByID(int id) throws SQLException {
@@ -88,22 +90,68 @@ public class KindsDAO {
 		
 		return map;
 	}
+	
+	
+	public Kind find(int id) throws SQLException {
+		Kind  k = null;
+		Connection conn=null;
+		Statement stm=null;
+		ResultSet rst=null;
+		try {
+			conn=ConnectionUtil.getConnection();
+//			conn.setAutoCommit(false);
+			stm=conn.createStatement();
+			rst=stm.executeQuery("select kind_name,id from t_kinds where id="+id);
+			if(rst.next()) {
+//				取游标中数据
+				int idd = rst.getInt("id");
+				String name = rst.getString("kind_name");
+				
+				// 创建一个对象
+				k = new Kind(idd, name);
+			}
+//			conn.commit();
+		}catch(SQLException ex) {
+//			conn.rollback();
+			ex.printStackTrace();
+		}finally {
+			if(null != rst) {
+				rst.close();
+			}
+			if(null != stm) {
+				stm.close();
+			}
+			if(null != conn) {
+				conn.close();
+			}
+		}
+		return k;
+	}
+	
+	
 
 	public static void main(String[] args) throws SQLException {
 		KindsDAO dao =new KindsDAO();
 		
-		Object[] kind = dao.findByID(10);
-		if(null != kind) {
-			  Object id = kind[0];
-			  Object name = kind[1];
-			  System.out.println(id + ":" + name);
+//		Object[] kind = dao.findByID(10);
+//		if(null != kind) {
+//			  Object id = kind[0];
+//			  Object name = kind[1];
+//			  System.out.println(id + ":" + name);
+//		}
+//		
+//		System.out.println("=======================");
+//		Map map = dao.findByName("工具");
+//		System.out.println(map.get("ID"));
+//		System.out.println(map.get("KIND_NAME"));
+//	  
+		
+		Kind k = dao.find(20);
+		if(null != k) {
+			System.out.println(k.getID());
+			System.out.println(k.getKindName());
 		}
 		
-		System.out.println("=======================");
-		Map map = dao.findByName("工具");
-		System.out.println(map.get("ID"));
-		System.out.println(map.get("KIND_NAME"));
-	  
 	}
 	
 }
