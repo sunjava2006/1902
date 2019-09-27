@@ -58,4 +58,6 @@ public class UserDAOTest extends TestCase {
 		boolean ok = dao.deleteByID(4,6);
 		TestCase.assertEquals(true, ok);
 	}
+	
+
 }
