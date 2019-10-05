@@ -1,3 +1,5 @@
+{{longitude}}
+{{latitude}}
 <map 
      longitude="{{longitude}}" 
      latitude="{{latitude}}"
