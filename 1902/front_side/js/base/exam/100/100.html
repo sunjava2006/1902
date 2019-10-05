@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       for(var w=1; w<=20; w++){
+           for(var m=1; m<=33; m++){
+               for(var c=3; c<=99 ; c+=3){
+                   var sum = w+m+c;
+                   var amount = w*5 + m*3 + c/3;
+                   if(sum==100 && amount==100){
+                       document.write('翁:' + w + "*5="+w*5+"<br>");
+                       document.write('母:' + m + "*3="+m*3+"<br>");
+                       document.write('雏:' + c + "/3="+c/3+"<br>");
+                       document.write('<hr>');
+                       break;
+                   }
+
+               }
+            
+           }
+       }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // for(var i=0;i<6;i++){
+    //     for(var j=0;j<5-i;j++){
+    //         document.write('&nbsp');
+    //     }
+    //     for(var m=0;m<2*i+1;m++){
+    //         document.write('*');
+    //     }
+    //     document.write('<br>')
+    // }
+    var i=0;
+    while(i<6){
+        var j=0;
+        while(j<5-i){ 
+            document.write("&nbsp;&nbsp;");
+            j++;
+            }
+           var m=0;
+           while(m<2*i+1){
+               
+               document.write('$');
+               m++;
+           }
+           document.write("<br>");
+           i++;
+        }
+    //===================================
+    var a=1;
+        do{
+            var b=1
+            do{
+                document.write("&nbsp;");
+                b++;
+                
+            }while(b<=(11-(2*a-1)));
+            var c=1;
+            do{
+                document.write("#");
+                c++;
+            }while(c<=2*a-1);
+
+            document.write("<br>");
+            a++;
+        }while(a<=6)
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+       .menu-bar{
+           list-style-type: none;
+           background: red;
+           padding: 0;
+           margin: 0;
+           width: 100%;
+           height: 40px;
+       }
+       li{
+          float: left;
+          width: 80px;
+          height: 40px;
+          /* border: white solid 1px; */
+       }
+       a{
+           width: 100%;
+           /* background: yellow; */
+           display: block;
+           height: 40px;
+           text-align: center;
+           line-height: 40px;
+           color: aliceblue;
+           text-decoration: none;
+       }
+       a:hover{
+           background: black;
+           font-weight: bold;
+           font-size:1.2em;
+           box-shadow: #555 10px 10px 30px;
+           transform: translate(5px ,5px) ;
+           transition: all linear 0.2s; 
+       }
+    </style>
+</head>
+<body>
+    <ul class="menu-bar">
+        <li><a href="">财经</a></li>
+        <li><a href="">军事</a></li>
+        <li><a href="">科技</a></li>
+        <li><a href="">时尚</a></li>
+        <li><a href="">体育</a></li>
+    </ul>
+</body>
+</html>

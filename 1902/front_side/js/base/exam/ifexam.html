@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+    // 产生一个随机整数。判断是odd or even
+    var ran = Math.round(Math.random()*100);
+
+    console.log(ran);    
+
+    if(0 == ran%2){
+        console.log('even');
+    }else{
+        console.log('odd');
+    }
+
+    // 产生一个0-100之间的整数，判断是否小于30,是否30-80之间，是否大于80。
+    if(ran <30){
+        console.log('less than 30');
+    }else if(ran>80){
+        console.log('great than 80')
+    }else{
+        console.log('between 30 and 80');
+    }
+
+    // "java And javaScript are OOP language."
+    // 要求，每个单词的首字母大写，其它字符小写。
+
+    </script>
+</body>
+</html>

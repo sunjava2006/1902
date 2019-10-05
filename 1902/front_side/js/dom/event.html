@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" onclick="myClick(this)" >hello</div>
+
+    <script>
+         function myClick(a){
+            console.log(a.id);
+            console.debug(a.id);
+            console.info(a.id);
+            console.warn(a.id);
+            console.error(a.id);
+         }
+    
+    </script>
+</body>
+</html>

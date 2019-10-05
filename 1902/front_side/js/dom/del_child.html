@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            china
+        </li>
+        <li>
+            english
+        </li>
+        <li>
+            franch
+        </li>
+        <li>
+            japanese
+        </li>
+        <li>
+            russion
+        </li>
+    </ul>
+    <button onclick="add();">add</button>
+
+    <script>
+        var ul = document.querySelector('ul');
+        var items = ul.children;
+        // for(var i=items.length-1; i>=0; i--){
+        //     ul.removeChild(items[i]);
+        // }
+        while(ul.children.length>1){
+            ul.removeChild(ul.lastChild);
+        }
+
+        function add(){
+            var ul = document.querySelector('ul');
+            // var li = document.createElement('li');
+            // // var txt = document.createTextNode('hello');
+            // // li.appendChild(txt);
+            // li.innerText='xxxx';
+            // ul.appendChild(li);
+
+            ul.innerHTML=  ul.innerHTML + "<li>xxxx</li>";
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

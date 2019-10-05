@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>Filco键盘<input type="checkbox"></li>
+        <li>RealFalse键盘<input type="checkbox"></li>
+        <li>HHKB键盘<input type="checkbox"></li>
+        <li>Thinkpad X1 Extreme<input type="checkbox"></li>
+        <li>Thinkpad X1 P1<input type="checkbox"></li>
+    </ul>
+    <input type="text" id="goods">
+    <button onclick="add();">add</button>
+    <button onclick="remove();">del</button>
+    <script>
+
+        function remove() {
+            var chks = //document.getElementsByTagName("input");
+            document.querySelectorAll('input[type=checkbox]');// 选择checkbox
+            for (var i = 0; i < chks.length; i++) {
+                var isChecked = chks[i].checked;//  判断是否是选中的
+                if (isChecked) {
+                    var ul = chks[i].parentNode.parentNode;
+                    var li = chks[i].parentElement;
+                    ul.removeChild(li);
+                }
+            }
+        }
+
+        function add(){
+            var val = document.querySelector("#goods").value;
+            if(val.trim()){
+                var ul = document.querySelector('ul');
+                var li = document.createElement('li');
+                var txt = document.createTextNode(val);
+                li.appendChild(txt);
+                //li.innerText = val;
+                ul.appendChild(li);
+
+                var chk = document.createElement('input');
+                chk.type="checkbox";
+                li.appendChild(chk);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bower_components//bootstrap/dist/css/bootstrap-theme.css">
+    <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(e){
+                var msg = $('#msg');
+                msg.text('');
+                var regexp = /^\d{6}$/;
+                var pwd1 = $('#pwd1').val().trim();
+                var pwd2 = $('#pwd2').val().trim();
+                if(pwd1 != pwd2){
+                    msg.text('输入不一致');
+                    return;
+                }else{
+                    if(!regexp.test(pwd1)){
+                        msg.text('密码只能是6位数字');
+                    }else{
+                        $.post('/change',{'pwd':pwd1},function(data, status){
+                            if(data.result="ok"){
+                                msg.text('修改成功');
+                            }else{
+                                msg.text('修改失败');
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">输入新密码：</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="input-group">
+                            <div class="input-group-addon">新密码</div>
+                            <input type="password" class="form-control" id="pwd1">
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-addon">确认密码</div>
+                            <input type="password" class="form-control" id="pwd2">
+                        </div> 
+                        <br>
+                        <span id="msg"></span>
+                        <button id="btn" type="button" class="btn btn-primary pull-right">修改</button>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

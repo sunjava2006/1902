@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            /* margin: 0;
+            padding: 0; */
+        }
+        body {
+            background: wheat;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #page {
+            margin: auto;
+            width: 1191px;
+            border: #ccc solid 1px;
+        }
+
+        #head {
+            background: url(../imgs/banel_b.jpg);
+            height: 138px;
+        }
+
+
+        #bar {
+            height: 38px;
+            background: url(../imgs/bar_1px.jpg)
+        }
+
+        #side-bar {
+            height: 900px;
+            width: 200px;
+            background: rgb(80, 80, 230);
+            float: left;
+        }
+
+        #frame1 {
+            width: 991px;
+            height: 900px;
+            margin: 0;
+            border: 0px;
+            padding: 0px;
+        }
+
+        #footer {
+            height: 200px;
+            background: black;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            clear: both;
+            position: relative;
+            /* top: -5px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <div id="head">
+            XXXXXXXX
+        </div>
+        <div id="bar">
+
+        </div>
+        <div id="middle" style="height: 900px;">
+            <div id="side-bar">
+                <ul>
+                    <li><a href="../2.html" target="main-frame">assss</a></li>
+                    <li><a href="../font.html" target="main-frame">fdfdfdfd</a></li>
+                </ul>
+            </div>
+            <iframe id="frame1" 
+            name="main-frame" src="../1.html" >
+
+            </iframe>
+        </div>
+
+        <div id="footer">
+
+        </div>
+    </div>
+</body>
+
+</html>

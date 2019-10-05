@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        array = [1,1]
+        while (true){
+            var a = array[array.length-1];
+            var b = array[array.length-2];
+            var n = a+b;
+            if(n>10000){
+                break;
+            }
+            array.push(n);
+        }
+        console.log(array);
+
+    </script>
+</body>
+</html>

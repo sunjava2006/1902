@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #left{
+            height: 200px;
+            width: 100px;
+            overflow: scroll;
+        }
+        #right{
+            height: 180px;
+            width: 100px;
+            overflow: scroll;
+        }
+        #group{
+            height: 200px;
+            width: 100px;
+            
+        }
+        #container{
+            display: flex;
+            flex-direction: row;
+        }
+        #btngrp1,#btngrp2{
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 60px;
+        }
+        option:checked{
+            font-size: 1.5em;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div id="container">
+            <select id="left" multiple>
+                    <option value="">a</option>
+                    <option value="">b</option>
+                    <option value="">c</option>
+                    <option value="">d</option>
+                    <option value="">e</option>
+                    <option value="">f</option>
+                    <option value="">g</option>
+                    <option value="">h</option>
+                    <option value="">i</option>
+                    <option value="">j</option>
+                    <option value="">k</option>
+                    <option value="">l</option>
+                    <option value="">m</option>
+                    <option value="">n</option>
+                    <option value="">o</option>
+                    <option value="">p</option>
+            
+                </select>
+                 <div id="btngrp1">
+                    <button onclick="toRight();">&gt;&gt;</button>
+                    <button onclick="toLeft();">&lt;&lt;</button>
+                 </div>
+                 <div id="group">
+                        <select name="groups" id="groups">
+                            <option value="group1">第一组</option>
+                            <option value="group2" selected>第二组</option>
+                            <option value="group3">第三组</option>
+                        </select>
+                        <select  id="right" multiple onchange="only();"></select>
+                 </div>
+                
+                 <div id="btngrp2">
+                    <button onclick="toUp();">&and;</button>
+                    <button onclick="toLower();">&or;</button>
+                 </div>
+    </div>
+    <script>
+
+        var groups={"group1":[],
+                    "group2":[], 
+                    "group3":[]};
+        var currGrp = document.querySelector('#groups').value;
+
+        function toLeft(){
+            var selectedLis = document.querySelectorAll('#right>option:checked');
+            var left = document.querySelector('#left');
+            for(var i=0; i<selectedLis.length; i++){
+                left.appendChild(selectedLis[i]);
+            }
+        }
+
+        function toRight(){
+            var selected = document.querySelectorAll('#left>option:checked');
+            var right = document.querySelector('#right');
+            for(var i=0; i<selected.length; i++){
+                right.appendChild(selected[i]);
+            }
+            only();
+        }
+
+        function only(){
+            console.log('-----------------only-----------')
+            var all = document.querySelectorAll('#right>option:checked');
+            for(var i=0;i<all.length-1; i++){
+                all[i].selected = false;
+            }
+            // var one = document.querySelector('#right>option:checked');
+            // one.selected = true;
+
+        }
+
+        function toUp(){
+            var o = document.querySelector('#right>option:checked');
+            var previous = o.previousSibling;
+            if(previous){
+                var p = o.parentNode;
+                p.insertBefore(o, previous);
+            }
+        }
+
+        function toLower(){
+            var o = document.querySelector('#right>option:checked');
+            var next = o.nextElementSibling;
+            if(next){
+                var parent = o.parentElement;
+                parent.insertBefore(next, o);
+            }
+            
+        }
+
+    </script>
+    
+</body>
+</html>

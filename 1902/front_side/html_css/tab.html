@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td,th {
+            border: grey solid 1px;
+        }
+        thead>tr>th{
+            height: 40px;
+            background: rgb(89, 233, 6);
+        }
+        tbody th{
+            background: rgb(153, 214, 9);
+        }
+        tr:nth-child(2n){
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="4">A</th>
+            <tr>
+                <th rowspan="3">C</th>
+                <td>blue</td>
+                <td>green</td>
+                <td>yellow</td>
+            </tr>
+            <tr>
+
+                <td>black</td>
+                <td>yellowgreen</td>
+                <td>brown</td>
+            </tr>
+            <tr>
+
+                <td>gray</td>
+                <td>orange</td>
+                <td>purple</td>
+            </tr>
+            <tr>
+                <th colspan="4">B</th>
+            <tr>
+                <td>red</td>
+                <td>blue</td>
+                <td>green</td>
+                <td>yellow</td>
+            </tr>
+            <tr>
+                <td>pink</td>
+                <td>black</td>
+                <td>yellowgreen</td>
+                <td>brown</td>
+            </tr>
+            <tr>
+                <td>white</td>
+                <td>gray</td>
+                <td>orange</td>
+                <td>purple</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

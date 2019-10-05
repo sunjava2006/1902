@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{name}}</h1>
+    <h2>{{age}}</h2>
+    <ul>
+        {% for i in li%}
+            <li>{{i}}</li> 
+        {% endfor %}
+    </ul>  
+    <form action="http://127.0.0.1:5000/photo/" method="POST" 
+          enctype="multipart/form-data">
+        <input type="file" name="photo" >
+        <input type="text" name="usr" >
+        <input type="text" name="age">
+        <input type="submit" >
+    </form>
+
+    <form action="http://127.0.0.1:5000/info/" method="GET">
+       <input type="text" name="usr">
+       <input type="text" name="age">
+       <input type="submit" value="注册">
+    </form>
+    <form action="http://127.0.0.1:5000/info/" method="post">
+        <input type="text" name="usr">
+        <input type="text" name="age">
+        <input type="submit" value="注册">
+     </form>
+</body>
+</html>

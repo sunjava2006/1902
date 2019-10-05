@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建一个函数，参数是人名。返回”你好XXX “。
+        function sayHello(name){
+            return "你好"+name;
+        }
+        
+        // 创建一个函数，参数是人名字，年龄。返回一个对象，该对象具有参数指定的名字、年龄。
+        function create(name, age){
+            return {
+                "name": name,
+                "age":age
+            };
+        }
+
+        var hello = sayHello('wang');
+        var p = create('wang', 33);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li:first-child{
+            color: goldenrod;
+        }
+        li:first-child+*{
+            color: red;
+        }
+        input[name]{
+            border-radius: 5px;
+        }
+        input[name=userName]{
+            background: lightgreen;
+        }
+        input[name=pwd]{
+            background: lightgray;
+        }
+
+        input:hover{
+            border: blue solid 1px;
+            box-shadow: blueviolet 5px 5px 5px;
+        }
+
+
+        .btn{
+            /* display: inline-block; */
+            font-size: 1.5em;
+            padding: 15px;
+            border: gray solid 1px;
+            border-radius: 5px;
+            box-shadow: gray 5px 5px 5px;
+            color: #555;
+            text-decoration: none;
+        }
+        .warn{
+            background: yellow;
+        }
+        .info{
+            background: rgb(98, 165, 241);
+        }
+        .info:hover{
+            background: orangered;
+            color: aliceblue;
+        }
+        .warn:hover{
+            background: brown;
+            color: aliceblue;
+        }
+        a[class~=info]{
+            display: none;
+        }
+        :root{
+            background: palevioletred;
+        }
+        body{
+            background: wheat;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>cn</li>
+        <li>jp</li>
+        <li>uk</li>
+        <li>frn</li>
+        <li>aus</li>
+    </ul>
+
+    <input type="text" name="userName">
+    <input type="password" name="pwd">
+    <input type="text" name="age">
+    <input type="text">
+
+    <a href="#" class="btn info" >btn1</a>
+    <a href="#" class="btn warn" >btn2</a>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bower_components//bootstrap/dist/css/bootstrap-theme.css">
+    <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <style>
+        #types>li:hover {
+            background: #bbb;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#types>li').click(function () {
+                // this是HTML原生对象，可使用$(this)转换为JQuery对象。
+                var t = $(this).text().trim();
+                var pid = $(this).attr('name');
+                $('#parent').val(t + ":" + pid);
+            });
+
+            $('#btnAdd').click(function () {
+                var type = $('#type').val();
+                var parent = $('#parent').val();
+                // XMLHttpRequestXMLHttpRequest
+                var ajax = new XMLHttpRequest();
+                ajax.onreadystatechange = function () {
+                    if (ajax.readyState == 4 && ajax.status == 200) {
+                        var data = ajax.responseText;
+                        data = eval("(" + data + ")"); // 将返回数据字符串，转换成对象。
+                        var lblAdd = document.querySelector('#lblAdd');
+                        lblAdd.innerHTML='';
+                        if (data.result == 'ok') {
+                            lblAdd.innerHTML='添加成功';
+                            // dom操作，在列表中加入新的类型
+                            var newli = $(document.createElement('li'));
+                            newli.attr('name',data.id).attr('title','ID:'+data.id);
+                            newli.text(data.typeName);
+                            $('#types').append(newli);
+
+                        } else {
+                            lblAdd.innerHTML='添加失败';
+                        }
+                    }
+                };
+                ajax.open('POST', '/addtype', true);
+                ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+
+                ajax.send('type=' + type + '&parent=' + parent);
+            });
+
+            //--------------------查询列表-------------------------
+            function del(){
+                
+                var tr = $(this).parent().parent();
+                $(this).unbind('click', del);
+                $(this).siblings('[name=modifyBtn]').unbind('click', modify);
+                var id = tr.children().first().text();
+                var val = tr.children(':nth-child(2)').children().val();
+                // 将ID 发送给服务器，删除该ID有类型
+                $.get('/delType?id='+id, function(data, status){
+                    if(data.result=='ok'){
+                          // 删除行显示
+                         tr.remove();
+                         $('#types').children().each(function(idx, e){
+                            if(val == $(e).text()){
+                                $(e).remove();
+                            }  
+                         });
+                    }else{
+                        alert('删除失败');
+                    }
+                });
+
+              
+            }
+            function modify(){
+                            var tr = $(this).parent().parent();
+                            var inputd = tr.children(':nth-child(2)');
+                           
+                            var curr = $(this).text();
+                            if(curr=='修改'){
+                                inputd.children().prop('disabled',false);
+                                $(this).text('保存');
+                                $(this).removeClass('btn-warning');
+                                $(this).addClass('btn-primary');
+                            }else{
+                                inputd.children().prop('disabled',true);
+                                $(this).text('修改');
+                                $(this).removeClass('btn-primary');
+                                $(this).addClass('btn-warning');
+                                var id = tr.children(':nth-child(1)').text();
+                                var typeName = tr.children(':nth-child(2)').children().val();
+                                $.ajax({
+                                    "type":'POST',
+                                    "url":"/updateType",
+                                    "data":{"id":id,"typeName":typeName},
+                                    "success":function(data, status){
+                                        if('ok'!= data.result){
+                                            alert('修改失败');
+                                        }
+                                    }
+                                });
+                            }
+
+            }
+
+            function search(key, page, size){
+                
+                $.post('/searchTypeList',{'key':key,'page':page,'size':size},function(data, status){
+                    console.log(data);
+                    var body = $('#typelist');
+                    $('button[name=delBtn]').unbind('click', del);
+                    $('button[name=modifyBtn]').unbind('click', modify);
+                    body.empty();
+                    
+                    for(var i=0;i<data.data.length;i++){
+                        var tr = $(document.createElement('tr'));
+                        var tdid = $(document.createElement('td'));
+                        tdid.text(data.data[i][0]);
+                        var tdname = $(document.createElement('td'));
+                        var editname = $(document.createElement('input'));
+                        editname.attr('type','text').val(data.data[i][1]);
+                        editname.prop('disabled',true);
+                        editname.addClass('form-control');
+                        tdname.append(editname);
+                        var tdbtn = $(document.createElement('td'));
+                        var btndel = $(document.createElement('button'));
+                        btndel.addClass('btn btn-danger');
+                        btndel.attr('name','delBtn');
+                        btndel.text('删除');
+                        btndel.bind('click', del);
+
+                        //------------------------
+                        var btnModify = $(document.createElement('button'));
+                        btnModify.attr('name','modifyBtn');
+                        btnModify.text('修改');
+                        btnModify.addClass('btn btn-warning');
+                        btnModify.click(modify);
+                       
+
+                        tdbtn.append(btndel, btnModify);
+                        tr.append(tdid,tdname,tdbtn);
+                        body.append(tr);
+
+                        //==================================================
+                        $('#listInfo').text('总记录数'+data.count+'，共'+data.totalPage+'页，当前为'+data.currentPage+'页');
+                        
+                        $('#btnPre').prop('disabled',false);
+                        $('#btnNext').prop('disabled',false);
+
+                        if(1 == data.currentPage){
+                            $('#btnPre').prop('disabled',true);
+                        }
+                        if(data.totalPage==data.currentPage){
+                            $('#btnNext').prop('disabled',true);
+                        }
+                            
+                        
+                        currentPage = data.currentPage;
+
+
+                    }
+                });
+            }
+            //==========================================================                        
+            var key ;
+            var currentPage;
+            var size = 5;
+            
+            $('#btnSearch').click(function(){
+                key = $('#searchName').val();
+
+                search(key, 1, 5);
+            });
+
+            $('#btnPre').click(function(){
+                search(key,currentPage-1,size);
+            });
+            $('#btnNext').click(function(){
+                search(key,currentPage+1,size);
+            });
+
+            $('#panelAdd').hide();
+            $('#btnTogger').click(function(e){
+                $('#panelAdd').slideToggle(300);
+            });
+
+        });
+
+
+       
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="panel-title">添加分类</span>
+                
+                <button id="btnTogger" type="button" class="btn btn-sm btn-primary pull-right
+               
+                ">
+                <span class="glyphicon glyphicon-sort" ></span>
+                </button>
+   
+            </div>
+            <div class="panel-body " id="panelAdd" >
+
+                <!-- --------------------------------- -->
+
+                <div class="input-group">
+                    <div class="input-group-addon">类型名：</div>
+                    <input type="text" class="form-control" id="type" id="exampleInputAmount">
+                </div>
+                <br>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="parent">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default 
+                        dropdown-toggle" data-toggle="dropdown">父类型
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" id='types'>
+                            <li name='' title="无ID">顶级分类</li>
+                            {% for i in types %}
+                            <li name='{{i[0]}}' title="ID:{{i[0]}}">
+                                {{i[1]}}
+                            </li>
+
+                            {% endfor%}
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <!-- ====================================== -->
+                <span class="label label-info" id="lblAdd"></span>
+                <button id="btnAdd" type="button" class="btn btn-primary pull-right">添加</button>
+            </div>
+      
+        </div>
+        <!--  ---------------------------------------------------- --->
+        
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">查询列表</div>
+                <div class="panel-body">
+                    
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                               id="searchName" placeholder="输入类型名">
+                        <span class="input-group-btn">
+                            <button id="btnSearch" type="button" class="btn btn-default">查询</button>
+                        </span>
+                    </div>
+                    
+                </div>
+        
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>类型ID</th>
+                            <th>类型名</th>
+                            <th>操作</th>
+                        </tr>
+                       
+                    </thead>
+                    <tbody id="typelist">
+                        
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" id="listInfo">
+                                总记录数：0
+                            </td>
+                            <td>
+                                <div class="btn-group ">
+                                    <button type="button" class="btn btn-default" id="btnPre" disabled>上一页</button>
+                                    <button type="button" class="btn btn-default" id="btnNext" disabled>下一页</button>
+                                   
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+        </div>
+        
+
+
+    </div>
+</body>
+
+</html>

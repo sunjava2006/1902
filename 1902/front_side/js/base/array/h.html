@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         
+         var a = new Array();// 数组对象
+         var a1 = [];
+
+         var a2 = new Array(3);//数组长度为3, 每一个元素为空
+         var a3 = new Array(100,200,300); // 初始化元素
+         var a4 = [20, 30, 40];// 初始化元素
+
+
+         console.log(a4[0]);
+         console.log(a4[1]);
+         console.log(a4[2]);
+         console.log(a4[3]);
+
+         a[0] = 10;
+         a[10] = 10;
+         
+        for(var i in a){
+            console.log(i+":"+a[i]);
+        }
+
+        delete a[10];
+        for(var i in a){
+            console.log(i+":"+a[i]);
+        }
+         
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../static/bower_components/jquery/dist/jquery.js"></script>
+    <script>
+       $(function(){
+        //    var ul = document.querySelector('ul');
+        //    ul.innerHTML += '<li>b</li>';
+            var li = document.createElement('li');
+            var c = document.createTextNode('C');
+            li.appendChild(c);
+        //     ul.appendChild(li);
+
+        $('#list1').append('<li>A</li>').append(li).append($('#lia'));
+
+        $('#list2>li:first-child').appendTo($('#list1'));
+
+
+       });
+    </script>
+</head>
+<body>
+    <ul id="list1">
+        <li>a</li>
+    </ul>
+
+    <ul id="list2">
+        <li id="lia">
+            china
+        </li>
+        <li>
+            english
+        </li>
+    </ul>
+</body>
+</html>

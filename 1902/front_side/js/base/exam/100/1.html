@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 有 1 、 2 、 3 、 4 个数字，
+    // 能组成多少个互不相同且无重复数字的三位数？都是多少？
+    a = [];
+    for(var h=1; h<=4; h++){
+        for(var m=1; m<=4; m++){
+            for(var l=1; l<=4; l++){
+                if(h!=m && m!=l && h!=l){
+                    a.push(Number(''+h+m+l));
+                }
+            }
+        }
+    }
+    document.write(a+"<br>");
+    document.write(a.length)
+    </script>
+</body>
+</html>

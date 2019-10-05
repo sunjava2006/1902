@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        题目2：企业发放的奖金根据利润提成。
+        利润 (I) 低于或等于 10 万元时，奖金可提 10% ；
+        利润高于 10 万元，低于 20 万元时， 
+        低于 10 万元的部分按 10% 提成， 高于 10 万元的部分，可可提成 7.5% ； 
+        20 万到 40 万之间时，高于 20 万元的部分，可提成 5% ；
+        40 万到 60 万之间时高于 40 万元的部分，可提成 3% ； 
+        60 万到 100 万之间时，高于 60 万元的部分，可提成 1.5% ，
+        高于 100 万元时，超过 100 万元的部分按 1% 提成，
+        求应发放奖金总数
+        <script>
+            var amount = 120000;
+            var sum = 0;
+
+            if(amount>1000000){
+                valide = amount-1000000;
+                sum += valide*0.01;
+                amount = 1000000;
+            }
+            if(amount>600000){
+                valide = amount-600000;
+                sum += valide * 0.015;
+                amount = 600000;
+            }
+            if(amount>400000){
+                valide = amount-400000;
+                sum += valide * 0.03;
+                amount = 400000;
+            }
+            if(amount>200000){
+                valide = amount-200000;
+                sum += valide*0.05;
+                amount = 200000;
+            }
+            if(amount>100000){
+                valide = amount-100000;
+                sum += valide * 0.075;
+                amount = 100000;
+            }
+            if(amount <= 100000){
+                sum += amount*0.1
+            }
+
+            document.write(sum);
+
+
+
+            //==========================================
+            var sum = 0;
+            var amount = 120000;
+            leave = [1000000, 600000, 400000, 200000, 100000, 0];
+            pct = [0.01, 0.015, 0.03, 0.05, 0.075, 0.1];
+
+            for(var i=0; i<leave.length; i++){
+                if(amount>leave[i]){
+                    sum += (amount-leave[i])*pct[i];
+                    amount = leave[i];
+                }
+            }
+            document.write("::"+sum);
+
+        </script>
+        
+</body>
+</html>

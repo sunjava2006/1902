@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td>
+                <input type="text" id="userName" onblur="valName(this.value);" title="用户名以字母开头字母与数字的组合，3-6位"
+                    value="a123">
+            </td>
+            <td><label for="" id="lblUserName"></label></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="text" id="id" onblur="valPwd(this.value);" title="字母(含_$#)数字组合6位"></td>
+            <td><label for="" id="lblPwd"></label></td>
+        </tr>
+        <tr>
+            <td>电子邮件</td>
+            <td><input type="text" id="email" onblur="valEmail(this.value);">
+            </td>
+            <td><label for="" id="lblEmail"></label></td>
+        </tr>
+        <tr>
+            <td>手机</td>
+            <td><input type="text" id="mobile" onblur="valMobile(this.value);"></td>
+            <td><label for="" id="lblMobile"></label></td>
+        </tr>
+        <tr>
+            <td>固定电话</td>
+            <td><input type="text" id="id"></td>
+            <td><label for="" id="id"></label></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+
+    <script>
+        function valMobile(value){
+            var reg = /^(139|138|133|130|180|189|190|151|152|171|136)\d{8}$/;
+            var lblMobile = document.getElementById('lblMobile');
+            if(reg.test(value)){
+                lblMobile.innerHTML='手机号可用';
+                lblMobile.className="green";
+            }else{
+                lblMobile.innerHTML='手机号不可用';
+                lblMobile.className="red";
+            }
+        }
+
+        function valEmail(value) {
+            var reg = /^[a-zA-Z0-9_]{3,}@\w+\.(com|org|edu)(\.cn)?$/;
+            var lblEmail = document.getElementById('lblEmail');
+            if (reg.test(value)) {
+                lblEmail.innerHTML = '邮件可用';
+                lblEmail.className = 'green';
+            } else {
+                lblEmail.innerHTML = '邮件不可用';
+                lblEmail.className = 'red';
+            }
+        }
+
+        function valPwd(value) {
+            var reg = /^[a-zA-Z0-9_$#]{6}$/;
+            var lblPwd = document.getElementById('lblPwd');
+            if (reg.test(value)) {
+                lblPwd.innerHTML = '密码可用';
+                lblPwd.className = 'green';
+            } else {
+                lblPwd.innerHTML = '密码不可用';
+                lblPwd.className = 'red';
+            }
+
+        }
+
+        function valName(value) {
+            console.log('校验用户名:');
+            var reg = /^[a-zA-Z][0-9a-zA-Z]{2,5}$/;
+            var ok = reg.test(value); // test方法返回true或false。
+            var lblUserName = document.getElementById('lblUserName');
+            if (ok) {
+                lblUserName.innerHTML = '用户名可用';
+                lblUserName.className = 'green';
+            } else {
+                lblUserName.innerHTML = '用户名不合法';
+                lblUserName.className = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

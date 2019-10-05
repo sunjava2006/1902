@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+       // 一个数为1,每次打印这个数后，都加1。在小于10的情况下，打印它的值。
+        var a = 11;
+       do{
+          document.write(a + "<br>");
+          a = a+1;
+       }while(a<10);
+    
+
+       // "中国队大胜日本队"，找出所有“队”位置，共有几个？
+       var str = "中国队大胜日本队";
+       var idx = 0;
+       var count = 0;
+       do{
+          var at = str.indexOf('队', idx);
+          if(-1 != at){
+              document.write('队：'+ at + "<br>");
+              idx = at+1;
+              count = count+1;
+          }
+
+       }while(at != -1);
+       document.write('共'+count + "个");
+
+       // 输出“*”，100个。
+       var i= 1;
+       do{
+           document.write('*');
+           i = i+1;
+       }while(i<=100);
+    
+    </script>
+</body>
+</html>

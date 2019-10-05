@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var a = [];
+        a.push(10);
+        a.push(20);
+        a.unshift(5);
+        a.unshift(0);
+
+
+        a.forEach(function(n, i, arr){
+            arr[i] = n*3;
+        })
+        
+        console.log(a);
+
+        a.map(function(n,i, arr){
+            arr[i] = n*3;
+        });
+
+        console.log(a);
+        
+        s = a.join('/');
+        console.log(s);
+        console.log('---------------------------------');
+        a.find(function(n, i, arr){
+
+            console.log(n + ":"+ i +":"+arr);
+        });
+
+
+    </script>
+
+</body>
+</html>

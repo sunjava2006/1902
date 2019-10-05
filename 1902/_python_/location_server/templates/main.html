@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>系统管理</title>
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bower_components//bootstrap/dist/css/bootstrap-theme.css">
+    <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+       
+
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+
+                        <span class="glyphicon glyphicon-globe  navbar-brand"></span>
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav">
+
+                            <li><a href="#">分类管理</a></li>
+                            <li><a href="#">位置信息</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    用户信息 <b class="caret"></b>
+                                </a> 
+                                <ul class="dropdown-menu">
+                                    {% if session['userInfo'][3]==1 %}
+                                   
+                                    <li><a href="#">用户维护</a></li>
+
+                                    <li class="divider"></li>
+                                    {% endif %}
+                                    
+                                    <li><a href="/changepwd" target="view">修改密码</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/exit">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <nav class="navbar"></nav>
+        </div>
+        <!--==================================================== -->
+       
+        <div class="container row">
+            <div class="row">
+                <iframe name="view" src="/type" frameborder="0" style="width: 100%; position:relative;  
+                        height:800px;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

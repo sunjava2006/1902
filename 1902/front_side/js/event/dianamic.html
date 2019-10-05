@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+        function init(){
+            // 为clickMe按钮添加事件监听。
+            var btnClickMe = document.querySelector('#clickMe');
+    
+            // 事件，事件的回调，在捕获区处理true（false在冒泡区处理）。
+           
+    
+            btnClickMe.addEventListener("click",  function (e){
+                console.log(e.target);
+                console.log(e.currentTarget);
+                console.log(e.type);
+                alert('点我');
+    
+                //e.stopPropagation();//停止事件传播
+                // 函数对象内部的arguments对象的callee属性是指向函数自己的引用。
+                //btnClickMe.removeEventListener("click", arguments.callee, false);
+            }, false);
+    
+    
+            document.addEventListener('click', function(e){
+                console.log("-------------------"+e.currentTarget)
+                e.stopPropagation();
+            }, true);
+
+        }
+       
+        </script>
+
+</head>
+<body onload="init();">
+    <button id="clickMe">click me</button>
+
+    
+</body>
+</html>
