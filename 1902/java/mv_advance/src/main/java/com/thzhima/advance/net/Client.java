@@ -47,8 +47,10 @@ public class Client {
 			bf.close();
 			writer.close();
 			out.close();
+			if(!client.isClosed()) {
+				client.close();
+			}
 			
-			client.close();
 		}
 	
 		

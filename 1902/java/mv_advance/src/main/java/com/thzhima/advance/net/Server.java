@@ -37,10 +37,19 @@ public class Server {
 			bfwriter = new BufferedWriter(writer);
 
 			String str = null;
-			str = bfreader.readLine();
-			System.out.println("收到：" + str);
+			while(!"".equals(str = bfreader.readLine())){
+				System.out.println(str);
+			}
+			System.out.println("end read-----------");
+			//System.out.println(bfreader.readLine());
+			System.out.println("end read-----------");
 
-			bfwriter.write("hello\n");
+			bfwriter.write("HTTP/1.1 200 OK \n");
+			bfwriter.write("Content-type: text/html\n");
+			bfwriter.write("Content-length: 5\n");
+			bfwriter.write("\n\n");
+			bfwriter.write("hello");
+			bfwriter.write("\n\n");
 			bfwriter.flush();
 
 		} catch (IOException e) {
