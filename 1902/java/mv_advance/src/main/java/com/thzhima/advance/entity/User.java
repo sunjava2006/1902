@@ -46,5 +46,31 @@ public class User implements Serializable {
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", pwd=" + pwd + "]";
 	}
+	
+	@Override
+	public int hashCode() {
+		
+		return 37*(this.id.hashCode()+this.userName.hashCode()+this.pwd.hashCode());
+	}
+	
+	
+	@Override
+	public boolean equals(Object o) {
+		if(this ==  o) {
+			return true;
+		}else {
+			if(o instanceof User) {
+				User other = (User)o;
+				if(other.id  != null && other.id.equals(this.id)  ) {
+					if(other.userName!=null && other.userName.equals(this.userName)) {
+						if(other.pwd != null && other.pwd.equals(this.pwd)) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
 
 }

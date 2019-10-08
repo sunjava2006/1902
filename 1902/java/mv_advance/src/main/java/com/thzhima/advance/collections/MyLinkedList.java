@@ -97,8 +97,6 @@ public class MyLinkedList<E> implements Iterable<E>{
 			this.previous = previous;
 			this.next = next;
 		}
-		
-		
 	}
 	
 	@Override
