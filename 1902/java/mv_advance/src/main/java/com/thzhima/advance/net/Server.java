@@ -22,43 +22,41 @@ public class Server {
 		OutputStream out = null;
 		OutputStreamWriter writer = null;
 		BufferedWriter bfwriter = null;
-		
+
 		try {
-			server = new ServerSocket();
-			server.bind(new InetSocketAddress(9090));
-			
-			//监听网络请求，阻塞。
+			server = new ServerSocket(9090);
+//			server.bind(new InetSocketAddress(9090));
+			// 监听网络请求，阻塞。
 			socket = server.accept();
+			
 			in = socket.getInputStream();
 			reader = new InputStreamReader(in);
 			bfreader = new BufferedReader(reader);
 			out = socket.getOutputStream();
 			writer = new OutputStreamWriter(out);
 			bfwriter = new BufferedWriter(writer);
-			
+
 			String str = null;
-			   str  = bfreader.readLine();
-				System.out.println("收到："+str);
-		
-			
-	
+			str = bfreader.readLine();
+			System.out.println("收到：" + str);
+
 			bfwriter.write("hello\n");
 			bfwriter.flush();
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
 			bfreader.close();
 			reader.close();
 			in.close();
-			
+
 			bfwriter.close();
 			writer.close();
 			out.close();
-			
+
 			socket.close();
 			server.close();
 		}
-	
+
 	}
 }
