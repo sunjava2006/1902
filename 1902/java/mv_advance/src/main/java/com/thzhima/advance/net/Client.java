@@ -20,7 +20,7 @@ public class Client {
 		InputStreamReader reader = null;
 		BufferedReader bfreader = null;
 		try {
-			client = new Socket("localhost", 9090);
+			client = new Socket("localhost", 45678);
 			in = client.getInputStream();
 			
 			reader = new InputStreamReader(in);
@@ -31,10 +31,14 @@ public class Client {
 			
 			bf.write("hi\n");
 			bf.flush();
-			
-			
 			String msg = bfreader.readLine();
 			System.out.println("返回：" + msg);
+			
+			bf.write(":bye!\n");
+			bf.flush();
+			msg = bfreader.readLine();
+			System.out.println("返回：" + msg);
+			
 			
 			
 		} catch (Exception e) {

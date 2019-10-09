@@ -18,3 +18,4 @@ public class MultiThread2 {
 		t.start();
 	}
 }
+ 
