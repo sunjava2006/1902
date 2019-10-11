@@ -1,41 +1,69 @@
 package com.thzhima.advance.bank;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Bank {
+private Map<String, Account> map = new HashMap<>();
+	
+    public synchronized Account getAccount(String account) {
+    	Account a = null;
+    	a = map.get(account);
+    	if(null == a) {
+    		// 到数据库取出账号信息，创建账号对象。
+    		a = new Account(account, 1000);
+    		map.put(account, a);
+    	}
+    	return a;
+    }
     
-	public synchronized int pay(Account a, int money) {
-		if(a.amount>=money) {
+	public  int pay(Account a, int money) {
+
+		synchronized(a) {
+			if(a.amount>=money) {
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				a.amount-=money;
+				return money;
+			}
+			
+		}
+		return 0;
+	
+	}
+	
+	public  int getAmount(Account a) {
+		synchronized(a) {
+			int aa =  a.amount;
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			a.amount-=money;
-			return money;
+			return aa;
 		}
-		else {
-			return 0;
-		}
-	}
-	
-	public synchronized int getAmount(Account a) {
-		return a.amount;
+		
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
 		Bank bank = new Bank();
 	
-		Account a = new Account("123", 10000);
+		Account a = bank.getAccount("123");
+		Account a2 = bank.getAccount("123");
 		
 		Thread t = new Thread() {
 			public void run() {
-				int money = bank.pay(a, 9000);
+				int money = bank.pay(a, 90);
 				System.out.println(Thread.currentThread().getName()+":"+money);
 			}
 		};
 		
 		Thread t2= new Thread() {
 			public void run() {
-				int amount = bank.getAmount(a);
+				int amount = bank.getAmount(a2);
 				System.out.println("-----------------------"+amount);
 //				int money = bank.pay(a, 9000);
 //				System.out.println(Thread.currentThread().getName()+":"+money);

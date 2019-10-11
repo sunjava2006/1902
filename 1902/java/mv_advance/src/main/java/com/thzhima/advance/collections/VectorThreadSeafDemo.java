@@ -1,17 +1,21 @@
 package com.thzhima.advance.collections;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
 public class VectorThreadSeafDemo {
 
 	public static void main(String[] args) throws InterruptedException {
-		List<Integer> list =  new Vector<>();//new ArrayList<>();
+		List<Integer> list =  new ArrayList<>();
 		
 		Thread t = new Thread() {
 			public void run() {
 				for(int i=0;i<200;i++) {
-					list.add(i);
+					synchronized (list) {
+						list.add(i);
+					}
+					
 				}
 				System.out.println("t end");
 			}
@@ -20,7 +24,9 @@ public class VectorThreadSeafDemo {
 		Thread t2 = new Thread() {
 			public void run() {
 				for(int i=0;i<200;i++) {
-					list.add(i);
+					synchronized (list) {
+						list.add(i);
+					}
 				}
 				System.out.println("t2 end");
 			}
