@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>blog2</display-name>
+  <display-name>fruit</display-name>
   <welcome-file-list>
     <welcome-file>index</welcome-file>
-   
   </welcome-file-list>
-  
   <context-param>
-      <param-name>from</param-name>
-      <param-value>iso-8859-1</param-value>
+    <param-name>from</param-name>
+    <param-value>iso-8859-1</param-value>
   </context-param>
-    <context-param>
-      <param-name>to</param-name>
-      <param-value>utf-8</param-value>
+  <context-param>
+    <param-name>to</param-name>
+    <param-value>utf-8</param-value>
   </context-param>
-  
   <servlet>
-      <servlet-name>user_regist</servlet-name>
-      <servlet-class>com.thzhima.blog.controller.RegistServlet
+    <servlet-name>user_regist</servlet-name>
+    <servlet-class>com.thzhima.blog.controller.RegistServlet
       </servlet-class>
-      <init-param>
-       <param-name>targetEncod</param-name>
+    <init-param>
+      <param-name>targetEncod</param-name>
       <param-value>utf-8</param-value>
-      </init-param>
-      <load-on-startup>1</load-on-startup>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-      <servlet-name>user_regist</servlet-name>
-      <url-pattern>/regist</url-pattern>
+    <servlet-name>user_regist</servlet-name>
+    <url-pattern>/regist</url-pattern>
   </servlet-mapping>
   <session-config>
-       <session-timeout>60</session-timeout>
+    <session-timeout>60</session-timeout>
   </session-config>
 </web-app>
