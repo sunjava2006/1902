@@ -5,29 +5,38 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
 
 import com.thzhima.blog.service.UserService;
 
 
-@WebServlet("/regist")
-public class RegistServlet implements Servlet {
 
+public class RegistServlet implements Servlet {
+   private String targetEncod;
+	
     public RegistServlet() {
-        // TODO Auto-generated constructor stub
+      System.out.println("----------创建Servlet---------");
     }
 
 	
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		System.out.println("-------------init----创建后立即运行，仅一次-------------");
+		// 取当前Servlet 自己的初始化配置参数。
+		targetEncod = config.getInitParameter("targetEncod");
+		
+		// 获取全局对象。
+		ServletContext application = config.getServletContext();
+		//从全局对象中取初始化配置参数
+		targetEncod = application.getInitParameter("to");
 	}
 
 	
 	public void destroy() {
-		// TODO Auto-generated method stub
+		System.out.println("--------------应用关闭时调用---释放-----------");
 	}
 
 
@@ -45,11 +54,18 @@ public class RegistServlet implements Servlet {
 	
 	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 		System.out.println("------------------------------");
+		HttpServletRequest req = (HttpServletRequest) request;
 		String userName = null;
 		String pwd = null;
 		
+		//获取发送的请求参数
+		req.setCharacterEncoding(targetEncod);
 		userName = request.getParameter("userName");
 		pwd = request.getParameter("pwd");
+		
+		if("GET".equalsIgnoreCase(req.getMethod())) {
+			//request.
+		}
 		
 		System.out.println(userName);
 		System.out.println(pwd);
@@ -59,10 +75,12 @@ public class RegistServlet implements Servlet {
 		
 		//-----------------------请求转发---------------
 		if(ok) {
-			request.setAttribute("msg", "注册成功");
+			// 讲求转发是同一个用户发生的请求，同用同一个请求和响应对象的。
+			request.setAttribute("msg", "注册成功"); // 向请求对象中设置属性。在不同服务单元间，共享数据。
 		}else {
 			request.setAttribute("msg", "注册失败");
 		}
+		//请求转发（在服务端的不同的服务单元之间）
 		RequestDispatcher rd = request.getRequestDispatcher("/RegInfo.jsp");
 		rd.forward(request, response);
 		

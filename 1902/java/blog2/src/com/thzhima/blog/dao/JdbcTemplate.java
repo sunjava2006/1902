@@ -3,6 +3,7 @@ package com.thzhima.blog.dao;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -27,6 +28,38 @@ public class JdbcTemplate {
 		}
 		
 	}
+	
+	public <T>  T select(String sql, ResultSetExtractor<T> ext, Object...args) throws SQLException {
+		T o = null;
+		Connection conn = null;
+		PreparedStatement stm = null;
+		ResultSet rst = null;
+		try {
+			conn = this.getConnection();
+			stm = conn.prepareStatement(sql);
+			if(null != args) {
+				for(int i=0;i<args.length;i++) {
+					stm.setObject(i+1, args[i]);
+				}
+			}
+			rst = stm.executeQuery();
+			o = ext.extract(rst);
+			
+		} catch (Exception e) {
+			if(null != rst) {
+				rst.close();
+			}
+			if(null != stm) {
+				stm.close();
+			}
+			if(null != conn) {
+				
+				conn.close();
+			}
+		}
+		return o;
+	}
+	
 	
 	public Connection getConnection() throws SQLException {
 		Connection conn = null;
