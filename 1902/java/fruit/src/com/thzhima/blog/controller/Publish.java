@@ -60,9 +60,8 @@ public class Publish extends HttpServlet{
 		char[] buffer = new char[100];
 		  try {
 			 // 取文本数据 
-			request.setCharacterEncoding("utf-8");
-			response.setCharacterEncoding("utf-8");
-			response.setContentType("text/html;charset=utf-8");
+//			request.setCharacterEncoding("utf-8");
+		    response.setContentType("text/html;charset=utf-8");
 			
 			Part goodsPart = request.getPart("goodsName");
 			String goodsName = this.getValue(goodsPart);

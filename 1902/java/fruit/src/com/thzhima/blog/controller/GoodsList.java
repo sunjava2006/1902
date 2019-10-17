@@ -39,7 +39,7 @@ public class GoodsList extends HttpServlet{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+		System.out.println("------/List.jsp-------------");
 		req.getRequestDispatcher("/List.jsp").forward(req, resp);
 	}
 

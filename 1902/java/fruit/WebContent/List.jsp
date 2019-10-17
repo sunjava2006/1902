@@ -11,6 +11,18 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <title>商品列表</title>
+    <style>
+    .pic{
+        width: 50px;
+        height:30px;
+        position:absolute;
+        z-index: 1;
+    }
+    .pic:hover{
+        z-index: 1000;
+        transform: scale(3);
+    }
+    </style>
 </head>
 <body>
     
@@ -45,8 +57,8 @@ for(Goods g : list){
                            <td><%=g.getUnit() %></td>
                            <td><%=g.getPrice() %></td>
                            <td><%=g.getLocation() %></td>
-                           <td><img src='/pictures/<%=g.getPicture() %>' style="width:50px;"/></td>
-                           <td></td>
+                           <td><img src='/pictures/<%=g.getPicture() %>' class="pic"/></td>
+                           <td><%=g.getSaleStatus()?"在售":"下架" %></td>
                        </tr>
 <%} %>                       
                     </tbody>

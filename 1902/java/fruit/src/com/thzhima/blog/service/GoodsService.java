@@ -44,8 +44,9 @@ public class GoodsService {
 					String description = rst.getString("description");
 					String location = rst.getString("location");
 					String picture = rst.getString("picture");
+					int status = rst.getInt("status");
 					
-					Goods g = new Goods(id, goodsName, description, unit, price, location, picture);
+					Goods g = new Goods(id, goodsName, description, unit, price, location, picture, status==1?true:false);
 					list.add(g);
 				}
 				return list;

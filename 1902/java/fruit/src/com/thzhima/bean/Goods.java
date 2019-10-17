@@ -11,6 +11,14 @@ public class Goods implements Serializable{
 	private float price;
 	private String location;
 	private String picture;
+	private boolean saleStatus;
+	
+	public boolean getSaleStatus() {
+		return saleStatus;
+	}
+	public void setSaleStatus(boolean saleStatus) {
+		this.saleStatus = saleStatus;
+	}
 	public Integer getID() {
 		return ID;
 	}
@@ -54,7 +62,7 @@ public class Goods implements Serializable{
 		this.picture = picture;
 	}
 	public Goods(Integer iD, String goodsName, String description, String unit, float price, String location,
-			String picture) {
+			String picture, boolean saleStatus) {
 		super();
 		ID = iD;
 		this.goodsName = goodsName;
@@ -63,6 +71,7 @@ public class Goods implements Serializable{
 		this.price = price;
 		this.location = location;
 		this.picture = picture;
+		this.saleStatus = saleStatus;
 	}
 	public Goods() {
 		super();
