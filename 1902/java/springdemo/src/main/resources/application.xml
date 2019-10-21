@@ -26,16 +26,16 @@
         
 <!--   </bean> -->
   
-  <bean name="student" class="com.thzhima.springdemo.bean.Student">
-      <lookup-method name="mkBook" bean="javaBook"/>
-  </bean>
+<!--   <bean name="student" class="com.thzhima.springdemo.bean.Student"> -->
+<!--       <lookup-method name="mkBook" bean="javaBook"/> -->
+<!--   </bean> -->
   
   <bean name="todoImple" class="com.thzhima.springdemo.bean.TodoImplements"></bean>
   <bean name="people" class="com.thzhima.springdemo.bean.People">
       <replaced-method name="todo" replacer="todoImple"></replaced-method>
   </bean>
   
-  <bean name="carFactory" class="com.thzhima.springdemo.bean.CarFactory"></bean>
-  <bean name = "car" factory-bean="carFactory" factory-method="create"></bean>
-  <bean name="car2"  class="com.thzhima.springdemo.bean.Factory" factory-method="create"></bean>
+<!--   <bean name="carFactory" class="com.thzhima.springdemo.bean.CarFactory"></bean> -->
+<!--   <bean name = "car" factory-bean="carFactory" factory-method="create"></bean> -->
+<!--   <bean name="car2"  class="com.thzhima.springdemo.bean.Factory" factory-method="create"></bean> -->
 </beans>

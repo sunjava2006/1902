@@ -5,6 +5,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.thzhima.springdemo.bean.Book;
 import com.thzhima.springdemo.bean.Car;
 import com.thzhima.springdemo.bean.Room;
+import com.thzhima.springdemo.bean.Service;
+import com.thzhima.springdemo.bean.Student;
 
 public class Test {
 
@@ -25,8 +27,17 @@ public class Test {
 //		Car c1 = (Car) app.getBean("car");
 //		c1.run();
 //		
-//		Car c2 = (Car) app.getBean("car2");
-//		c2.run();
+		Car c2 = (Car) app.getBean("car2");
+		c2.run();
+		
+		Student s = app.getBean(Student.class);
+		s.readBook();
+		
+		System.out.println("=====================");
+		Service sv = app.getBean(Service.class);
+		sv.service();
+	    
+		app.destroy();
 	}
 
 }
