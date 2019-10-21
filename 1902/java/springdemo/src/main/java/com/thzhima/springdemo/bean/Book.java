@@ -1,9 +1,15 @@
 package com.thzhima.springdemo.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("javaBook")
 public class Book {
-	
+	@Value("java")
     private String name;
+	@Value("wang")
     private String author;
+	@Value("12.34")
     private float price;
     
 	public String getName() {

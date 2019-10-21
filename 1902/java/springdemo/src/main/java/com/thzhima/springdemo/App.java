@@ -18,24 +18,24 @@ public class App
     public static void main( String[] args )
     {  
     	ClassPathXmlApplicationContext app = new ClassPathXmlApplicationContext("application.xml");
-        Book book = null;
-        
-        book = (Book)app.getBean("pythonBook");//app.getBean(Book.class);
+//        Book book = null;
+//        
+//        book = (Book)app.getBean("pythonBook");//app.getBean(Book.class);
         
         
        Room myRoom = app.getBean(Room.class);
        System.out.println(myRoom);
         
-        System.out.println(book);
-        
-        System.out.println("----------------------------------------------");
-        Student s = app.getBeanFactory().getBean(Student.class);
-        s.readBook();
-        System.out.println(s.getClass().getName());
-        System.out.println(s.mkBook());
-        System.out.println("===============================");
-        
-        People p = app.getBean(People.class);
-        p.todo();
+//        System.out.println(book);
+//        
+//        System.out.println("----------------------------------------------");
+//        Student s = app.getBeanFactory().getBean(Student.class);
+//        s.readBook();
+//        System.out.println(s.getClass().getName());
+//        System.out.println(s.mkBook());
+//        System.out.println("===============================");
+//        
+//        People p = app.getBean(People.class);
+//        p.todo();
     }
 }

@@ -1,7 +1,16 @@
 package com.thzhima.springdemo.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class Room {
 
+	@Autowired
+	@Qualifier("pythonBook")
 	private Book book;
 
 	public Room(Book book) {
@@ -15,7 +24,7 @@ public class Room {
 	}
 
 	public Book getBook() {
-		return book;
+		return this.book;
 	}
 
 	public void setBook(Book book) {
@@ -24,7 +33,7 @@ public class Room {
 
 	@Override
 	public String toString() {
-		return "Room [book=" + book + "]";
+		return "Room [book=" + this.book + "]";
 	}
 	
 	

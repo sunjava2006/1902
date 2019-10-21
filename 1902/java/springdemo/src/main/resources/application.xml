@@ -6,22 +6,25 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+		default-autowire="byName">
 
-  <bean name="javaBook" class="com.thzhima.springdemo.bean.Book">
-      <constructor-arg index="0" value="Java Advance Programming"></constructor-arg>
-      <constructor-arg index="1" value="Jack"></constructor-arg>
-      <constructor-arg  name="price" value="52.12"></constructor-arg>
-  </bean>
+       <context:component-scan base-package="com.thzhima.springdemo">
+       </context:component-scan>
+<!--   <bean name="javaBook, JavaBook" class="com.thzhima.springdemo.bean.Book" scope="prototype"> -->
+<!--       <constructor-arg index="0" value="Java Advance Programming"></constructor-arg> -->
+<!--       <constructor-arg index="1" value="Jack"></constructor-arg> -->
+<!--       <constructor-arg  name="price" value="52.12"></constructor-arg> -->
+<!--   </bean> -->
 
    <bean name="pythonBook" class="com.thzhima.springdemo.bean.Book" p:author="Smith">
      <property name="name" value="Python Programming"></property>
      <property name="price"><value>13.14</value></property>
   </bean>
   
-  <bean name="myRoom" class="com.thzhima.springdemo.bean.Room">
-         <property name="book" ref="javaBook"></property>
-  </bean>
+<!--   <bean name="myRoom" class="com.thzhima.springdemo.bean.Room" autowire="default"> -->
+        
+<!--   </bean> -->
   
   <bean name="student" class="com.thzhima.springdemo.bean.Student">
       <lookup-method name="mkBook" bean="javaBook"/>
@@ -32,4 +35,7 @@
       <replaced-method name="todo" replacer="todoImple"></replaced-method>
   </bean>
   
+  <bean name="carFactory" class="com.thzhima.springdemo.bean.CarFactory"></bean>
+  <bean name = "car" factory-bean="carFactory" factory-method="create"></bean>
+  <bean name="car2"  class="com.thzhima.springdemo.bean.Factory" factory-method="create"></bean>
 </beans>
