@@ -17,9 +17,27 @@
         
         <mvc:annotation-driven></mvc:annotation-driven>
         
+        <mvc:interceptors>
+            
+            <mvc:interceptor>
+                 <mvc:mapping path="/*"/>
+                  <bean class="com.thzhima.mvcblog.Interceptors.SetCharSetInterceptor"></bean>
+            </mvc:interceptor>
+        </mvc:interceptors>
+        
+        
         <!-- 配置SpringMVC视图解析器，将ModelAndView及字符串解析为具体的页面 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 	    p:viewClass="org.springframework.web.servlet.view.JstlView"
 	    p:suffix=".jsp"/>
+	    
+	    <!-- 文件上传 -->
+<!-- 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" -->
+<!-- 	    p:maxUploadSize="1024000000" -->
+<!-- 	    p:uploadTempDir="/temp/" -->
+<!-- 	    p:maxInMemorySize="10240" -->
+<!-- 	    p:defaultEncoding="utf-8"/> -->
+
+
 
 </beans>
