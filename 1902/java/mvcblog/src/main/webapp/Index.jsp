@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,8 +51,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
+  <%
+  Object o = session.getAttribute("userInfo");
+   if (null == o){
+  %>              
                     <li><a href="Regist.jsp" target="_blank">注册</a></li>
-                    <li><a href="#">登录</a></li>
+                    <li><a href="Login.jsp" target="_blank">登录</a></li>
+  <% 
+  }else{%>  
+                    <li><a>你好:${sessionScope.userInfo.userName }</a> 
+                    </li>
+                 
+  
+                    <li><a href="/logout.do" target="_blank">注销</a></li>
+  <% }%>                  
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -60,16 +73,29 @@
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
+<c:if test="${sessionScope.userInfo != null}">         
+
+
+    <c:choose> 
+   
+          <c:when test="${sessionScope.blogInfo == null }">
+                    <li><a href="#">申请博客</a></li>
+          </c:when>
+          <c:otherwise>
+                    <li><a href="#">我的博客</a></li>
+           </c:otherwise>
+    </c:choose>   
+</c:if>                       
+                    
+<!--                     <li class="dropdown"> -->
+<!--                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a> -->
+<!--                         <ul class="dropdown-menu"> -->
+<!--                             <li><a href="#">Action</a></li> -->
+<!--                             <li><a href="#">Another action</a></li> -->
+<!--                             <li><a href="#">Something else here</a></li> -->
+<!--                             <li><a href="#">Separated link</a></li> -->
+<!--                         </ul> -->
+<!--                     </li> -->
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

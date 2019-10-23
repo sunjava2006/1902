@@ -20,14 +20,23 @@
 
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">注册信息</h3>
+                <h3 class="panel-title">登录</h3>
             </div>
             <div class="panel-body">
-                    ${requestScope.userName } 注册成功。
+                <form action="/login.do" method="post">
+
+                    <div class="input-group">
+                        <div class="input-group-addon">用户名</div>
+                        <input type="text" class="form-control" name="userName">
+                    </div><br>
+                    <div class="input-group">
+                        <div class="input-group-addon">密码</div>
+                        <input type="text" class="form-control" name="pwd">
+                    </div>
                     <br>
-                    <button type="button" class="btn btn-success pull-right" 
-                     onclick="location.href='/'">返回首页</button>
-               
+                    ${msg }
+                    <button type="submit" class="btn btn-success pull-right">登录</button>
+                </form>
             </div>
 
         </div>
