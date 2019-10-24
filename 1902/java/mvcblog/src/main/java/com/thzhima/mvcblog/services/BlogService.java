@@ -17,24 +17,27 @@ public class BlogService {
 	@Autowired
 	private BlogDao dao;
 	
+	/**
+	 * 根据用户ID，查找博客。
+	 * @param userID
+	 * @return 如果存在Blog对象
+	 */
 	public Blog findByUserID(int userID) {
-		String sql = "select * from t_blogs where user_id=?";
-		
-		ResultSetExtractor<Blog> ext = new ResultSetExtractor<Blog>() {
-			@Override
-			public Blog extractData(ResultSet rs) throws SQLException, DataAccessException {
-				Blog b = null;
-				if(rs.next()) {
-					Integer blogID = rs.getInt(1);
-					Integer userID = rs.getInt(2);
-					String blogName = rs.getString(3);
-					String photo = rs.getString(4);
-					b = new Blog(blogID, userID, blogName, photo);
-				}
-				return b;
-			}
-		};
-		
-		return dao.selectOne(sql, ext, userID);
+		return dao.findByUserID(userID);
+	}
+	
+	/**
+	 * 申请博客
+	 * @param userID
+	 * @param blogName
+	 * @param photoName
+	 * @return 成功返回true.
+	 */
+	public boolean apply(int userID, String blogName, String photoName) {
+		boolean  ok = false;
+		if(1 == this.dao.add(userID, blogName, photoName)) {
+			ok = true;
+		}
+		return ok;
 	}
 }

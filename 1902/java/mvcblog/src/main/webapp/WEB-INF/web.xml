@@ -23,4 +23,17 @@
 			<param-value>classpath:application.xml</param-value>
 	 </context-param>
   
+     <filter>
+          <filter-name>autoLoginFilter</filter-name>
+          <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+          <init-param>
+	      <param-name>targetFilterLifecycle</param-name>
+	         <!-- 为true，表示执行过滤器的生命周期方法 -->
+	      <param-value>true</param-value>
+	    </init-param>
+     </filter>
+     <filter-mapping>
+         <filter-name>autoLoginFilter</filter-name>
+         <url-pattern>/*</url-pattern>
+     </filter-mapping>
 </web-app>

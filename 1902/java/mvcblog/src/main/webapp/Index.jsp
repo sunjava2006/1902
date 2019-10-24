@@ -45,7 +45,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span>
+    <c:if test="${!empty userInfo }">            
+               <c:out value="你好${userInfo.userName }" default=""/>
+   </c:if>
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,9 +63,7 @@
                     <li><a href="Login.jsp" target="_blank">登录</a></li>
   <% 
   }else{%>  
-                    <li><a>你好:${sessionScope.userInfo.userName }</a> 
-                    </li>
-                 
+                                
   
                     <li><a href="/logout.do" target="_blank">注销</a></li>
   <% }%>                  
@@ -79,7 +81,7 @@
     <c:choose> 
    
           <c:when test="${sessionScope.blogInfo == null }">
-                    <li><a href="#">申请博客</a></li>
+                    <li><a href="./apply.html" >申请博客</a></li>
           </c:when>
           <c:otherwise>
                     <li><a href="#">我的博客</a></li>

@@ -32,11 +32,11 @@
 	    p:suffix=".jsp"/>
 	    
 	    <!-- 文件上传 -->
-<!-- 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" -->
-<!-- 	    p:maxUploadSize="1024000000" -->
-<!-- 	    p:uploadTempDir="/temp/" -->
-<!-- 	    p:maxInMemorySize="10240" -->
-<!-- 	    p:defaultEncoding="utf-8"/> -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+	    p:maxUploadSize="1024000000"
+	    p:uploadTempDir="/photo"
+	    p:maxInMemorySize="10240"
+	    p:defaultEncoding="utf-8"/>
 
 
 

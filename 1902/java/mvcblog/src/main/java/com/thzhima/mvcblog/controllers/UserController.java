@@ -1,12 +1,19 @@
 package com.thzhima.mvcblog.controllers;
 
+import java.io.UnsupportedEncodingException;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.thzhima.mvcblog.beans.Blog;
@@ -24,13 +31,15 @@ public class UserController {
 	private BlogService blogService;
 	
 	@RequestMapping(path = "/regist", method = RequestMethod.POST)
-	public ModelAndView regist(String userName, String pwd) {
+	public ModelAndView regist(@ModelAttribute(name = "userName") String userName,
+			                                @RequestParam("password") String pwd) throws UnsupportedEncodingException {
 		ModelAndView mv = new ModelAndView(); 
+		//userName = new String(userName.getBytes("iso-8859-1"), "utf-8"); 
 		System.out.println(userName + pwd);
 		boolean ok = this.userService.registUser(userName, pwd);
 		if(ok) {
 			mv.setViewName("/RegistOk");
-			mv.addObject("userName", userName);
+			//mv.addObject("userName", userName);
 			
 		}else {
 			mv.setViewName("/Regist");
@@ -40,20 +49,40 @@ public class UserController {
 		
 	}
 	
-	@PostMapping(path="/login" )
-	public ModelAndView login(ModelAndView mv, User user, HttpSession session) {
-		User u = this.userService.login(user);
-		if(null == u) {
-			mv.addObject("msg", "用户名或密码不正确。");
-			mv.setViewName("Login");
+	@RequestMapping(path="/login" , params = {"userName","pwd"} )
+	public ModelAndView login(ModelAndView mv,User user, HttpSession session,
+			                              boolean auto, HttpServletResponse response,
+			                              @RequestHeader(name = "Referer", required = false) String referer) {
+		if("http://localhost:8088/login.do".equals(referer) || "http://localhost:8088/Login.jsp".equals(referer)) {
+			User u = this.userService.login(user);
+			if(null == u) {
+				mv.addObject("msg", "用户名或密码不正确。");
+				mv.setViewName("Login");
+			}else {
+				session.setAttribute("userInfo", u);
+				
+				Blog blog = this.blogService.findByUserID(u.getUserID());
+				session.setAttribute("blogInfo", blog);
+				
+				if(auto) {
+					Cookie c = new Cookie("userName", u.getUserName());
+					c.setMaxAge(10*24*60*60);
+					
+					Cookie c2 = new Cookie("pwd", u.getPwd());
+					c2.setMaxAge(10*24*60*60);
+					
+					response.addCookie(c);
+					response.addCookie(c2);
+				}
+				
+				
+				mv.setViewName("redirect:/");
+			}
 		}else {
-			session.setAttribute("userInfo", u);
-			
-			Blog blog = this.blogService.findByUserID(u.getUserID());
-			session.setAttribute("blogInfo", blog);
-			
-			mv.setViewName("redirect:/");
+			mv.setViewName("redirect:/Login.jsp");
+			mv.addObject("msg", "别瞎玩！！！！！！！");
 		}
+		
 		return mv;
 	}
 	

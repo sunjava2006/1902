@@ -6,6 +6,7 @@ public class Blog {
 	private Integer userID;
 	private String blogName;
 	private String photo;
+	
 	public Integer getBlogID() {
 		return blogID;
 	}

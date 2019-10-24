@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.css">
     <script src="./bower_components/jquery/dist/jquery.js"></script>
     <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                 <h3 class="panel-title">注册</h3>
             </div>
             <div class="panel-body">
-                <form action="/regist.do" method="post">
+                <form action="${applicationScope.contextPath }/regist.do" method="post">
 
                     <div class="input-group">
                         <div class="input-group-addon">用户名</div>
@@ -31,7 +32,7 @@
                     </div><br>
                     <div class="input-group">
                         <div class="input-group-addon">密码</div>
-                        <input type="text" class="form-control" name="pwd">
+                        <input type="text" class="form-control" name="password">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-success pull-right">注册</button>

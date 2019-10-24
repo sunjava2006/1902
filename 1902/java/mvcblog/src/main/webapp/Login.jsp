@@ -34,7 +34,8 @@
                         <input type="text" class="form-control" name="pwd">
                     </div>
                     <br>
-                    ${msg }
+                    ${msg }${param.msg }
+                    <span>10天免登录<input type="checkbox" name="auto" /></span>
                     <button type="submit" class="btn btn-success pull-right">登录</button>
                 </form>
             </div>

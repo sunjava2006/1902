@@ -12,6 +12,7 @@ public class SetCharSetInterceptor extends HandlerInterceptorAdapter{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		request.setCharacterEncoding("utf-8");
+		System.out.println("--------------utf-8----------------");
 		return true;
 	}
 
