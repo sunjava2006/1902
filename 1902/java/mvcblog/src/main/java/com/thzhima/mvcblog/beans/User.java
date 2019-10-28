@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class User implements Serializable{
 
+	@Override
+	public String toString() {
+		return "User [userID=" + userID + ", userName=" + userName + ", pwd=" + pwd + "]";
+	}
 	private Integer userID;
 	private String userName;
 	private String pwd;

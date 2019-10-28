@@ -8,8 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,21 +31,24 @@ public class UserController {
 	private BlogService blogService;
 	
 	@RequestMapping(path = "/regist", method = RequestMethod.POST)
-	public ModelAndView regist(@ModelAttribute(name = "userName") String userName,
-			                                @RequestParam("password") String pwd) throws UnsupportedEncodingException {
-		ModelAndView mv = new ModelAndView(); 
+	public String regist(@ModelAttribute(name = "userName") String userName,
+			                                @RequestParam("password") String pwd,
+			                                Model m 
+			                                 ) throws UnsupportedEncodingException {
+		String view = "/RegistOk";
 		//userName = new String(userName.getBytes("iso-8859-1"), "utf-8"); 
 		System.out.println(userName + pwd);
 		boolean ok = this.userService.registUser(userName, pwd);
 		if(ok) {
-			mv.setViewName("/RegistOk");
-			//mv.addObject("userName", userName);
+			m.addAttribute("userName", userName);
+//			m.addObject("userName", userName);
 			
 		}else {
-			mv.setViewName("/Regist");
-			mv.addObject("smg", "注册失败");
+			view= "/Regist";
+			m.addAttribute("smg", "注册失败");
+//			m.addObject("smg", "注册失败");
 		}
-		return mv;
+		return view;
 		
 	}
 	

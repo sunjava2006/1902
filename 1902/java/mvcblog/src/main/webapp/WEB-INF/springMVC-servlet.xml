@@ -38,6 +38,15 @@
 	    p:maxInMemorySize="10240"
 	    p:defaultEncoding="utf-8"/>
 
-
+<!-- 以JSON形式返回结果 -->
+		<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="cacheSeconds" value="0"></property>
+		<property name="messageConverters">
+		<list>
+		<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		</bean>
+		</list>
+		</property>
+		</bean>
 
 </beans>

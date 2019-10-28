@@ -35,7 +35,8 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 	    <artifactId>spring-jdbc</artifactId>
 	    <version>5.2.0.RELEASE</version>
 	</dependency>
-	
+
+
 
 	
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
@@ -44,13 +45,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 	    <artifactId>commons-dbcp2</artifactId>
 	    <version>2.7.0</version>
 	</dependency>
-	    
-<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
-<!-- <dependency> -->
-<!--     <groupId>org.apache.taglibs</groupId> -->
-<!--     <artifactId>taglibs-standard-impl</artifactId> -->
-<!--     <version>1.2.5</version> -->
-<!-- </dependency> -->
+
 
 <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
 <dependency>
@@ -71,6 +66,30 @@ http://maven.apache.org/maven-v4_0_0.xsd">
     <version>1.4</version>
 </dependency>
 
+   
+   <dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.62</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.10.0</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.10.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.10.0</version>
+</dependency>
+
+   
    
     
   </dependencies>
