@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -89,7 +90,22 @@ public class UserController {
 		return mv;
 	}
 	
-	
+	@GetMapping("/logout")
+	public String logout(HttpSession session, HttpServletResponse response) {
+		session.removeAttribute("userInfo");
+		session.removeAttribute("blogInfo");
+		session.invalidate();
+		
+		Cookie c = new Cookie("userName", "");
+		c.setMaxAge(0);
+		Cookie c2 = new Cookie("pwd", "");
+		c2.setMaxAge(0);
+		
+		response.addCookie(c);
+		response.addCookie(c2);
+		
+		return "redirect:/";
+	}
 	
 	
 	
