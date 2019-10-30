@@ -37,4 +37,8 @@ public class UserService {
 	public void sendEmailValidate(User user) {
 		this.jmsTemplate.convertAndSend(this.queue, user);
 	}
+	
+	public User login(User u) {
+		return this.userMapper.findByNameAndPwd(u);
+	}
 }

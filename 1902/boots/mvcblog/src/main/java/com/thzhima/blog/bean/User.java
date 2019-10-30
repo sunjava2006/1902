@@ -10,14 +10,20 @@ public class User implements Serializable{
 
 	
 	private Integer userID;
-	
-
 	private String userName;
-	
-	
 	private String pwd;
-	
 	private String email;
+	private Blog blog; // 关联对象
+	
+	
+	public User(Integer userID, String userName, String pwd, String email, Blog blog) {
+		super();
+		this.userID = userID;
+		this.userName = userName;
+		this.pwd = pwd;
+		this.email = email;
+		this.blog = blog;
+	}
 	
 	public User(Integer userID, String userName, String pwd, String email) {
 		super();
@@ -25,6 +31,13 @@ public class User implements Serializable{
 		this.userName = userName;
 		this.pwd = pwd;
 		this.email = email;
+	}
+	
+	public Blog getBlog() {
+		return blog;
+	}
+	public void setBlog(Blog blog) {
+		this.blog = blog;
 	}
 	public String getEmail() {
 		return email;
