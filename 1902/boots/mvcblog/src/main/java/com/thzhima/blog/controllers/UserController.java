@@ -48,6 +48,7 @@ public class UserController {
 		if(null != u) {
 			user.setUserID(u.getUserID());
 			user.setEmail(u.getEmail());
+			user.setBlog(u.getBlog());//
 		}else {
 			view = "/login";
 			m.addAttribute("msg", "用户名或密码不正确");

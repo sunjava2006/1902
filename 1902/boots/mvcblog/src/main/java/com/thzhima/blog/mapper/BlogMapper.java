@@ -1,5 +1,6 @@
 package com.thzhima.blog.mapper;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
@@ -20,5 +21,9 @@ public interface BlogMapper {
 	        		 @Result(column = "photo", property = "photo")
 	         })
 	public Blog findByUserID(int userID);
+	
+	
+	@Insert("insert into t_blogs(user_id, blog_name, photo) values (#{userID}, #{blogName}, #{photo})")
+	public int add(Blog blog);
 	
 }
