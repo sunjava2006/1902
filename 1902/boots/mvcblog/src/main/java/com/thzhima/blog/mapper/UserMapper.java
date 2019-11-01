@@ -17,18 +17,20 @@ import com.thzhima.blog.bean.User;
 @Mapper
 public interface UserMapper {
 
-	@Insert("insert into t_users(user_name, pwd)values(#{userName},#{pwd})")
+	@Insert("insert into t_users(user_name, pwd, email, token)values(#{userName},#{pwd}, #{email}, #{token}) ")
 	public int insert(User u);
 
 	@Select("select count(*) from t_users where user_name=#{name}")
 	public int findName(String name);
 	
-	@Select("select * from t_users where user_name=#{userName} and pwd=#{pwd}")
+	@Select("select * from t_users where user_name=#{userName} and pwd=#{pwd} ")
 	@Results(id = "userResult",
 	        value = {
 	           @Result(column = "user_id", property = "userID", id = true),
 	           @Result(column = "user_name", property = "userName"),
 	           @Result(column = "pwd", property = "pwd"),
+	           @Result(column = "email", property = "email"),
+	           @Result(column = "status", property = "status"),
 	           @Result(property = "blog", column = "user_id",
 	                   one = @One(select = "com.thzhima.blog.mapper.BlogMapper.findByUserID", fetchType = FetchType.EAGER) )
 	        })

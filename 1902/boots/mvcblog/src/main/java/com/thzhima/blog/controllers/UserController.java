@@ -29,9 +29,14 @@ public class UserController {
 	@PostMapping("/regist")
 	public String regist(User user, Model m) {
 		String view = "/registOK";
+		int token = (int)(Math.random()*10000000);
+		user.setToken(token);
 		if( this.userService.regist(user)) {
 			m.addAttribute("msg", user.getUserName()+"注册成功,已经发送激活邮件。");
-			userService.sendEmailValidate(user);// 发送到MQ.
+			User u = userService.login(user);
+			
+			userService.sendToMQ(u);
+			
 		}else {
 			m.addAttribute("msg", user.getUserName()+"注册失败");
 			view = "/regist";

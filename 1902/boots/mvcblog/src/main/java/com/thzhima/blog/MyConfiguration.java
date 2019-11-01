@@ -13,6 +13,6 @@ public class MyConfiguration {
 
 	@Bean
 	public Queue queue() {
-		return new ActiveMQQueue("emailQueue");
+		return new ActiveMQQueue("emailMQ"); 
 	}
 }

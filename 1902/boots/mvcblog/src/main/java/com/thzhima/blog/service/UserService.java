@@ -14,12 +14,12 @@ public class UserService {
 
 	@Autowired
 	private UserMapper userMapper;
-	
+
 	@Autowired
 	private JmsTemplate jmsTemplate;
 	
 	@Autowired
-	private Queue queue;
+	private Queue emailQueue;
 	
 	public boolean regist(User user) {
 		boolean ok = false;
@@ -34,11 +34,14 @@ public class UserService {
 		return c==0 ? true:false;
 	}
 	
-	public void sendEmailValidate(User user) {
-		this.jmsTemplate.convertAndSend(this.queue, user);
-	}
+	
 	
 	public User login(User u) {
 		return this.userMapper.findByNameAndPwd(u);
+	}
+	
+	
+	public void sendToMQ(User user) {
+		this.jmsTemplate.convertAndSend(emailQueue, user);
 	}
 }
