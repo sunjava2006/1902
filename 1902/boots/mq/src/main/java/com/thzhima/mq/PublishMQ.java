@@ -55,10 +55,7 @@ public class PublishMQ {
 	
 	
 	public static void listenMsg() throws JMSException {
-//		Connection conn = null;
-//		Session session = null;
-//		MessageConsumer consumer = null;
-		
+	
 		try {
 			final Connection conn = factory.createConnection();
 			conn.start();
@@ -76,8 +73,9 @@ public class PublishMQ {
 					try {
 						txt = msg.getText();
 						System.out.println("收到:" + txt);
-						
+						session.commit();
 					} catch (JMSException e) {
+						
 						e.printStackTrace();
 					} finally {
 						
@@ -96,7 +94,6 @@ public class PublishMQ {
 			});
 			
 			
-			session.commit();
 		} catch (JMSException e) {
 			
 			e.printStackTrace();
@@ -109,7 +106,7 @@ public class PublishMQ {
 	public static void main(String[] args) throws JMSException {
 		listenMsg();
 		
-		publish("hello world!");
+		publish("hello world!!!!!");
 	}
 	
 }
