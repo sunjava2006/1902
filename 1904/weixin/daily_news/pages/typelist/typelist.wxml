@@ -1,7 +1,10 @@
 <view class="container">
     <view id="search-bar">
         <view>搜索</view>
-        <view id="input"></view>
+        <view id="input">
+            <image src="/imgs/search.png"></image>
+            <input placeholder="输入搜索内容"></input>
+        </view>
     </view>
     <view id="type-list">
         <scroll-view id="scroll" scroll-x="true">

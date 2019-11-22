@@ -16,6 +16,21 @@
     height: 70rpx;
     width: 500rpx;
     border-radius: 10rpx;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#input>image{
+    width: 50rpx;
+    height: 50rpx;
+}
+
+#input>input{
+     width: 430rpx;
+     height: 70rpx;
+     color: #333;
 }
 
 #type-list{
