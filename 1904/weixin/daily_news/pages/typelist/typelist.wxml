@@ -1,0 +1,6 @@
+<view class="container">
+    <view id="search-bar">
+        <view>搜索</view>
+        <view id="input"></view>
+    </view>
+</view>

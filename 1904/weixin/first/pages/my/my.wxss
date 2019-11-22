@@ -1,0 +1,41 @@
+.ad{
+  background: yellow;
+  height: 40vh;
+  width: 750rpx;
+}
+.adimg{
+  width: 100%;
+  height: 100%;
+}
+.panel{
+  height: 60vh;
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+}
+.row{
+  /* border: yellow 1px solid; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.row>view{
+   /* border-radius: 15vh; */
+   /* background: red; */
+   flex-grow: 1;
+   /* border: yellow 1px dashed; */
+   display: flex;
+  
+   justify-content: center; 
+   align-items: center;
+}
+
+.row>view>image{
+  width: 200rpx;
+  height: 200rpx;
+  /* background: red; */
+  border-radius: 50rpx;
+  border: dashed 2rpx red;
+}

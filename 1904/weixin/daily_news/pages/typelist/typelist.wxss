@@ -1,0 +1,19 @@
+/* pages/typelist/typelist.wxss */
+#search-bar{
+    height: 90rpx;
+    width: 100%;
+    background: #f33;
+
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#input{
+    background: white;
+    height: 70rpx;
+    width: 500rpx;
+    border-radius: 10rpx;
+}

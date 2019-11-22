@@ -1,0 +1,13 @@
+{
+    "pages": [
+        "pages/typelist/typelist"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f33",
+        "navigationBarTitleText": "每日新闻",
+        "navigationBarTextStyle": "white"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}
