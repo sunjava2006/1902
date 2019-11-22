@@ -4,7 +4,37 @@
         <view id="input"></view>
     </view>
     <view id="type-list">
-        <scroll-view id="scroll"></scroll-view>
+        <scroll-view id="scroll" scroll-x="true">
+            <view id="bar">
+                 <view>
+                     <view>头条</view>
+                 </view>
+                 <view>
+                     <view>社会</view>
+                 </view>
+                 <view>
+                     <view>国内</view>
+                 </view>
+                 <view>
+                     <view>娱乐</view>
+                 </view>
+                 <view>
+                     <view>体育</view>
+                 </view>
+                 <view>
+                     <view>军事</view>
+                 </view>
+                 <view>
+                     <view>科技</view>
+                 </view>
+                 <view>
+                     <view>财经</view>
+                 </view>
+                 <view>
+                     <view>时尚</view>
+                 </view>
+            </view>
+        </scroll-view>
         <view id="plus">+</view>
     </view>
 </view>

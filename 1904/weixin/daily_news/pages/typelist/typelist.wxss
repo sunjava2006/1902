@@ -29,7 +29,7 @@
 #scroll{
    width: 650rpx;
    height: 90rpx;
-   background: greenyellow;
+   /* background: greenyellow; */
 }
 #plus{
     width: 100rpx;
@@ -38,5 +38,16 @@
     line-height: 90rpx;
     font-weight: bold;
     text-align: center;
-    background: white;
+    /* background: white; */
+}
+
+#bar{
+    display: flex;
+    flex-direction: row;
+}
+#bar view{
+    width: 100rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
 }
