@@ -3,4 +3,8 @@
         <view>搜索</view>
         <view id="input"></view>
     </view>
+    <view id="type-list">
+        <scroll-view id="scroll"></scroll-view>
+        <view id="plus">+</view>
+    </view>
 </view>

@@ -17,3 +17,26 @@
     width: 500rpx;
     border-radius: 10rpx;
 }
+
+#type-list{
+    height: 90rpx;
+    width: 100vw;
+    background: pink;
+
+    display: flex;
+    flex-direction: row;
+}
+#scroll{
+   width: 650rpx;
+   height: 90rpx;
+   background: greenyellow;
+}
+#plus{
+    width: 100rpx;
+    height: 90rpx;
+    font-size: 50rpx;
+    line-height: 90rpx;
+    font-weight: bold;
+    text-align: center;
+    background: white;
+}
