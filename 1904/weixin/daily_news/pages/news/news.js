@@ -1,46 +1,53 @@
-// pages/typelist/typelist.js
+// pages/news/news.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        currentType:0
+        "url":"http:\/\/mini.eastday.com\/mobile\/191125103444448.html",
+        "id":100
     },
 
     /**
-     * 生命周期函数--监听页面加载
+     * 生命周期函数--监听页面加载,
+     * options 中包含传递的参数。
      */
     onLoad: function (options) {
-
+        var id = options.id;
+        console.log(options);
+        console.log("-----------1----------");
+        // this.setData({
+        //     "id":id
+        // });
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        console.log("-----------2----------");
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        console.log("-----------3----------");
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-
+        console.log("-----------4----------");
     },
 
     /**
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+        console.log("-----------5----------");
     },
 
     /**
@@ -62,18 +69,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-    showNews:function(e){
-        var id = e.currentTarget.id;
-        console.info(id);
-        wx.navigateTo({
-            url: '/pages/news/news?id='+id
-        })
-    },
-    selected:function(e){
-        var id = e.currentTarget.id;
-        this.setData({
-            currentType: id
-        });
     }
 })

@@ -1,0 +1,12 @@
+<view style="margin:20rpx;">
+    <image src="/imgs/2.jpg" style="width:710rpx;"></image>
+    <view>{{id}}</view>
+    <view class="title">微信信用个人Web-view组件</view>
+    <view class="info">
+         <view>XX网</view>
+         <view>2019-2-2</view>
+    </view>
+    <view class="content">
+    微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。微信小程序停用个人开发者web-view功能。
+    </view>
+</view>

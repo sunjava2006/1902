@@ -1,0 +1,18 @@
+.title{
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #888;
+    margin-bottom: 30rpx;
+}
+.content{
+    text-indent: 2em;
+   
+}
