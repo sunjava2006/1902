@@ -1,6 +1,6 @@
 /* pages/typelist/typelist.wxss */
 #search-bar{
-    height: 90rpx;
+    height: 8vh;
     width: 100%;
     background: #f33;
 
@@ -34,7 +34,7 @@
 }
 
 #type-list{
-    height: 90rpx;
+    height: 8vh;
     width: 100vw;
     background: pink;
 
@@ -65,4 +65,45 @@
     height: 90rpx;
     line-height: 90rpx;
     text-align: center;
+}
+
+
+#news-list{
+    height: 84vh;
+    background: white;
+}
+
+#list{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.news-item{
+    width: 710rpx;
+    border-bottom: gray solid 1px;
+}
+.title{
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 40rpx;
+
+}
+.news-item>.imgs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.news-item>.imgs>image{
+    width: 230rpx;
+    height: 129rpx;
+}
+.info{
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 60rpx;
 }
