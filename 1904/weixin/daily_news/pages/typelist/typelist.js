@@ -75,5 +75,11 @@ Page({
         this.setData({
             currentType: id
         });
+    },
+    slide:function(e){
+        var id = e.detail.current;
+        this.setData({
+            currentType:id
+        });
     }
 })

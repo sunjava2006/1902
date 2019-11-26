@@ -110,3 +110,7 @@
 .active{
     font-weight: bold;
 }
+
+swiper{
+    height: 84vh;
+}

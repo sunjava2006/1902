@@ -41,22 +41,30 @@
         <view id="plus">+</view>
     </view>
    
-    <scroll-view scroll-y="true" id="news-list">
-        <view id="list">
+    <swiper current="{{currentType}}" bindchange="slide">
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}" item-id="{{item}}">
+             <scroll-view scroll-y="true" id="news-list">
+                <view id="list">
 
-            <view class="news-item" wx:for="{{[0,1,2,3,4,5,6]}}" bindtap="showNews" id="{{item}}">
-                <view class="title">title{{item}}</view>
-                <view class="imgs">
-                      <image src="/imgs/1.jpg"></image>
-                      <image src="/imgs/1.jpg"></image>
-                      <image src="/imgs/1.jpg"></image>
-                </view>
-                <view class="info">
-                      <view>xxx网</view>
-                      <view>2019-2-2</view>
-                </view>
-            </view>
+                    <view class="news-item" wx:for="{{[0,1,2,3,4,5,6]}}" bindtap="showNews" id="{{item}}">
+                        <view class="title">title{{item}}</view>
+                        <view class="imgs">
+                            <image src="/imgs/1.jpg"></image>
+                            <image src="/imgs/1.jpg"></image>
+                            <image src="/imgs/1.jpg"></image>
+                        </view>
+                        <view class="info">
+                            <view>xxx网</view>
+                            <view>2019-2-2</view>
+                        </view>
+                    </view>
 
-        </view>
-    </scroll-view>
+                </view>
+            </scroll-view>
+
+        </swiper-item>
+
+    </swiper>
+
+
 </view>

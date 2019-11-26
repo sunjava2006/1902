@@ -1,0 +1,19 @@
+<view id="search-bar">
+    <view>搜索</view>
+    <view id="input">
+        <image src="/imgs/search.png"/>
+        <input placeholder="输入搜索内容" />
+    </view>
+</view>
+<view id="news-list">
+    <scroll-view id="scroll" scroll-x="true">
+        <view id="list">
+            <view a:for="{{typelist}}">
+                <view id="{{index}}" onTap="selected" class="{{type==index?'active':''}}">{{item}}</view>
+            </view>
+            
+
+        </view>
+    </scroll-view>
+    <view id="plus">+</view>
+</view>
