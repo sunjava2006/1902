@@ -9,5 +9,16 @@ Page({
       this.setData({
           type:id
       });
+  },
+  slide(e){
+      var id = e.detail.current;
+       this.setData({
+          type:id
+      });
+  },
+  show(e){
+      my.navigateTo({
+          "url":"/pages/news/news"
+      });
   }
 });

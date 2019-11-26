@@ -29,7 +29,7 @@
     height: 40rpx;
 }
 
-#news-list{
+#newstype-list{
     height: 8vh;
     width: 100vw;
     background: pink;
@@ -42,7 +42,7 @@
 #scroll{
     width: 700rpx;
     height: 8vh;
-    background: yellow;
+    /* background: yellow; */
 }
 #plus{
     width: 50rpx;
@@ -68,4 +68,37 @@
 
 .active{
     font-weight: bold;
+}
+swiper{
+    height: 84vh;
+
+    width: 100vw;
+}
+
+#news-list{
+    height: 84vh;
+    width: 100vw;
+     /* background: yellow; */
+
+}
+.title{
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.imgs{
+   
+    display: flex;
+    justify-content: space-between;
+}
+.imgs image{
+    width: 230rpx;
+    height: 190rpx;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: gray solid 1rpx;
 }
