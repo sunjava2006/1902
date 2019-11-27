@@ -1,0 +1,44 @@
+<view id="search-bar">
+    <view>搜索</view>
+    <view id="input">
+        <image src="/imgs/search.png"/>
+        <input placeholder="输入搜索内容" />
+    </view>
+</view>
+<view id="newstype-list">
+    <scroll-view id="scroll" scroll-x="true">
+        <view id="list">
+            <view a:for="{{typelist}}">
+                <view id="{{index}}" onTap="selected" class="{{type==index?'active':''}}">{{item}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view id="plus">+</view>
+</view>
+
+<swiper style="height:84vh" current="{{type}}" onChange="slide">
+
+    <block a:for="{{typelist}}">
+
+    <swiper-item style="height:84vh"  item-id="{{index}}">
+        <scroll-view scroll-y="true" id="news-list" >
+            <view>
+                <view class="news-item" a:for="{{[0,1,2,3,4,5,6,7]}}" onTap="show">
+                    <view class="title">Title</view>
+                    <view class="imgs">
+                        <image src="/imgs/1.jpg"/>
+                        <image src="/imgs/2.jpg"/>
+                        <image src="/imgs/1.jpg"/>
+                    </view>
+                    <view class="info">
+                        <view>Xx网</view>
+                        <view>2019-2-2</view>
+                    </view>
+                </view>
+            </view>
+            
+        </scroll-view>    
+    </swiper-item>
+
+    </block>
+</swiper>

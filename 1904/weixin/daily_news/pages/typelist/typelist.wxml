@@ -1,0 +1,70 @@
+<view class="container">
+    <view id="search-bar">
+        <view>搜索</view>
+        <view id="input">
+            <image src="/imgs/search.png"></image>
+            <input placeholder="输入搜索内容"></input>
+        </view>
+    </view>
+    <view id="type-list">
+        <scroll-view id="scroll" scroll-x="true">
+            <view id="bar">
+                 <view>
+                     <view id="0" bindtap="selected" class="{{currentType==0?'active':''}}">头条</view>
+                 </view>
+                 <view>
+                     <view id="1" bindtap="selected" class="{{currentType==1?'active':''}}">社会</view>
+                 </view>
+                 <view>
+                     <view id="2" bindtap="selected" class="{{currentType==2?'active':''}}">国内</view>
+                 </view>
+                 <view>
+                     <view  id="3" bindtap="selected" class="{{currentType==3?'active':''}}">娱乐</view>
+                 </view>
+                 <view>
+                     <view  id="4" bindtap="selected" class="{{currentType==4?'active':''}}">体育</view>
+                 </view>
+                 <view>
+                     <view  id="5" bindtap="selected" class="{{currentType==5?'active':''}}">军事</view>
+                 </view>
+                 <view>
+                     <view  id="6" bindtap="selected" class="{{currentType==6?'active':''}}">科技</view>
+                 </view>
+                 <view>
+                     <view  id="7" bindtap="selected" class="{{currentType==7?'active':''}}">财经</view>
+                 </view>
+                 <view>
+                     <view  id="8" bindtap="selected" class="{{currentType==8?'active':''}}">时尚</view>
+                 </view>
+            </view>
+        </scroll-view>
+        <view id="plus">+</view>
+    </view>
+   
+    <swiper current="{{currentType}}" bindchange="slide">
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}" item-id="{{item}}">
+             <scroll-view scroll-y="true" id="news-list">
+                <view id="list">
+
+                    <view class="news-item" wx:for="{{[0,1,2,3,4,5,6]}}" bindtap="showNews" id="{{item}}">
+                        <view class="title">title{{item}}</view>
+                        <view class="imgs">
+                            <image src="/imgs/1.jpg"></image>
+                            <image src="/imgs/1.jpg"></image>
+                            <image src="/imgs/1.jpg"></image>
+                        </view>
+                        <view class="info">
+                            <view>xxx网</view>
+                            <view>2019-2-2</view>
+                        </view>
+                    </view>
+
+                </view>
+            </scroll-view>
+
+        </swiper-item>
+
+    </swiper>
+
+
+</view>

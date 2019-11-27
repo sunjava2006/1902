@@ -1,0 +1,48 @@
+<!-- wxml  微信标记语言 markup language -->
+<swiper class="ad" autoplay="true" circular="true" interval="2000" duration="500" indicator-dots="true" indicator-color="white" indicator-active-color="orange">
+     <swiper-item>
+         <image src="/imgs/1.jpg"></image>
+     </swiper-item>
+     <swiper-item>
+         <image src="/imgs/2.jpg"></image>
+     </swiper-item>
+     <swiper-item>
+         <image src="/imgs/3.jpg"></image>
+     </swiper-item>
+</swiper>
+<view class="grid">
+    <view id="r1">
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+    </view>
+    <view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+    </view>
+    <view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/home.png"></image>
+        </view>
+    </view>
+
+</view>

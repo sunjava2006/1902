@@ -1,0 +1,41 @@
+<view id="global">
+    <view id="screen">
+        <text>{{result}}</text>
+    </view>
+    <view id="grid">
+        <view>
+           <button>1</button>
+           <button>2</button>
+           <button>3</button>
+        </view>
+
+        <view>
+           <button>4</button>
+           <button>5</button>
+           <button>6</button>
+        </view>
+
+        <view>
+           <button>7</button>
+           <button>8</button>
+           <button>9</button>
+        </view>
+
+        <view>
+           <button>+</button>
+           <button>0</button>
+           <button>-</button>
+        </view>
+
+        <view>
+           <button>X</button>
+           <button>/</button>
+           <button>.</button>
+        </view>
+        <view>
+           <button>=</button>
+        </view>
+        
+    
+    </view>
+</view>

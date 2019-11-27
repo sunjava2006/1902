@@ -1,0 +1,26 @@
+<swiper class="ad"  autoplay="true" circular="true" duration="1000" interval="3000" indicator-dots="true" indicator-color="#ccc" indicator-active-color="orange" >
+   <swiper-item>
+       <image src="/imgs/1.jpg" class="adimg"></image>
+   </swiper-item>
+   <swiper-item>
+       <image src="/imgs/2.jpg" class="adimg"></image>
+   </swiper-item>
+</swiper>
+<view class="panel">
+    <view class="row">
+        <view>
+            <image src="/imgs/index.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/index.png"></image>
+        </view>
+    </view>
+    <view class="row">
+         <view>
+            <image src="/imgs/index.png"></image>
+        </view>
+        <view>
+            <image src="/imgs/index.png"></image>
+        </view>
+    </view>
+</view>

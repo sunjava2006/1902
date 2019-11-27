@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/newslist/newslist",
+    "pages/news/news"
+  ],
+  "window": {
+    "defaultTitle": "每日新闻",
+    "titleBarColor": "#f33"
+  }
+}

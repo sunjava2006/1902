@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/index/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#a00",
+    "navigationBarTitleText": "我的第一个小程序",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "#FF0202",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "imgs/home.png",
+        "selectedIconPath": "imgs/home_r.png"
+      },
+      {
+        "text": "logs",
+        "pagePath": "pages/logs/logs",
+        "iconPath": "imgs/logo.png",
+        "selectedIconPath": "imgs/logo_r.png"
+      },
+      {
+        "text":"my",
+        "pagePath":"pages/my/my",
+        "iconPath":"imgs/my.png",
+        "selectedIconPath":"imgs/my_r.png"
+      }
+    ]
+  }
+}

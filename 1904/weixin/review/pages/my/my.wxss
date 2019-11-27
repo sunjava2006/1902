@@ -1,0 +1,42 @@
+/* wxss 微信Style样式 Sheet表 */
+.ad{ /* class类选择符 */
+  height: 40vh;
+  width: 100%;
+  background: yellow;
+}
+.ad image{ /*上下文件选择符*/
+  height: 40vh;
+  width: 100vw;
+}
+.grid{
+  width:100vw;
+  height: 60vh;
+  background: yellowgreen;
+
+  display: flex;/*在父容器中，设置弹性布局。*/
+  flex-direction: column;/*方向，是“列”方向*/
+}
+.grid>view{/* 选择.grid的直接子元素view */
+   flex-grow: 1; /*弹性值*/
+   border: solid 1px red; /*边框，实线 1像素 红色*/
+
+   display: flex;
+   flex-direction: row;
+}
+
+.grid>view>view{
+     flex-grow: 1; /*弹性值*/
+     border: solid 1px red; /*边框，实线 1像素 红色*/
+
+     display: flex;
+     flex-direction: row; /*主轴方向*/
+     justify-content: center;/*在主轴方向居中*/
+     align-items: center; /*在次轴方向也居中*/
+}
+.grid>view>view>image{
+    width: 70px;
+    height: 70px;
+}
+#r1{ /*id选择符*/
+      flex-grow: 1; /*弹性值*/
+}
