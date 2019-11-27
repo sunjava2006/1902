@@ -11,10 +11,13 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.mapping.FetchType;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Repository;
 
 import com.thzhima.blog.bean.User;
 
 @Mapper
+@Cacheable(value = "c1")
 public interface UserMapper {
 
 	@Insert("insert into t_users(user_name, pwd, email, token)values(#{userName},#{pwd}, #{email}, #{token}) ")
@@ -40,8 +43,7 @@ public interface UserMapper {
 	@ResultMap("userResult")
 	public List<User> list(int from,int len);
 	
-	@SelectProvider(value=com.thzhima.blog.mapper.DianmicSqlProvider.class,
-			        method = "findUserByExam")
+	 
 	@ResultMap("userResult")
 	public List<User> findByExample(User u);
 }

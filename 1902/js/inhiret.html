@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function People(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        People.prototype.work = function(){
+            console.log(this.name + " is  working now.");
+        };
+
+
+        let p = new People('wang', 30);
+        p.work=function(){console.log(this.name + ' work hard.')};
+        p.work();
+
+
+        function a(){
+            {
+                var aa = 90;
+            }
+          //  alert(aa);
+        }
+        a();
+
+        function Student(sid, name, age){
+            this.sid = sid;
+            People.call(this, name,age);
+        }
+        Student.prototype = People.prototype;
+        Student.prototype.constructor=Student;
+
+        var s  = new Student(100, 'LiXin', 40);
+
+    
+        
+
+    </script>
+</body>
+</html>
