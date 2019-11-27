@@ -1,0 +1,37 @@
+body{
+    background:gray;
+}
+#page{
+    width:100%;
+    height:800px;
+    background: white;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#main{
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+}
+
+#left-bar{
+    width: 100px;
+    background: red;
+}
+
+#middle{
+    /* width: 150px; */
+    flex-grow: 1;
+    background: yellow;
+}
+
+#right{
+    flex-grow: 2;
+    background: saddlebrown;
+}
