@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         .scroll-view{
+             width: 200px;
+             height: 50px;
+             background: pink;
+             overflow-x: scroll;
+       
+         }
+         .scroll-view::-webkit-scrollbar {
+             display: none;
+    
+         }
+
+         .scroll-view>div{
+             display: flex;
+             flex-direction: row;
+             width: 450px;
+         }
+         .scroll-view>div div{
+             width: 50px;
+             height: 50px;
+             line-height: 50px;
+             text-align: center;
+         }
+    </style>
+</head>
+<body>
+    <div class="scroll-view">
+        <div>
+            <div>a</div>
+            <div>b</div>
+            <div>c</div>
+            <div>d</div>
+            <div>e</div>
+            <div>f</div>
+            <div>g</div>
+            <div>h</div>
+            <div>i</div>
+        </div>
+    </div>
+</body>
+</html>
