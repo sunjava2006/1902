@@ -60,13 +60,59 @@
             color: white;
             transition: background 1s linear;
         }
-
+        .sub-menu{
+            display: none;
+            list-style: none;
+            background:#eee;
+            border: solid #aaa 1px;
+            margin:0px;
+            padding:0 ;
+            left: 10px;
+            position: relative;
+            z-index: 1000;
+            
+        }
+        .sub-menu>li{
+            padding: 10px;
+            border-bottom: #aaa inset 1px;
+        }
+        .menu-bar>li>a:not(:only-child){
+            color: red !important;
+        }
     </style>
+    <script>
+        function init(){
+            var ls =  document.querySelectorAll(".menu-bar>li>a:not(:only-child)");
+            for(var i=0; i<ls.length; i++){
+                var a = ls[i];
+                console.log(a.nodeName);
+                a.addEventListener("click",function(e){
+                    e.preventDefault();
+                    var sub=  e.currentTarget.nextElementSibling;
+                    sub.style.display="block";
+                }, false);
+            }
+        }
+
+        
+    </script>
 </head>
-<body>
+<body onload="init();">
     <menu class="menu-bar menu-bar-inverse">
-        <li><a href="">军事</a></li>
-        <li><a href="">时尚</a></li>
+        <li><a href="http://www.qq.com"  >军事</a>
+            <ul class="sub-menu">
+                <li><a>军武</a></li>
+                <li><a>政治与军事</a></li>
+                <li><a>经典战例</a></li>
+            </ul>
+        </li>
+        <li><a href="">时尚</a>
+            <ul class="sub-menu">
+                    <li><a>军武</a></li>
+                    <li><a>政治与军事</a></li>
+                    <li><a>经典战例</a></li>
+            </ul>
+        </li>
         <li><a href="">国内</a></li>
         <li><a href="">国际</a></li>
         <li><a href="">财经</a></li>
