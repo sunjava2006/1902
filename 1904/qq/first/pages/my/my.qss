@@ -5,11 +5,16 @@
 }
 
 .page>swiper{
+    height:500rpx;
     background:white;
     width:100vw;
 }
 .page>swiper>swiper-itme{
-    height:400rpx;
+    height:500rpx;
     width:100vw;
     background:yellow;
+}
+.page>swiper image{
+    width:100vw;
+    height:500rpx;
 }

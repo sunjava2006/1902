@@ -1,14 +1,13 @@
 <view class="page">
-    <swiper>
-        
+    <swiper autoplay="true" circular="true" interval="2000" duration="1000" indicator-dots="true" indicator-color="white" indicator-active-color="orange">
         <swiper-item>
-        a
+            <image src="/imgs/sdd.jpg"/>
         </swiper-item>
         <swiper-item>
-        b
+            <image src="/imgs/ss.png"/>
         </swiper-item>
         <swiper-item>
-        c
+            <image src="/imgs/31b01.jpg"/>
         </swiper-item>
 
     </swiper>
