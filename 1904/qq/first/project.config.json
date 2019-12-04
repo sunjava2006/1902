@@ -8,9 +8,10 @@
 		"newFeature": true,
 		"autoAudits": false
 	},
+	"qqLibVersion": "1.8.5",
 	"compileType": "miniprogram",
-	"createTime": 1574302020002,
-	"accessTime": 1574302020002,
+	"createTime": 1575424825326,
+	"accessTime": 1575424825326,
 	"packOptions": {
 		"ignore": []
 	},

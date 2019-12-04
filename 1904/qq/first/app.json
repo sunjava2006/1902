@@ -1,28 +1,30 @@
 {
   "pages":[
-    "pages/first/first",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "QQ小程序",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "我的小程序",
+    "navigationBarTextStyle":"white"
   },
-  "tabBar":{
-    "color":"#555",
-    "selectedColor":"#f44",
-    "backgroundColor":"#ccc",
-    "list":[
-      {"text":"index",
-       "pagePath":"pages/index/index"
+  "tabBar": {
+    "color":"#333",
+    "selectedColor":"#f13414",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"/imgs/index.png",
+        "selectedIconPath":"/imgs/indexed.png"
       },
-       {"text":"first",
-       "pagePath":"pages/first/first"
-      },
-      {"text":"logs",
-       "pagePath":"pages/logs/logs"
-      }]
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+         "iconPath":"/imgs/log.png",
+        "selectedIconPath":"/imgs/loged.png"
+      }
+    ]
   }
 }
