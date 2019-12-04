@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: gray;
+        }
+         #page{
+             width: 1024px;
+             height: 1024px;
+             background: white;
+             margin: auto;
+             
+             display: flex;
+            flex-direction: column;
+
+         }
+
+         #header{
+             height: 100px;
+             background: rebeccapurple;
+         }
+
+         #main{
+             flex-grow: 1;
+             background: red;
+
+
+             display: flex;
+             flex-direction: row;
+             align-items: stretch;
+         }
+
+         #side-bar{
+             width: 200px;
+             background: lightblue;
+             /* height: 200px; */
+
+             display: flex;
+             flex-direction: column;
+         }
+
+         #content{
+             flex-grow: 1;
+             background: white;
+         }
+
+         #side-bar>div:first-child{
+             height: 200px;
+             background: blue;
+         }
+         #side-bar>div:last-child{
+             flex-grow: 1;
+             background: yellow;
+         }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <div id="header" ></div>
+        <div id="main">
+            <div id="side-bar">
+                <div></div>
+                <div></div>
+            </div>
+            <div id="content"></div>
+        </div>
+    </div>
+</body>
+</html>

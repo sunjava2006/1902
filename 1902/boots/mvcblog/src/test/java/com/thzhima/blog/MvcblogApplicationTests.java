@@ -30,7 +30,9 @@ class MvcblogApplicationTests {
 	
 	@Test
 	public void findByExample() {
-		List<User> users = this.userMapper.findByExample(new User(null, "wang", "123456"));
+		List<User> users = this.userMapper.findByExample(new User(20, "wang", "123456"));
+		System.out.println(users);
+		users = this.userMapper.findByExample(new User(20, "wang", "123456"));
 		System.out.println(users);
 	}
 
