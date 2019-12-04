@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/my/my"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -26,6 +27,12 @@
         "text": "日志",
          "iconPath":"/imgs/log.png",
         "selectedIconPath":"/imgs/loged.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+         "iconPath":"/imgs/my.png",
+        "selectedIconPath":"/imgs/myed.png"
       }
     ]
   }
