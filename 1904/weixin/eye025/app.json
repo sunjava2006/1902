@@ -1,11 +1,14 @@
 {
     "pages": [
-        "pages/index/index"
+        "pages/index/index",
+        "pages/depinfo/depinfo"
+        
+       
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarBackgroundColor": "#3a3",
+        "navigationBarTitleText": "南京eye眼科",
         "navigationBarTextStyle": "black"
     },
     "style": "v2",

@@ -13,7 +13,7 @@
     </swiper>
 
     <view class="row">
-        <view class="col">
+        <view class="col" bindtap="showDep">
             <image class="dpt-img" src="/imgs/a1.png"/>
             <view class="dpt-title">
                 眼底病学科

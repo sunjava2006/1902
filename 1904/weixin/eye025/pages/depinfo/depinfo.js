@@ -1,12 +1,6 @@
-const app=getApp();
-
-// pages/index/index.js
+// pages/depinfo/depinfo.js
 Page({
-    showDep:function(e){
-        wx.navigateTo({
-            url: '/pages/depinfo/depinfo',
-        })
-    },
+
     /**
      * 页面的初始数据
      */
@@ -69,5 +63,4 @@ Page({
     onShareAppMessage: function () {
 
     }
-
 })
