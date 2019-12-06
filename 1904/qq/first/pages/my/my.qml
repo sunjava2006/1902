@@ -11,5 +11,6 @@
         </swiper-item>
 
     </swiper>
-
+    <video id="myVideo" src="http://3eg2tz.natappfree.cc/mov_bbb.mp4" controls></video>
+ 
 </view>

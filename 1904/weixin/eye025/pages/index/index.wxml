@@ -1,0 +1,61 @@
+<view class="container">
+    <image id="brand" src="/imgs/brand.png"/>
+    <swiper id="ad" autoplay="true" circular="true" indicator-dots="true">
+        <swiper-item>
+             <image src="/imgs/01.jpg"/>
+        </swiper-item>
+        <swiper-item>
+             <image src="/imgs/02.png"/>
+        </swiper-item>
+        <swiper-item>
+             <image src="/imgs/03.png"/>
+        </swiper-item>
+    </swiper>
+
+    <view class="row">
+        <view class="col">
+            <image class="dpt-img" src="/imgs/a1.png"/>
+            <view class="dpt-title">
+                眼底病学科
+            </view>
+            <view class="dpt-info">
+                精于各类眼底病诊疗，包括玻璃体出血、复杂性视网膜脱离、严重眼外伤、视网膜病变、黄斑病变、视网膜肿瘤等多种复杂疑难眼底疾病...
+            </view>
+        </view>
+        <view class="col">
+            <image class="dpt-img" src="/imgs/a2.png"/>
+            <view class="dpt-title">
+                白内障学科
+            </view>
+            <view class="dpt-info">
+            主要诊疗的疾病包括老年性白内障、并发性白内障、外伤性白内障、先天性白内障，以及因各种疾病引起的晶状体脱位，人工晶体植入等...
+            </view>
+        </view>
+    </view>
+
+
+    <!-- -------------------------------------------------------- -->
+    <view class="row">
+        <view class="col">
+            <image class="dpt-img" src="/imgs/a3.png"/>
+            <view class="dpt-title">
+                青光眼学科
+            </view>
+            <view class="dpt-info">
+                开展复合式小梁切除术、房角切开术、虹膜周切术、青光眼减压阀植入术、眼内窥镜睫状体光凝术及睫状体冷凝术等青光眼手术...
+            </view>
+        </view>
+        <view class="col">
+            <image class="dpt-img" src="/imgs/a4.png"/>
+            <view class="dpt-title">
+                近视矫正学科
+            </view>
+            <view class="dpt-info">
+                主要开展全飞秒激光矫正近视、飞秒激光矫正近视、V4C晶体植入矫正高度近视，迄今为止，已为150万近视患者摘掉眼镜，重获清晰视力...
+            </view>
+        </view>
+    </view>
+
+
+
+</view>

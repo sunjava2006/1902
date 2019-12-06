@@ -1,34 +1,27 @@
 {
-	"projectid": "1110054830_first",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
-		"remoteDebugLogEnable": false,
-		"uploadWithSourceMap": true,
-		"nodeModules": true,
-		"uglifyFileName": true
+		"coverView": true
 	},
-	"qqLibVersion": "1.8.5",
 	"compileType": "miniprogram",
-	"createTime": 1575424825326,
-	"accessTime": 1575424825326,
-	"packOptions": {
-		"ignore": []
-	},
+	"libVersion": "2.9.3",
+	"appid": "wx8c4446e481b0197d",
+	"projectname": "eye025",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"qqappid": "1110054830",
-	"projectname": "first",
-	"scripts": {
-		"beforeCompile": "",
-		"beforePreview": "",
-		"beforeUpload": ""
-	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

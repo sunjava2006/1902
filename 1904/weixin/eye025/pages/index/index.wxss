@@ -1,0 +1,33 @@
+/* pages/index/index.wxss */
+
+#brand{
+    height:10vh;
+    width: 100%;
+}
+#ad{
+    width: 100%;
+    height: 30vh;
+}
+#ad image{
+    width: 100%;
+    height: 30vh;
+}
+
+.row{
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.col{
+    width: 350rpx;
+}
+.dpt-img{
+    width: 350rpx;
+    height: 200rpx;
+}
+.dpt-title{
+    color: green;
+    font-weight: bold;
+    font-size: 1.5em;
+}
