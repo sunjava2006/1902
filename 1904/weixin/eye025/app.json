@@ -12,5 +12,26 @@
         "navigationBarTextStyle": "black"
     },
     "style": "v2",
-    "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json",
+    "tabBar":{
+        "list":[
+            {
+                "text":"首页",
+                "pagePath":"pages/index/index"
+            },
+            {
+                "text": "首页",
+                "pagePath": "pages/index/index"
+            },{
+                "text": "首页",
+                "pagePath": "pages/index/index"
+            },{
+                "text": "首页",
+                "pagePath": "pages/index/index"
+            },{
+                "text": "首页",
+                "pagePath": "pages/index/index"
+            }
+        ]
+    }
 }
