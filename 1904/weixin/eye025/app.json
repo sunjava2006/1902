@@ -1,9 +1,10 @@
 {
     "pages": [
+        "pages/order/order",
         "pages/index/index",
         "pages/depinfo/depinfo",
         "pages/specialist/specialist",
-        "pages/order/order",
+       
         "pages/location/location",
         "pages/device/device"
         

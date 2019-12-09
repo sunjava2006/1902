@@ -1,2 +1,25 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<view class="page">
+
+    <view class="line">
+        <label>姓名</label><input/>
+    </view>
+
+    <view class="line">
+        <label>性别</label>
+        <radio-group>
+            <radio value="male">男</radio>
+            <radio value="female">女</radio>
+        </radio-group>
+    </view>
+
+    <view class="line">
+        <label>科室</label>
+        <picker mode="selector" range="{{deps}}"
+                value="{{deps[depIdx]}}" bindchange="selectDep">
+           <view >
+               {{deps[depIdx]}}
+          </view>
+        </picker>
+    </view>
+    
+</view>

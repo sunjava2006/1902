@@ -1,1 +1,26 @@
-/* pages/order/order.wxss */
+.page{
+    padding: 0 20rpx;
+    border: solid red 1px;
+    font-size: 3mm;
+}
+.line{
+    display: flex;
+    height: 50rpx;
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+}
+.line>label{
+    width: 150rpx;
+    line-height: 50rpx;
+    
+}
+input{
+    border: solid gray 1px;
+    flex-grow: 1;
+    height: 50rpx;
+    border-radius: 10rpx;
+}
+picker view{
+    height: 50rpx;
+    line-height: 50rpx;
+}

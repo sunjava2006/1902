@@ -1,11 +1,16 @@
 // pages/order/order.js
 Page({
-
+    selectDep:function(e){
+       this.setData({
+           depIdx: e.detail.value
+       });
+    },
     /**
      * 页面的初始数据
      */
     data: {
-
+        deps:['眼底病学科','白内障学科','青光眼学科','近视矫正学科'],
+        depIdx:0
     },
 
     /**
