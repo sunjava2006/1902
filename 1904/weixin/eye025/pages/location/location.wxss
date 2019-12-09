@@ -1,0 +1,10 @@
+/* pages/location/location.wxss */
+map{
+    width: 100vw;
+    height: 80vh;
+}
+view{
+    margin: 20rpx;
+    font-size: 3mm;
+  
+}
