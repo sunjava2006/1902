@@ -1,5 +1,5 @@
 <map latitude="32.1565500000" 
      longitude="118.6975000000"
      markers="{{markers}}"
-     scale="7"/>
-     {{markers.length}}
+     scale="16" polyline="{{polyline}}"/>
+   

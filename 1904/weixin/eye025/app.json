@@ -8,8 +8,7 @@
        
         "pages/location/location",
         "pages/device/device"
-        
-       
+
     ],
     "window": {
         "backgroundTextStyle": "light",

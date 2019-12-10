@@ -25,9 +25,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
-        markers: [inc]
-
+        markers: [inc], 
+        polyline: [ ]
     },
 
     /**
@@ -52,7 +51,18 @@ Page({
                }
                that.setData(
                    {
-                       markers:[inc,myLocation]
+                       markers:[inc,myLocation],
+                       polyline:[
+                           {
+                               points: [{latitude: latitude,
+                                         longitude: longitude},
+                                        {latitude: inc.latitude,
+                                         longitude: inc.longitude}                                       ],
+                                color:"#0000ff",
+                                width:2,
+                                dottedLine:true
+                           }
+                       ]
                    }
                );
             }

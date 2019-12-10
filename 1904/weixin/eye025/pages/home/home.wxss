@@ -1,4 +1,4 @@
 map{
     width: 750rpx;
-    height: 90vh;
+    height: 100vh;
 }
