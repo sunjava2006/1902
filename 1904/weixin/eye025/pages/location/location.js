@@ -14,6 +14,7 @@ Page({
      */
     onLoad: function (options) {
         var target={
+            title:'艾尔眼科',
             iconPath: "/imgs/location_r.png",
             id: 0,
             latitude: 32.0244900000,
@@ -38,7 +39,7 @@ Page({
                     longitude: 118.7755530000,
                     color:"#0000FF",
                     radius:20,
-                    strokeWidth:0.02,
+                    strokeWidth:1,
                    
                 }
                 that.setData({ markers: array ,
