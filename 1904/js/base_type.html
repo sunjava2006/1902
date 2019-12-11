@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据类型</title>
+</head>
+<body>
+    <script>
+        /***********************************************
+        * “var”是关键字，表示申明了一个变量。           
+        * “a”是变量名。                                 
+        * “=”是赋值运算符，将“=”右边的值，赋给左边的变量。
+        * “10”是一个数值。是number类型的。
+        * “；”是语句结束符。（可选的）
+        ************************************************/
+        var a = 10; 
+        console.log(a); // "console"是控制台对象。"."运算符，取对象的属性或方法。
+
+        var b; // 申明变量，但是没有赋值。这时b的值是？undefined。
+
+        var c = undefined; // 也可以显示赋值undefined。
+
+        console.log("c type is : "+typeof c); // typeof 返回变量的类型
+
+        /*************************************************
+        *  null 类型 ——“空类型”，也是“空值”。
+        *  当给一个对象赋值为null时，所表达的"语义"应该是：
+        *  1、这个变量存储的是一个对象，只是现在没有给它。
+        *  2、清空原来存储的对象，现在不存了。
+        *************************************************/
+        var d = null; 
+        console.log("d type is : " + typeof d);
+
+        console.log(c == d);// == 是相等比较（==约等）运算符
+    
+        /***************************************************
+        *  给变量赋值是整数或小数时，变量为number类型
+        *  赋值可用10\8\16进制\学科计数法
+        *  Number()转化函数（方法），undefined转换为NaN;null转换为0；
+        *                           true转换为1,false转换为0; 
+        *  parseInt(val, [进制]);  解析到非数字为止。
+        *  parseFloat(val); 解析到非小数为止。
+        *  NaN（Not a Number）不是一个数。
+        ***************************************************/
+        var a = 3.14;
+        var e = 2E2;
+        var f = 030;
+        var g = 0x30;
+
+        /*****************************************************
+        *  boolean 类型，有true / false 两个值
+        *  值：可以直接赋值，或通过“比较运算”获取结果
+        *  比较运算：==（===）、＞、＜、＞＝、＜＝、！＝
+        *  Boolean()转换函数: false:null\undefined\0\"";
+                              true:对象、非空字符串、非0
+        *****************************************************/
+        var h = true;
+        var i = false;
+        var j = 1 > 90;
+        var j = 4 != 9;
+
+        console.log(Boolean(undefined));
+        console.log(Boolean(null));
+        console.log(Boolean({}));
+        console.log(Boolean(0));
+        console.log(Boolean(-1));
+        console.log(Boolean(1));
+        console.log(Boolean(" "));
+        console.log(Boolean("ddfd"));
+        console.log(Boolean(""));
+
+        /***************************************************
+        * 字符串，是用“引号”括起来的“字符序列”（空、一个、多个都可以）。
+        * 单引号、双引号都可以，但是成对使用。
+        * 常用方法（无论什么方法，都不改变原有内容）：
+        * toUpperCase()：返回大写的字符串。
+          toLowerCase(): 返回小写的字符串。
+        **************************************************/
+        var k = "China";
+        var l = 'China';
+
+        k = k.toUpperCase(); // k 存储的是新的字符串。
+        console.log(l.toLowerCase());
+        // console.log(l.includes("in")); //判断字符串中是否包含指定的“子字符串”。返回true\false。
+        console.log(l.indexOf("in", 3 )); //查找“in”在字符串中的位置，(从指定位置找),返回下标，找不到返回-1。
+        console.log(l.lastIndexOf("in",1)); //从字符串的后面向前找。
+        console.log(l.charAt(0));// 取指定字符
+        console.log(l.charCodeAt(0)); // 取指定字符编码
+        console.log(l.substring(1,5));// 取子串，从起始下标开始，到指定下标（之前）。
+        console.log(l.substr(1,4));// 取子串，从起始下标开始，取多长。
+        console.log("ChinaChina".replace("h", "H"));// 替换指定内容。
+        console.log("ChinaChina".replace(/h/g, "H"));// 根据“正则表达式”替换指定内容。
+        console.log(l.repeat(3));// 重复3次
+        console.log(" china ".trim()); // 去除空格
+        console.log(l.length); // 属性，返回字符的长度。
+
+        console.log("chinese,english,franch".split(",")); // 按“分割符”将字符串分割成一个数组。
+        console.log(l.startsWith("Ch")); // 判断是否以指定字符串开头，返回true/false。
+        console.log(l.endsWith("a")); //判断是否以指定字符串结束。
+        console.log(l.match('ina')[0]); //返回匹配的内容。
+        console.log(l.slice(1, 5)); //与substring相同，取子串。
+
+
+
+    </script>
+    
+</body>
+</html>

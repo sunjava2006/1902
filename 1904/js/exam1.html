@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "a.txt";
+        var dot = s.lastIndexOf(".");
+        var prefix = s.substring(0,dot);
+        var surfix = s.substring(dot+1)
+        console.log("prefix ："  + prefix);     
+        console.log("surfix ："  + surfix);
+
+        s = prefix+100+"."+surfix;
+        console.log(s);
+
+        // 有一个字符串，将首字母大写。后面全部小写。
+        /*******************************************
+         * “function”是一个关键字，申明一个函数。
+         * 函数名：fine;后面一定要有一个（）。
+         * （）中指定形参。
+         * {}中是方法体。就是函数在调用时，才执行的步骤。
+         * return 关键字，表示函数在执行完成后，返回一个结果。
+         * 这个结果可以赋值给一个变量。return是可选的，没有return
+         * 这个函数，执行完，就完了。没有返回值。
+         * ******************************************/
+        function fine(s){
+            var first = s.charAt(0).toUpperCase();
+            var sub = s.substring(1).toLowerCase();
+            return first+sub;
+        }
+
+        /*********************************************
+        * 调用函数。要通过函数名来调用，加上（）。
+        * （）中要写实参。
+        *********************************************/
+
+        var ss = fine("gooGLe");
+        console.log(ss);
+
+
+        /********************************************/
+        function change(s){
+            var dot = s.lastIndexOf(".");
+            var prefix = s.substring(0,dot);
+            var surfix = s.substring(dot+1);
+            return surfix+"."+prefix;
+        }
+
+        var ss = change("abc.exe");
+        console.log(ss);
+        ss = change("hello.world");
+        console.log(ss);
+
+        /*****************************************
+         *  add方法，实现两数相加，如果有字符串，就实现拼接。 
+         *****************************************/
+        function add(a, b){
+            return a+b;
+        }
+
+        var a = add(1,5);
+        console.log(a);
+
+        
+        var a = add("hello", "java");
+        console.log(a);
+
+    </script>
+</body>
+</html>
