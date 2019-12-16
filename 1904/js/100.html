@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var w  = 1;    
+      abccc:  while(w<=20){
+            var m = 1;
+            while(m<=33){
+                var c =3;
+                while(c<=99){
+                    var count = w+m+c;
+                    var amount = 5*w + 3*m + c/3;
+                    if(100 == count && 100==amount){
+                        document.write("翁:" + w + ",母:" + m +",雏:" + c+"<br>");
+                        break abccc;// 跳出当前的循环
+                        //continue;
+                    }
+                    c+=3; // c= c+3;  
+                }
+                m++;
+            }
+            w++;
+        }
+    </script>
+</body>
+</html>

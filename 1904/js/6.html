@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 1;
+        var row = 7;
+        var size = 2*row-1;
+        while(i<=row){
+            var spaceCount = Math.floor((size-((i-1)*2))/2);
+            var s = 1;
+            while(s<=spaceCount){
+                document.writeln("&nbsp;");
+                s++;
+            }
+            var startCount = size-2*spaceCount;
+            var start = 1;
+            while(start<=startCount){
+                document.writeln("*");
+                start++;
+            }
+
+            document.writeln("<br>");
+            i++;
+        }    
+        
+    </script>
+</body>
+</html>

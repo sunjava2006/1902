@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "ChinaEnglish";   
+
+        var at = Math.floor(Math.random()*s.length);
+
+        var char = s.charCodeAt(at);
+
+        var msg = "";
+        if(char>=65 && char<=90){
+            msg = "大写字母";
+        }else{
+            msg = "小写字母";
+        }
+
+        document.writeln("at:" + at + ", is :" + char +","+ msg);
+        
+    </script>
+</body>
+</html>

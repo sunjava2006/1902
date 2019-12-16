@@ -18,15 +18,37 @@
     <script>
          function input(text){
              var v = text.value;
-             console.log(v);
-             v = v.toUpperCase();
+            //  console.log(v);
+            //  v = v.toUpperCase();
+
+            v = v.replace('法轮','');
                 
              text.value = v;
 
          }
-    </script>
+   
+            // var tdreset = document.getElementById("tdreset");
+            // tdreset.addEventListener("keyup",function(e){
+            //     console.log("current : "+e.currentTarget.tagName + ", target:" + e.target.tagName);
+                
+    
+            // }, false);
+    
+            function init(){
+                var abs = document.getElementById("abs");
+                abs.addEventListener("keyup", function(e){
+                    var textarea = e.currentTarget;
+                    var content = textarea.value;
+        
+                    content = content.replace(/法轮/g, "");
+                    textarea.value = content;
+                }, true);
+            }
+           
+        
+        </script>
 </head>
-<body>
+<body onload="init();">
     <form action="#" method="POST">
         <table>
             <tr>
@@ -66,14 +88,12 @@
             </tr>
             <tr>
                 <td>简介</td>
-                <td>
-                    <textarea name="ads"  cols="30" rows="10" >
-我是一个。。。。
-                    </textarea>
+                <td id="tdreset">
+                    <textarea name="ads"  cols="30" rows="10" id="abs"></textarea>
                 </td>
             </tr>
             <tr>
-                <td><input type="reset" value="重置"></td>
+                <td ><input type="reset" value="重置"></td>
                 <td><input type="submit" value="发送"></td>
             </tr>
 
@@ -82,5 +102,7 @@
 
 
     </form>
+    
 </body>
+
 </html>

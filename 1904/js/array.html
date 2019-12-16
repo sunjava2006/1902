@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    var a = new Array(); //创建数组对象。
+    document.write(a.length); // length属性，返回数组的长度。
+
+    // 访问数组元素，是通过下标（索引）来访问的。
+    // 索引是从0开始的。第一个元素索引为0。
+    a[0] = 10; // 为数组中第一个元素，赋值为10。
+
+    a[1] = 20;
+    a[2] = 30;
+
+    document.write(a.length);    
+
+    document.write(a[0]);
+    document.write("<hr>");
+
+    for(var i=0; i<a.length; i++){
+        document.write(a[i] + ", ");
+    }
+
+    
+    </script>
+</body>
+</html>

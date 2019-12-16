@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var row = 7;
+        var size = 2*row-1;
+        var i = 0;
+        while(i<row){
+            var s=1;
+            while(s<=i){
+                document.writeln("_")
+                s++;
+            }
+
+            var start=1;
+            var startCount = size-2*i;
+            while(start<=startCount){
+                document.writeln("*");
+                start++;
+            }
+
+            i++;
+            document.writeln("<br>");
+        }
+        
+        
+    </script>
+</body>
+</html>

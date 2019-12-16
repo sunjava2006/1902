@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <script>
+        var array = [1000,100,100,100,100];
+
+    </script>
+
+    <div  id="page">
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+        <div style="height: 100px; border: solid red 1px;"></div>
+    </div>
+</body>
+    <script>
+        var page = document.getElementById("page");
+        var canload = true;
+        document.addEventListener('scroll', function(e){
+            var htmlHeight = document.documentElement.scrollHeight;// html页面滚动条高度（即逻辑上应该这么高）
+            var viewHeight = window.innerHeight;// 窗口的实际显示高度
+            var scrollPos = window.scrollY; // 窗口滚动隐藏的高试。
+
+            if(htmlHeight - viewHeight - scrollPos <= 10){
+                if(canload){
+                    canload = false;
+                    console.log('加载页面');
+                    canload = true;
+                }
+                
+            }
+           
+
+        }, true);
+    </script>
+</html>

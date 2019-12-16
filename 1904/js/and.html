@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var score = Math.round(Math.random()*100);
+        
+        var msg = "";
+        if(score >= 90){
+            msg = "优";
+        }else if(score >= 80){
+            msg = "良";
+        }else if(score >= 70){
+            msg = "中";
+        }else if(score >= 60){
+            msg = "及格";
+        }else{
+            msg = "不及格";
+        }
+
+
+        document.writeln(score + msg);
+
+
+        
+        
+        
+    </script>
+</body>
+</html>

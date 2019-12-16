@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xiaoZhang = new Object();
+        xiaoZhang.name = "ZhangFang";//  为对象添加属性
+        xiaoZhang.age = 21;
+        xiaoZhang.gender = "female";
+
+        xiaoZhang.study=function(){
+            document.write(this.name + "正在认真学习。");
+        };
+
+        with(xiaoZhang){
+            document.writeln(name);
+            document.writeln(age);
+            document.writeln(gender);
+            study();
+        }
+
+        xiaoZhang.study();
+
+        //===========================================
+        // JSON JavaScript Object Notation
+        var xiaoLi = {
+                        name:"LiBai",
+                        gender : "male",
+                        age : 22,
+                        study: function(){
+                            document.write(this.name +"学习中");
+                        }
+                     };
+       
+        document.write(xiaoLi.name);
+        xiaoLi.study();
+    
+    </script>
+</body>
+</html>

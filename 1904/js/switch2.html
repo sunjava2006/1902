@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function grade(n){
+            var s;
+            switch(true){
+                case n<60:
+                   s='不及格';
+                   break;
+                case n>=60 && n<70:
+                   s = "及格";
+                   break;
+                case n>=70 && n<80:
+                   s= "中";
+                   break;
+                case n>=80 && n<90:
+                   s = "良";
+                   break;
+                default:
+                   s= "优";
+            }
+            return s;
+        }
+
+        var score = Math.round(Math.random()*100);
+        document.writeln(score);
+        var g = grade(score);
+        document.writeln(g);
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var score = Math.round(Math.random()*150);
+        
+        document.writeln("score:" + score +"<br>");
+
+        var grade;
+
+        if(score >= 120){
+            grade = "优"; 
+        }else{
+            if(score >= 100){
+                grade = "良";
+            }else{
+                if(score >= 80){
+                    grade = "中";
+                }else{
+                    if(score>=60){
+                        grade = "及格";
+                    }
+                    else{
+                        grade = "差";
+                    }
+                }
+
+            }
+        }
+
+        document.writeln(grade);
+
+        //==========================================
+        var grade = "不及格";
+        if(scror >= 120){
+            grade = "优";
+        }
+        if(score >= 100){
+            grade = "良";
+        }
+        if(score >= 80){
+            grade = "中";
+        }
+        if(score >= 60){
+            grade = "及格";
+        }
+        document.writeln(grade);
+
+        
+    </script>
+</body>
+</html>

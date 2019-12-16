@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var people = {name:"wang", 
+                      work:function(){
+                          console.log(this.name + " working now.");
+                      }
+                     };
+        people.name;
+        people.work();
+
+        // var count = 1;
+        // while(count<=3){
+        //     document.writeln("hello<br>");
+        //     count++; // count = count+1;
+        // }
+        // document.writeln("over<br>");
+
+        var s = "HelloWorld123";
+        var count = 0;
+        while(count<s.length){
+            var c = s.charCodeAt(count);
+            if(c >= 'AZaz'.charCodeAt(0) && c <= 'AZaz'.charCodeAt(1)){
+                document.writeln(count+":"+"是大写<br>");
+            }else if(c >= 'AZaz'.charCodeAt(2) && c <= 'AZaz'.charCodeAt(3)){
+                document.writeln(count+":"+"是小写<br>");
+            }
+            else{
+                document.writeln(count+":"+"是数字或其它字符<br>");
+            }
+            count++;
+        }
+    
+    
+    </script>
+</body>
+</html>

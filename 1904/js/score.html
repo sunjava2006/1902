@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var score = Math.random() * 100; // 0-1之间小数
+      score = Math.round(score);
+
+      if (score >= 60) { // 语句块，一个整体。
+          document.writeln("<span style='color:green;'>成绩为：" + score + "</span><br>");
+          document.writeln("<hr>");
+      }else{
+          document.writeln("<span style='color:red'>不及格</span>");
+          document.writeln("<hr>");
+      }
+     
+
+      document.writeln("end");
+    </script>
+  </body>
+</html>
