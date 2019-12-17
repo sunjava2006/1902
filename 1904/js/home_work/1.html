@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    创建一个数组，存放班级学生的信息
+    */    
+
+    var s1= {name:"欧阳雷", gender:"男"};
+    var s2= {name:"聂佳政", gender:"男"};
+    var a = new Array(s1, s2);
+
+    var b = new Array();
+    b[0]=s1;
+    b[1]=s2;
+
+    var c = [s1, s2];
+
+    var d = [{name:"欧阳雷", gender:"男"},
+             {name:"聂佳政", gender:"男"}];
+
+    document.write("长度："+a.length);         
+
+
+    /**
+     * 创建一个长度为500的空数组
+     * */
+    var e = new Array(500);
+
+    document.write("e 数组长：" + e.length);
+
+    /**
+     * 创建一个人对象，有姓名Li、年龄20、妻子null
+     * */
+    var people = {
+        name:"li",
+        age:20,
+        wife:null
+    };
+
+    </script>
+</body>
+</html>

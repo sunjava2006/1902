@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function Human(name, age, gender){
+             this.name = name;
+             this.age=age;
+             this.gender = gender;
+         }
+         Human.prototype.work=function(){
+            console.log(this.name + " is working now.");
+         };
+
+         /**
+         *一个对象在调用它的方法时，首先在自己的实例中查询这个方法。
+         如果找到就调用。如果找不到，就到这个对象的“原型”中去找。如果找到就调用。
+         发果还是找不到，就到还上一级的“原型”中去找。
+
+         ***/
+
+         var h1 = new Human("Zhang", 20, "male");
+         h1.work=function(){
+             console.log("随便搞搞啦。。。。。");
+         };
+         h1.study=function(){
+             console.log("上课中");
+         };
+         var h2 = new Human("Wang", 10, "female");   
+    
+    
+        // function Student(name, age, gender){
+        //     Human.call(this,name,age, gender);
+        // } 
+        var s1 = Object.create(h1);
+
+        
+
+    </script>
+</body>
+</html>

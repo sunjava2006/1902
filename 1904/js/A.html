@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var student = {
+            name:"Li",
+            age: 20
+        };    
+
+        /**
+         * 使用构造方法，创建对象。
+         * */
+        function Student(name, age){
+            this.name = name;
+            this.age = age;
+            this.toString = function(){
+                return "name:"+this.name+", age: " + this.age ;
+            };
+        }
+
+        /**********************************************
+         * new关键字，作用是创建对象。并以此对象为this，
+         * 在这个基础上调用构造函数。
+         *********************************************/
+        var s1 = new Student("Wang", 22);
+        var s2 = new Student("Li", 21);
+        document.write(s1+"<br>");
+        document.write(s2);
+
+       
+
+
+        /**
+         * 定义一个构造方法，Human，
+         * 属性：name,age,gender,
+         * 方法：work
+         * **/
+         function Human(name, age, gender){
+             this.name = name;
+             this.age=age;
+             this.gender = gender;
+             this.work=function(){
+                 console.log(this.name + " is working now.");
+             };
+         }
+
+         var h1 = new Human("Zhang", 20, "male");
+         document.write(h1.name+"<hr>");
+         h1.work();
+
+
+         //**类型的定义
+         document.write(typeof s1);
+         document.write(typeof h1);
+
+         
+
+    </script>
+</body>
+</html>

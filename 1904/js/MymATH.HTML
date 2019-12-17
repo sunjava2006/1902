@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         document.write(Math.PI+"<br>");
+         document.write(Math.pow(3,4)+ "<br>");
+         document.write(Math.abs(-3)+"<br>");
+         
+         
+         MyMath={
+                    PI:3.1415,
+                    pow:function(x,y){
+                        var a =x;
+                        for(var i=1;i<y;i++){
+                            a=a*x;
+                        }
+                        return a;
+                    },
+                    abs:function(x){
+                        if(x<0){
+                            return -1*x;
+                        }else{
+                            return x;
+                        }
+                    }
+                };
+
+        document.write(MyMath.PI+"<br>");
+        document.write(MyMath.pow(3,4)+ "<br>");
+        document.write(MyMath.abs(-3)+"<br>");
+    </script>
+</body>
+</html>
