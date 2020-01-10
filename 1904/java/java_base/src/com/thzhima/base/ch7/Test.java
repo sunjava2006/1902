@@ -23,5 +23,9 @@ public class Test {
 		
 		AutoCar c3 = new AutoCar();
 		
+		//=========================
+		A a = new A();
+	
+		
 	}
 }
