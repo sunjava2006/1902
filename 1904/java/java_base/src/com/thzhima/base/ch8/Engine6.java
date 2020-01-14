@@ -6,7 +6,5 @@ public abstract  class Engine6 {
 		System.out.println("点火");
 	}
 	
-	public  void run() {
-		
-	}
+	public abstract void run() ;
 }
