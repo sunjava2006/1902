@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var people={
+            name:"wang"
+        };
+
+        var people2={
+            name:"王英"
+        };
+
+        window.name="BaLaBaLa";
+
+        function printName(){
+            console.log(this.name);
+        }
+
+        printName.apply(people,[]);// apply(目标对象，方法参数如有多个放到一个数组中)
+        printName.call(people2,null,null); // call(目标对象， 方法参数列表多个参数用','分隔);
+    
+    
+    </script>
+</body>
+</html>
