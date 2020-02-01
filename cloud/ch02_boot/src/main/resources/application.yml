@@ -1,0 +1,19 @@
+server:
+  port: 8088
+  
+spring:
+  datasource:
+    dbcp2:
+      url: jdbc:mariadb://127.0.0.1:3306/cloud
+      username: cloud
+      password: cloud
+      driver-class-name: org.mariadb.jdbc.Driver
+      
+  jpa:
+    database: mysql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL
+    show-sql: true
+      
+    
