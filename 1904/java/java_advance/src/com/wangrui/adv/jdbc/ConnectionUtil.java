@@ -3,20 +3,27 @@ package com.wangrui.adv.jdbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionUtil {
 
-	private static final String URL = "jdbc:mariadb://localhost:3306/locations";
-	private static final String USER = "location";
-	private static final String PWD = "123456";
+	private static  String URL ;
+	private static  String USER ;
+	private static  String PWD ;
  	
 	// 注册驱动
 	static {
 //		Driver driver = new org.mariadb.jdbc.Driver();
 //		DriverManager.registerDriver(driver);
 		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
+			Properties p = new Properties();
+			p.load(ConnectionUtil.class.getResourceAsStream("/db.properties"));
+			URL = p.getProperty("url");
+			USER = p.getProperty("user");
+			PWD = p.getProperty("passwd");
+			String driver = p.getProperty("driver");
+			Class.forName(driver);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
