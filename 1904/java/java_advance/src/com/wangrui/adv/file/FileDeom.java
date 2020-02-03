@@ -2,6 +2,8 @@ package com.wangrui.adv.file;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FileDeom {
 	
@@ -62,9 +64,17 @@ public class FileDeom {
 //		delDir(new File("/home/wangrui/a"));
 //		set("/home/wangrui/a", true, true, true);
 		
-		File d = new File("/home/wangrui");
-		String parent = d.getParent();
-		System.out.println(parent);
+//		File d = new File("/home/wangrui");
+//		String parent = d.getParent();
+//		System.out.println(parent);
+		
+		File f = new File("/home/wangrui/a");
+		long time = f.lastModified();
+		Date date = new Date(time);
+		
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String sdate = fmt.format(date);
+		System.out.println(sdate);
 		
 		
 	}
