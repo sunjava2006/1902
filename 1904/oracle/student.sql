@@ -39,4 +39,21 @@ commit;
 
 insert into students(student_id, student_name)values(4,'李亮');
 
+--==========================================================================
+-- 创建成绩等级表
+create table  brank(
+start_score number,
+end_score number,
+grad varchar2(2 char)
+);
+
+
+insert into brank values(91,100,'优');
+
+
+select * from brank;
+
+commit;
+
+update scores set  score=80 where student_id=2 and subject_id=2;
 

@@ -30,7 +30,27 @@ select * from students a full  join scores b on b.student_id = a.student_id;
 -- 自然连接，自动按两表的相同的字段名进行匹配
 select * from students NATURAL JOIN scores;
 
--- oracle 自已的写法 不推荐
+-- oracle 8i写法 不推荐
+select * from students a, scores b where a.student_id=b.student_id(+);
+
+-- 列出学生名，学科名，成绩
+select s.student_id, s.student_name, j.subject_name, c.score, k.grad
+from students s join  scores c on s.student_id=c.student_id
+join subjects j on j.subject_id=c.subject_id
+join brank k on c.score between k.start_score and k.end_score;
+
+-- 高级分区统计查询
+-- 查询学科2最高分的学生
+select * from
+(select student_id,subject_id,score,
+dense_rank() over(partition by subject_id order by score desc) NO
+from scores
+where subject_id=2)
+where NO=1;
+
+update scores set score=90 where student_id=3 and subject_id=2;
+
+
 
 
 
