@@ -146,6 +146,26 @@ where exists
 
 --SELECT * FROM EMPLOYEES;
 
--- 24、公司要为员工涨薪水50%。但不能超过各岗位的最高工资，如涨50%后超过限额的不涨。列出可以涨薪的员工、当前工资、加薪之后的工资、岗位工资上限。
+-- 24、公司要为员工涨薪水50%。但不能超过各岗位的最高工资，如涨50%后超过限额的不涨。
+--列出可以涨薪的员工、当前工资、加薪之后的工资、岗位工资上限。
+select first_name, salary, salary*1.5 new_salary ,job_title, max_salary
+from employees e join jobs j 
+on e.job_id=j.job_id and e.salary*1.5 between j.min_salary and j.max_salary;
+
+select * from(
+select first_name, job_title , salary ,salary*1.5 new_salary, max_salary from employees e
+join jobs j on j.job_id=e.job_id) where new_salary<max_salary;
+
 -- 25、查询出在两个以上岗位工作过的员工。列出曾工作过的岗位。
+select first_name,j.job_id from
+(select employee_id, count(*) from job_history group by employee_id having count(*)>=2)a
+join job_history j on a.employee_id=j.employee_id
+join employees e on e.employee_id=a.employee_id;
+
 -- 26、查询出各部门工资最高的2个人。
+select first_name,department_name, salary, NO from
+(select first_name,department_id, salary,NO from
+(select first_name, department_id,  salary ,row_number() over(partition by department_id order by salary desc) NO from employees)
+where NO<=2) a
+join departments d on d.department_id=a.department_id;
+
