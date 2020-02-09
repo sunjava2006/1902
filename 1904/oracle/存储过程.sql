@@ -87,20 +87,24 @@ begin
     end loop;
 end;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--================================  使用存储过程动态查询，返回结果  ======================================
+create or replace procedure p_dysql(stm varchar2, rst out sys_refcursor)
+as
+begin
+     open rst for stm;
+end;
+/
+-------------------------- 调用 动态查询，返回结果 --------------------------
+declare
+cur sys_refcursor;
+i subjects%rowtype;
+begin
+    p_dysql('select * from subjects', cur);
+    loop
+        fetch cur into i;
+        exit when cur%notfound;
+        dbms_output.put_line(i.subject_name);
+    end loop;
+    close cur;
+end;
 
