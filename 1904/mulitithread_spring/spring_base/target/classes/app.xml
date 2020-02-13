@@ -20,10 +20,10 @@
          <constructor-arg index="0" type="String" value="Xie"/>
          <constructor-arg index="1" type="int" value="18"/>
      </bean>
-<!--      <bean name="people2" class="com.wangrui.spring.base.bean.People"> -->
-<!--          <constructor-arg index="0" type="String" value="Wang"/> -->
-<!--          <constructor-arg index="1" type="int" value="20"/> -->
-<!--      </bean> -->
+     <bean class="com.wangrui.spring.base.bean.People">
+         <constructor-arg index="0" type="String" value="Wang"/>
+         <constructor-arg index="1" type="int" value="20"/>
+     </bean>
 
      <!-- 方法注入有两种 -->
      <bean name="clearMan" class="com.wangrui.spring.base.bean.ClearMan"
@@ -41,5 +41,47 @@
      <!-- ================================================ -->
      <bean name="home" class="com.wangrui.spring.base.bean.Home" 
            autowire="byName"></bean>
+           
+     <!-- ################################################ -->
+     <bean name="school" class="com.wangrui.spring.base.bean.School">
+         <property name="student" ref="student"></property>
+     </bean>
+     <bean name="student" class="com.wangrui.spring.base.bean.Student" scope="prototype" >
+         <constructor-arg index="0" ref="school"></constructor-arg>
+         <property name="name" value="李二"></property>
+     </bean>
+     <!--  配置实例工厂  -->
+     <bean name="carFactory"  class="com.wangrui.spring.base.bean.factory.CarFactory"/>
+     <bean name="car" factory-bean="carFactory" factory-method="createCar"/>     
+     
+     <bean name="tv" class="com.wangrui.spring.base.bean.factory.TVFactory" 
+           factory-method="createTV"></bean>  
+           
+     <!-- 赋值 -->      
+     <bean name="airplane" class="com.wangrui.spring.base.bean.Airplane">
+          <property name="modle" >
+              <null></null>
+          </property>
+     </bean>
+     <bean name="school2" class="com.wangrui.spring.base.bean.School">
+          <property name="student" ref="student">
+<!--               <bean class="com.wangrui.spring.base.bean.Student"> -->
+<!--                   <property name="name" value="LiBai"></property> -->
+<!--               </bean> -->
+          </property>
+     </bean>
+     
+     <bean name="library" class="com.wangrui.spring.base.bean.Library" >
+          <property name="bookNames">
+               <list>
+                   <value>java</value>
+                   <value>python</value>
+                   <value>c</value>
+               </list>
+          </property>
+     </bean>
+     
+     <bean name="myService" class="com.wangrui.spring.base.service.MyService"
+            init-method="init" destroy-method="close"/>
      
 </beans>
