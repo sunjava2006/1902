@@ -79,3 +79,13 @@ public class Bank {
 		System.out.println("余额："+account2.remain);
 	}
 }
+
+
+
+
+
+
+
+
+
+

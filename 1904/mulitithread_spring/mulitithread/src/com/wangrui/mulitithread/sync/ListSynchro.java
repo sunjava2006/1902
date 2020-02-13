@@ -1,10 +1,12 @@
 package com.wangrui.mulitithread.sync;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListSynchro {
-	static List<Integer> list = new ArrayList<>();//new Vector<>();
+	static List<Integer> list = Collections.synchronizedList(new ArrayList<>());//new Vector<>();
+	
 	
 	public static void main(String[] args) throws InterruptedException {
 		Runnable target = new MyRunnable();
@@ -27,7 +29,8 @@ class MyRunnable implements Runnable {
 	@Override
 	public void run() {
 		for(int i=1;i<=100000;i++) {
-			add(i);
+			//add(i);
+			ListSynchro.list.add(i);
 		}
 	}
 	
