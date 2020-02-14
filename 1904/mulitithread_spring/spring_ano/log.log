@@ -1,0 +1,140 @@
+DEBUG - Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG - Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+INFO - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@442d9b6e: startup date [Fri Feb 14 08:21:02 CST 2020]; root of context hierarchy
+DEBUG - Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG - Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+INFO - Loading XML bean definitions from class path resource [app.xml]
+DEBUG - Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+DEBUG - Loading schema mappings from [META-INF/spring.schemas]
+DEBUG - Loaded schema mappings: {http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.2.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.2.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/util/spring-util-3.2.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.2.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/cache/spring-cache-3.2.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/aop/spring-aop-3.2.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans-3.2.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/task/spring-task-3.2.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.2.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+DEBUG - Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.2.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.2.xsd
+DEBUG - Found XML schema [http://www.springframework.org/schema/context/spring-context-3.2.xsd] in classpath: org/springframework/context/config/spring-context-3.2.xsd
+DEBUG - Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.2.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.2.xsd
+DEBUG - Loading bean definitions
+DEBUG - Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+DEBUG - Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG - Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+DEBUG - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+DEBUG - Looking for matching resources in directory tree [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/test-classes/com/wangrui/spring/base]
+DEBUG - Searching directory [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/test-classes/com/wangrui/spring/base] for files matching pattern [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/test-classes/com/wangrui/spring/base/**/*.class]
+DEBUG - Looking for matching resources in directory tree [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base]
+DEBUG - Searching directory [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base] for files matching pattern [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/**/*.class]
+DEBUG - Searching directory [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/service] for files matching pattern [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/**/*.class]
+DEBUG - Searching directory [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean] for files matching pattern [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/**/*.class]
+DEBUG - Resolved location pattern [classpath*:com/wangrui/spring/base/**/*.class] to resources [file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/test-classes/com/wangrui/spring/base/AppTest.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/service/MyService.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/service/AspectDemo.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/Home.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/Library.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/People.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/Book.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/Table.class], file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/App.class]]
+DEBUG - Identified candidate component class: file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/service/MyService.class]
+DEBUG - Identified candidate component class: file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/Home.class]
+DEBUG - Identified candidate component class: file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/Library.class]
+DEBUG - Identified candidate component class: file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/People.class]
+DEBUG - Identified candidate component class: file [/home/wangrui/_git_workspace_/1904/mulitithread_spring/spring_ano/target/classes/com/wangrui/spring/base/bean/Table.class]
+DEBUG - No XML 'id' specified - using 'p' as bean name and [] as aliases
+DEBUG - No XML 'id' specified - using 'c' as bean name and [] as aliases
+DEBUG - No XML 'id' specified - using 'python' as bean name and [] as aliases
+DEBUG - No XML 'id' specified - using 'java' as bean name and [] as aliases
+DEBUG - Loaded 13 bean definitions from location pattern [app.xml]
+DEBUG - Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@442d9b6e: org.springframework.beans.factory.support.DefaultListableBeanFactory@617faa95: defining beans [myService,home,library,people,table,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,p,c,python,java]; root of factory hierarchy
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+DEBUG - Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+DEBUG - Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+DEBUG - Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+DEBUG - Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+DEBUG - Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+DEBUG - Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+DEBUG - Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+DEBUG - Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+DEBUG - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+DEBUG - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+DEBUG - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+DEBUG - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@32d2fa64]
+DEBUG - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@687080dc]
+INFO - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@617faa95: defining beans [myService,home,library,people,table,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,p,c,python,java,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+DEBUG - Creating shared instance of singleton bean 'myService'
+DEBUG - Creating instance of bean 'myService'
+DEBUG - Found init method on class [com.wangrui.spring.base.service.MyService]: public void com.wangrui.spring.base.service.MyService.init()
+DEBUG - Found destroy method on class [com.wangrui.spring.base.service.MyService]: public void com.wangrui.spring.base.service.MyService.close()
+DEBUG - Registered init method on class [com.wangrui.spring.base.service.MyService]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@316510
+DEBUG - Registered destroy method on class [com.wangrui.spring.base.service.MyService]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@5a5ddf8
+DEBUG - Eagerly caching bean 'myService' to allow for resolving potential circular references
+DEBUG - Invoking init method on bean 'myService': public void com.wangrui.spring.base.service.MyService.init()
+DEBUG - Finished creating instance of bean 'myService'
+DEBUG - Creating shared instance of singleton bean 'home'
+DEBUG - Creating instance of bean 'home'
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.Home]: AutowiredFieldElement for private com.wangrui.spring.base.bean.Table com.wangrui.spring.base.bean.Home.table
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.Home]: AutowiredFieldElement for private com.wangrui.spring.base.bean.People com.wangrui.spring.base.bean.Home.p
+DEBUG - Eagerly caching bean 'home' to allow for resolving potential circular references
+DEBUG - Processing injected method of bean 'home': AutowiredFieldElement for private com.wangrui.spring.base.bean.Table com.wangrui.spring.base.bean.Home.table
+DEBUG - Creating shared instance of singleton bean 'table'
+DEBUG - Creating instance of bean 'table'
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.Table]: AutowiredFieldElement for private java.lang.String com.wangrui.spring.base.bean.Table.model
+DEBUG - Eagerly caching bean 'table' to allow for resolving potential circular references
+DEBUG - Processing injected method of bean 'table': AutowiredFieldElement for private java.lang.String com.wangrui.spring.base.bean.Table.model
+DEBUG - Finished creating instance of bean 'table'
+DEBUG - Autowiring by type from bean name 'home' to bean named 'table'
+DEBUG - Processing injected method of bean 'home': AutowiredFieldElement for private com.wangrui.spring.base.bean.People com.wangrui.spring.base.bean.Home.p
+DEBUG - Creating instance of bean 'people'
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.People]: AutowiredFieldElement for private java.lang.String com.wangrui.spring.base.bean.People.name
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.People]: AutowiredFieldElement for private int com.wangrui.spring.base.bean.People.age
+DEBUG - Processing injected method of bean 'people': AutowiredFieldElement for private java.lang.String com.wangrui.spring.base.bean.People.name
+DEBUG - Processing injected method of bean 'people': AutowiredFieldElement for private int com.wangrui.spring.base.bean.People.age
+DEBUG - Finished creating instance of bean 'people'
+DEBUG - Autowiring by type from bean name 'home' to bean named 'people'
+DEBUG - Finished creating instance of bean 'home'
+DEBUG - Creating shared instance of singleton bean 'library'
+DEBUG - Creating instance of bean 'library'
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.Library]: AutowiredFieldElement for private java.util.List com.wangrui.spring.base.bean.Library.bookNames
+DEBUG - Eagerly caching bean 'library' to allow for resolving potential circular references
+DEBUG - Processing injected method of bean 'library': AutowiredFieldElement for private java.util.List com.wangrui.spring.base.bean.Library.bookNames
+DEBUG - Creating shared instance of singleton bean 'c'
+DEBUG - Creating instance of bean 'c'
+DEBUG - Eagerly caching bean 'c' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'c'
+DEBUG - Creating shared instance of singleton bean 'python'
+DEBUG - Creating instance of bean 'python'
+DEBUG - Eagerly caching bean 'python' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'python'
+DEBUG - Creating shared instance of singleton bean 'java'
+DEBUG - Creating instance of bean 'java'
+DEBUG - Eagerly caching bean 'java' to allow for resolving potential circular references
+DEBUG - Finished creating instance of bean 'java'
+DEBUG - Autowiring by type from bean name 'library' to bean named 'c'
+DEBUG - Autowiring by type from bean name 'library' to bean named 'python'
+DEBUG - Autowiring by type from bean name 'library' to bean named 'java'
+DEBUG - Finished creating instance of bean 'library'
+DEBUG - Returning cached instance of singleton bean 'table'
+DEBUG - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+DEBUG - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+DEBUG - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+DEBUG - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+DEBUG - Creating shared instance of singleton bean 'p'
+DEBUG - Creating instance of bean 'p'
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.People]: AutowiredFieldElement for private java.lang.String com.wangrui.spring.base.bean.People.name
+DEBUG - Registered injected element on class [com.wangrui.spring.base.bean.People]: AutowiredFieldElement for private int com.wangrui.spring.base.bean.People.age
+DEBUG - Eagerly caching bean 'p' to allow for resolving potential circular references
+DEBUG - Processing injected method of bean 'p': AutowiredFieldElement for private java.lang.String com.wangrui.spring.base.bean.People.name
+DEBUG - Processing injected method of bean 'p': AutowiredFieldElement for private int com.wangrui.spring.base.bean.People.age
+DEBUG - Finished creating instance of bean 'p'
+DEBUG - Returning cached instance of singleton bean 'c'
+DEBUG - Returning cached instance of singleton bean 'python'
+DEBUG - Returning cached instance of singleton bean 'java'
+DEBUG - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+DEBUG - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@1068e947]
+DEBUG - Returning cached instance of singleton bean 'lifecycleProcessor'
+DEBUG - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+DEBUG - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+DEBUG - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+DEBUG - Returning cached instance of singleton bean 'myService'
+INFO - Closing org.springframework.context.support.ClassPathXmlApplicationContext@442d9b6e: startup date [Fri Feb 14 08:21:02 CST 2020]; root of context hierarchy
+DEBUG - Returning cached instance of singleton bean 'lifecycleProcessor'
+INFO - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@617faa95: defining beans [myService,home,library,people,table,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,p,c,python,java,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+DEBUG - Invoking destroy method on bean 'myService': public void com.wangrui.spring.base.service.MyService.close()
