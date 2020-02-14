@@ -1,7 +1,10 @@
 package com.wangrui.spring.aop.base.service;
 
+import org.springframework.stereotype.Component;
+
 import com.wangrui.spring.aop.base.entity.A;
 
+@Component
 public class ReportService implements Service{
 
 	@Override

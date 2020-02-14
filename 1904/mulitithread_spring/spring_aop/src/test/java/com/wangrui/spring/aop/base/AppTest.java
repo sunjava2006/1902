@@ -1,8 +1,12 @@
 package com.wangrui.spring.aop.base;
 
-import junit.framework.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.wangrui.spring.aop.base.entity.A;
+import com.wangrui.spring.aop.base.service.MyService;
+import com.wangrui.spring.aop.base.service.ReportService;
+
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 /**
  * Unit test for simple App.
@@ -10,29 +14,17 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
+   
+	
     public void testApp()
     {
-        assertTrue( true );
+        ClassPathXmlApplicationContext app = new ClassPathXmlApplicationContext("app.xml");
+        
+//        ReportService rs = app.getBean(ReportService.class);
+//        A report = rs.service(3);
+//        System.out.println(report);
+        
+        MyService ms = app.getBean(MyService.class);
+        System.out.println(ms.getGDP());
     }
 }
