@@ -21,7 +21,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-webmvc</artifactId>
-	    <version>5.2.0.RELEASE</version>
+	    <version>5.3.18</version>
 	</dependency>
     <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
 	<dependency>
